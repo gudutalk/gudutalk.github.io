@@ -237,6 +237,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-effective-golang-interface-md" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/22/effective-golang-interface-md/" class="article-date">
+      <time datetime="2016-08-22T16:02:08.000Z" itemprop="datePublished">2016-08-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/effective-golang-interface-md/">Effective Go之接口和其他类型</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>在Go语言里，一个类型可以实现多个接口，例如一个collection如果实现了sort.interface<br>就可以被sort包排序，sort.interface，例如:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Sequence []<span class="keyword">int</span></div><div class="line"></div><div class="line"><span class="comment">// sort.Interface接口的方法</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Len</span><span class="params">()</span> <span class="title">int</span></span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">len</span>(s)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Less</span><span class="params">(i, j, <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</div><div class="line">    <span class="keyword">return</span> s[i] &lt; s[j]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Swap</span><span class="params">(i, j, <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</div><div class="line">    s[i], s[j] = s[j], s[i]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    sort.Sort(s)</div><div class="line">    str := <span class="string">"["</span></div><div class="line">    <span class="keyword">for</span> i, elem := <span class="keyword">range</span> s &#123;</div><div class="line">        <span class="keyword">if</span> i &gt; <span class="number">0</span> &#123;</div><div class="line">            str += <span class="string">" "</span></div><div class="line">        &#125;</div><div class="line">        str += fmt.Sprint(elem)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> str + <span class="string">"]"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>前面例子的String方法实际上在Sprint中已经实现了，只不过Sprint函数接受的是一个Slice，<br>我们可以调用这个方法从而实现代码重用，但是我们在调用Sprint函数之前，我们需要做一个<br>从Sequence到Slice的类型转换</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    sort.Sort(s)</div><div class="line">    <span class="keyword">return</span> fmt.Sprint([]<span class="keyword">int</span>(s)) <span class="comment">//把s从Sequence类型转换为Slice类型</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在上面这个例子中，类型转换不会创建新的值，因为Sequence和[]int本质上是一样的，只是<br>名字不同，但是在有些类型转换中是需要创建新的值的，比如从int类型转换为float类型。</p>
+<p>在Go语言里，把一个类型转换为另一个类型，从而调用相应的方法是十分常见的，对于上面<br>这个例子，我们可以用一个已存在类型sort.IntSlice来使整个例子更加短小。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Sequence []<span class="keyword">int</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    sort.IntSlice(s).Sort() <span class="comment">// sort.IntSlice实现了sort.Interface的三个接口方法</span></div><div class="line">    <span class="keyword">return</span> fmt.Sprint([]<span class="keyword">int</span>(s))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="接口转换和类型诊断"><a href="#接口转换和类型诊断" class="headerlink" title="接口转换和类型诊断"></a>接口转换和类型诊断</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Stringer <span class="keyword">interface</span> &#123;</div><div class="line">    String() <span class="keyword">string</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> value <span class="keyword">interface</span> &#123;&#125; <span class="comment">// 调用者提供的值</span></div><div class="line"></div><div class="line"><span class="keyword">switch</span> str := value.(<span class="keyword">type</span>) &#123; <span class="comment">// type swit</span></div><div class="line">    <span class="keyword">case</span> <span class="keyword">string</span>:</div><div class="line">        <span class="keyword">return</span> str</div><div class="line">    <span class="keyword">case</span> Stringer:</div><div class="line">        <span class="keyword">return</span> str.String()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Golang/">Golang</a><a class="article-category-link" href="/categories/Golang/Effective-Go/">Effective Go</a><a class="article-category-link" href="/categories/Golang/Effective-Go/Interfaces-and-other-types/">Interfaces and other types</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-effective-golang-data-md" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -973,75 +1039,9 @@
 
 
   
-    <article id="post-fissionable-imbark-01" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/22/fissionable-imbark-01/" class="article-date">
-      <time datetime="2016-07-22T19:24:29.000Z" itemprop="datePublished">2016-07-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/22/fissionable-imbark-01/">第一次裂变--割肉</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="比强大对手更可怕的事情–留不住人"><a href="#比强大对手更可怕的事情–留不住人" class="headerlink" title="比强大对手更可怕的事情–留不住人"></a>比强大对手更可怕的事情–留不住人</h2><blockquote><p>企业机制要提前设立，等到出问题时再补救，为时已晚</p>
-<footer><strong>宗毅</strong><cite>《裂变式创业》</cite></footer></blockquote>
-<h3 id="为什么留不住人–用何种方式激励优秀人才"><a href="#为什么留不住人–用何种方式激励优秀人才" class="headerlink" title="为什么留不住人–用何种方式激励优秀人才"></a>为什么留不住人–用何种方式激励优秀人才</h3><p>感情维系为主，小恩小惠为辅的组织管理使得团队的结构变得脆弱，一旦遇到外界冲击，<br>要么临阵倒戈，要么内部政变，所以老板通常疲于一方面监管底下的人是否偷懒，另一<br>方面还要防范内部有人“叛变”。每个“宰相”都有一个皇帝梦，其实最核心的就是，而不是<br>给多少钱的问题。</p>
-<blockquote><p>有一套好的制度，平凡的人在一起可以干伟大的事；一套坏的制度，好人也会变坏。</p>
-<footer><strong>马云</strong></footer></blockquote>
-<h3 id="把员工变成合伙人"><a href="#把员工变成合伙人" class="headerlink" title="把员工变成合伙人"></a>把员工变成合伙人</h3><p>只有各方都得利的时候，组织才会平和的新陈代谢，私心是组织变革的最大挑战。合伙人<br>模式是个一加一大于二的模式。合伙人之间个性，能力，专长要互补，整体价值观要一致。</p>
-<blockquote><p>人是很奇怪的，一旦被逼入进退维谷的境地，反倒想开了，很轻松。在改变了自己心态的<br>瞬间，人生就出现专辑了。</p>
-<footer><strong>稻盛和夫</strong></footer></blockquote>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Reading/">Reading</a><a class="article-category-link" href="/categories/Reading/创业/">创业</a><a class="article-category-link" href="/categories/Reading/创业/《裂变式创业》/">《裂变式创业》</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </div>
