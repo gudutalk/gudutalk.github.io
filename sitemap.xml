@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://talk.gudu.io/2017/06/05/a1-15-german-indefinite-articles/</loc>
+    
+    <lastmod>2017-06-05T06:56:59.563Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://talk.gudu.io/2017/05/27/a1-06-Yes-No-Thank-you/</loc>
     
     <lastmod>2017-06-05T05:05:45.714Z</lastmod>
@@ -44,14 +51,14 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/</loc>
+    <loc>http://talk.gudu.io/2017/05/28/a1-07-german-numbers1/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/</loc>
+    <loc>http://talk.gudu.io/2017/05/23/a1-02-german-self-introduction/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -72,7 +79,7 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2017/05/23/a1-02-german-self-introduction/</loc>
+    <loc>http://talk.gudu.io/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -86,13 +93,6 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2015/09/18/2015-09-18-hello-world/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://talk.gudu.io/2017/05/26/a1-05-german-where-do-you-live/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
@@ -100,14 +100,21 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2017/05/28/a1-07-german-numbers1/</loc>
+    <loc>http://talk.gudu.io/2017/05/29/a1-08-german-numbers2/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2017/05/29/a1-08-german-numbers2/</loc>
+    <loc>http://talk.gudu.io/2015/09/19/2015-09-19-test-highlight/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2017/05/31/a1-10-german-how-to-guess-articles/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -128,20 +135,6 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-run-py-file-on-windows/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2017/05/31/a1-10-german-how-to-guess-articles/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://talk.gudu.io/2015/09/29/2015-09-29-monad-in-javascript/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
@@ -149,14 +142,21 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2015/09/19/2015-09-19-test-highlight/</loc>
+    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-django-social-auth/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2016/08/20/effective-golang-methods/</loc>
+    <loc>http://talk.gudu.io/2015/09/18/2015-09-18-hello-world/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-run-py-file-on-windows/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -170,28 +170,7 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2016/07/22/fissionable-imbark-01/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://talk.gudu.io/2016/08/19/effective-golang-function/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2016/07/22/fissionable-imbark-02/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2016/07/23/fissionable-imbark-03/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -205,6 +184,27 @@
   </url>
   
   <url>
+    <loc>http://talk.gudu.io/2016/08/22/effective-golang-interface-md/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2016/08/20/effective-golang-methods/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2016/07/22/fissionable-imbark-02/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://talk.gudu.io/2016/07/25/fissionable-imbark-04/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
@@ -212,7 +212,14 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2016/08/22/effective-golang-interface-md/</loc>
+    <loc>http://talk.gudu.io/2016/07/23/fissionable-imbark-03/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2016/07/22/fissionable-imbark-01/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -240,13 +247,6 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2016/11/08/how-to-recursively-copy-file/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://talk.gudu.io/2016/11/05/how-to-install-deb-file/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
@@ -268,14 +268,7 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-django-social-auth/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2016/11/11/run-virtualbox-on-windows/</loc>
+    <loc>http://talk.gudu.io/2016/11/08/how-to-recursively-copy-file/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -283,6 +276,20 @@
   
   <url>
     <loc>http://talk.gudu.io/2016/07/24/staged-event-driven-architecture/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2016/11/11/run-virtualbox-on-windows/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
