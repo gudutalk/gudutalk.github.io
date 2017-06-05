@@ -279,7 +279,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.js"> </script><h2 id="3-阶段式的事件驱动架构-The-Staged-Event-Driven-Architecture"><a href="#3-阶段式的事件驱动架构-The-Staged-Event-Driven-Architecture" class="headerlink" title="3. 阶段式的事件驱动架构(The Staged Event-Driven Architecture)"></a>3. 阶段式的事件驱动架构(The Staged Event-Driven Architecture)</h2><p>在这一节，我们提出了一个使得高并发，负载调节(load conditioning)和容易操纵(ease of engineering)<br>的互联网服务成为可能的新的软件架构–阶段式的事件驱动架构(Staged Event-Driven Architecture–SDEA)。<br>SEDA通过事件队列分开把一个应用分解为由不同阶段组成的网络，并且引入了动态资源控制器，从而允许应用<br>根据负载的变化进行动态调整。图5给出了一个使用了SEDA架构的服务的整体设计。</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="3-阶段式的事件驱动架构-The-Staged-Event-Driven-Architecture"><a href="#3-阶段式的事件驱动架构-The-Staged-Event-Driven-Architecture" class="headerlink" title="3. 阶段式的事件驱动架构(The Staged Event-Driven Architecture)"></a>3. 阶段式的事件驱动架构(The Staged Event-Driven Architecture)</h2><p>在这一节，我们提出了一个使得高并发，负载调节(load conditioning)和容易操纵(ease of engineering)<br>的互联网服务成为可能的新的软件架构–阶段式的事件驱动架构(Staged Event-Driven Architecture–SDEA)。<br>SEDA通过事件队列分开把一个应用分解为由不同阶段组成的网络，并且引入了动态资源控制器，从而允许应用<br>根据负载的变化进行动态调整。图5给出了一个使用了SEDA架构的服务的整体设计。</p>
 <h3 id="3-1-目标"><a href="#3-1-目标" class="headerlink" title="3.1 目标"></a>3.1 目标</h3><p>下面列出了SEDA的主要设计目标：</p>
 <h4 id="支持大规模并发"><a href="#支持大规模并发" class="headerlink" title="支持大规模并发:"></a>支持大规模并发:</h4><p>为了避免多线程造成的性能下降，SEDA尽可能使用事件驱动的执行模型这同时也要求系统提<br>供高效和可伸缩的输入/输出元语</p>
 <h4 id="简化良态服务的构建"><a href="#简化良态服务的构建" class="headerlink" title="简化良态服务的构建"></a>简化良态服务的构建</h4><p>为了简化构建互联网服务的复杂性， SEDA将调度(scheduling)和资源管理的细节与开发者<br>进行隔离。同时支持模块化构建这些应用，并提供调试和性能分析的支持。</p>

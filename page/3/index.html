@@ -267,7 +267,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.js"> </script><p>####以把/opt/openshift添加到$PATH中为例</p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>####以把/opt/openshift添加到$PATH中为例</p>
 <p><strong>编辑/etc/profile</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">PATH=<span class="variable">$PATH</span>:/opt/profile</div><div class="line"><span class="built_in">export</span> PATH</div></pre></td></tr></table></figure>
 <p><strong>重新加载/etc/profile</strong></p>
@@ -329,7 +329,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.js"> </script><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>在Go语言里，一个类型可以实现多个接口，例如一个collection如果实现了sort.interface<br>就可以被sort包排序，sort.interface，例如:</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>在Go语言里，一个类型可以实现多个接口，例如一个collection如果实现了sort.interface<br>就可以被sort包排序，sort.interface，例如:</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Sequence []<span class="keyword">int</span></div><div class="line"></div><div class="line"><span class="comment">// sort.Interface接口的方法</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Len</span><span class="params">()</span> <span class="title">int</span></span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">len</span>(s)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Less</span><span class="params">(i, j, <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</div><div class="line">    <span class="keyword">return</span> s[i] &lt; s[j]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Swap</span><span class="params">(i, j, <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</div><div class="line">    s[i], s[j] = s[j], s[i]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    sort.Sort(s)</div><div class="line">    str := <span class="string">"["</span></div><div class="line">    <span class="keyword">for</span> i, elem := <span class="keyword">range</span> s &#123;</div><div class="line">        <span class="keyword">if</span> i &gt; <span class="number">0</span> &#123;</div><div class="line">            str += <span class="string">" "</span></div><div class="line">        &#125;</div><div class="line">        str += fmt.Sprint(elem)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> str + <span class="string">"]"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>前面例子的String方法实际上在Sprint中已经实现了，只不过Sprint函数接受的是一个Slice，<br>我们可以调用这个方法从而实现代码重用，但是我们在调用Sprint函数之前，我们需要做一个<br>从Sequence到Slice的类型转换</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    sort.Sort(s)</div><div class="line">    <span class="keyword">return</span> fmt.Sprint([]<span class="keyword">int</span>(s)) <span class="comment">//把s从Sequence类型转换为Slice类型</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -395,7 +395,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.js"> </script>
+        <script src="/assets/js/APlayer.min.js"> </script>
       
       
     </div>
@@ -449,7 +449,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.js"> </script><p>在Go语言里，可以为任何命名类型定义新的方法(指针和接口除外):</p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>在Go语言里，可以为任何命名类型定义新的方法(指针和接口除外):</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> ByteSlice []<span class="keyword">byte</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(slice ByteSlice)</span> <span class="title">Append</span><span class="params">(data []<span class="keyword">byte</span>)</span> []<span class="title">byte</span></span> &#123;</div><div class="line">    l := <span class="built_in">len</span>(slice)</div><div class="line">    <span class="keyword">if</span> l + <span class="built_in">len</span>(data) &gt; <span class="built_in">cap</span>(slice) &#123;  <span class="comment">// reallocate</span></div><div class="line">        <span class="comment">// Allocate double what's needed, for future growth.</span></div><div class="line">        newSlice := <span class="built_in">make</span>([]<span class="keyword">byte</span>, (l+<span class="built_in">len</span>(data))*<span class="number">2</span>)</div><div class="line">        <span class="comment">// The copy function is predeclared and works for any slice type.</span></div><div class="line">        <span class="built_in">copy</span>(newSlice, slice)</div><div class="line">        slice = newSlice</div><div class="line">    &#125;</div><div class="line">    slice = slice[<span class="number">0</span>:l+<span class="built_in">len</span>(data)]</div><div class="line">    <span class="keyword">for</span> i, c := <span class="keyword">range</span> data &#123;</div><div class="line">        slice[l+i] = c</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> slice</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上面这个方法仍然需要返回被更新过的slice，我们可以把这个方法改成接受一个指向ByteSlice<br>的指针，这样这个方法就可以修改调用者的slice了</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p *ByteSlice)</span> <span class="title">Append</span><span class="params">(data []<span class="keyword">byte</span>)</span></span> &#123;</div><div class="line">    slice = *p</div><div class="line">    <span class="comment">// 和上面的函数体一样，但是没有return语句</span></div><div class="line">    *p = slice</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -516,7 +516,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.js"> </script><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>在Go语言里，常量在编译期被创建，并且常量仅仅可以是数字，字符，字符串或者布尔类型<br>由于是编译器被创建，初始化常量仅仅可以使用常量表达式，因此不能用函数调用来初始化<br>常量，比如：</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>在Go语言里，常量在编译期被创建，并且常量仅仅可以是数字，字符，字符串或者布尔类型<br>由于是编译器被创建，初始化常量仅仅可以使用常量表达式，因此不能用函数调用来初始化<br>常量，比如：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="number">1</span> &lt;&lt; <span class="number">3</span> <span class="comment">// 合法</span></div><div class="line"><span class="keyword">const</span> b = math.Sin(math.Pi/<span class="number">4</span>) <span class="comment">// 编译错误，因为math.Sin是个函数调用</span></div></pre></td></tr></table></figure>
 <p>在go语言中，枚举常量是用iota枚举器产生的，而且iota可以出现在表达式里，并且表达式<br>可以被隐式的重复，例如:</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> ByteSize <span class="keyword">float64</span></div><div class="line"><span class="keyword">const</span> (</div><div class="line">    _               = <span class="literal">iota</span> <span class="comment">//忽略第一个值</span></div><div class="line">    KB  ByteSize    = <span class="number">1</span> &lt;&lt; (<span class="number">10</span> * <span class="literal">iota</span>)</div><div class="line">    MB</div><div class="line">    GB</div><div class="line">    TB</div><div class="line">    EB</div><div class="line">    ZB</div><div class="line">    YB</div><div class="line">)</div></pre></td></tr></table></figure>
@@ -586,7 +586,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.js"> </script><h3 id="多个返回值"><a href="#多个返回值" class="headerlink" title="多个返回值"></a>多个返回值</h3><p>Go语言支持函数有多个返回值，例如:</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="多个返回值"><a href="#多个返回值" class="headerlink" title="多个返回值"></a>多个返回值</h3><p>Go语言支持函数有多个返回值，例如:</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">nextInt</span><span class="params">(b []<span class="keyword">byte</span>, i <span class="keyword">int</span>)</span> <span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span> &#123;</div><div class="line">    <span class="keyword">for</span> ; i &lt; <span class="built_in">len</span>(b) &amp;&amp; !isDigit(b[i]); i++ &#123;</div><div class="line">    &#125;</div><div class="line">    x := <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> ; i &lt; <span class="built_in">len</span>(b) &amp;&amp; isDigit(b[i]); i++ &#123;</div><div class="line">        x = x*<span class="number">10</span> + <span class="keyword">int</span>(b[i]) - <span class="string">'0'</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x, i</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>多返回值函数的使用方法:</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(b); &#123;</div><div class="line">    x, i = nextInt(b, i)</div><div class="line">    fmt.Println(x)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -665,7 +665,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.js"> </script><h2 id="发音缩写"><a href="#发音缩写" class="headerlink" title="发音缩写"></a>发音缩写</h2><p>一些发音缩写的例子：</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="发音缩写"><a href="#发音缩写" class="headerlink" title="发音缩写"></a>发音缩写</h2><p>一些发音缩写的例子：</p>
 <p>Ra-di-o Cor-po-ra-tion of A-mer-i-ca =&gt; RCA</p>
 <p>Gen-er-al E-le-tric =&gt; GE</p>
 <p>Los An-ge-les =&gt; LA</p>
@@ -736,7 +736,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.js"> </script><h2 id="好产品要从组织架构开始设计"><a href="#好产品要从组织架构开始设计" class="headerlink" title="好产品要从组织架构开始设计"></a>好产品要从组织架构开始设计</h2><blockquote><p>从错综复杂中发现简洁，从不一致中发现和谐，困难中蕴藏着机会。</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="好产品要从组织架构开始设计"><a href="#好产品要从组织架构开始设计" class="headerlink" title="好产品要从组织架构开始设计"></a>好产品要从组织架构开始设计</h2><blockquote><p>从错综复杂中发现简洁，从不一致中发现和谐，困难中蕴藏着机会。</p>
 <footer><strong>爱因斯坦</strong></footer></blockquote>
 <h3 id="组织存在决定业务模式"><a href="#组织存在决定业务模式" class="headerlink" title="组织存在决定业务模式"></a>组织存在决定业务模式</h3><p>产品销路不畅，更多的时候是组织架构没有设计好，内部的利益分割不够清晰，因此就不可<br>能生产出好的产品。聪明的创业者一定要先解决好人和组织的问题。</p>
 <blockquote><p>一个商品是否赚钱不仅仅取决于利润率，更取决于资金的周转频率。</p>
@@ -852,7 +852,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.js"> </script><h2 id="3-阶段式的事件驱动架构-The-Staged-Event-Driven-Architecture"><a href="#3-阶段式的事件驱动架构-The-Staged-Event-Driven-Architecture" class="headerlink" title="3. 阶段式的事件驱动架构(The Staged Event-Driven Architecture)"></a>3. 阶段式的事件驱动架构(The Staged Event-Driven Architecture)</h2><p>在这一节，我们提出了一个使得高并发，负载调节(load conditioning)和容易操纵(ease of engineering)<br>的互联网服务成为可能的新的软件架构–阶段式的事件驱动架构(Staged Event-Driven Architecture–SDEA)。<br>SEDA通过事件队列分开把一个应用分解为由不同阶段组成的网络，并且引入了动态资源控制器，从而允许应用<br>根据负载的变化进行动态调整。图5给出了一个使用了SEDA架构的服务的整体设计。</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="3-阶段式的事件驱动架构-The-Staged-Event-Driven-Architecture"><a href="#3-阶段式的事件驱动架构-The-Staged-Event-Driven-Architecture" class="headerlink" title="3. 阶段式的事件驱动架构(The Staged Event-Driven Architecture)"></a>3. 阶段式的事件驱动架构(The Staged Event-Driven Architecture)</h2><p>在这一节，我们提出了一个使得高并发，负载调节(load conditioning)和容易操纵(ease of engineering)<br>的互联网服务成为可能的新的软件架构–阶段式的事件驱动架构(Staged Event-Driven Architecture–SDEA)。<br>SEDA通过事件队列分开把一个应用分解为由不同阶段组成的网络，并且引入了动态资源控制器，从而允许应用<br>根据负载的变化进行动态调整。图5给出了一个使用了SEDA架构的服务的整体设计。</p>
 <h3 id="3-1-目标"><a href="#3-1-目标" class="headerlink" title="3.1 目标"></a>3.1 目标</h3><p>下面列出了SEDA的主要设计目标：</p>
 <h4 id="支持大规模并发"><a href="#支持大规模并发" class="headerlink" title="支持大规模并发:"></a>支持大规模并发:</h4><p>为了避免多线程造成的性能下降，SEDA尽可能使用事件驱动的执行模型这同时也要求系统提<br>供高效和可伸缩的输入/输出元语</p>
 <h4 id="简化良态服务的构建"><a href="#简化良态服务的构建" class="headerlink" title="简化良态服务的构建"></a>简化良态服务的构建</h4><p>为了简化构建互联网服务的复杂性， SEDA将调度(scheduling)和资源管理的细节与开发者<br>进行隔离。同时支持模块化构建这些应用，并提供调试和性能分析的支持。</p>
@@ -921,7 +921,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.js"> </script><blockquote><p>20岁有人愿意带你，愿意把一生的本领传给你，这就是成功。30岁有人愿意用你，把什么事情都交到你手上，事情不会办砸这叫成功。</p>
+        <script src="/assets/js/APlayer.min.js"> </script><blockquote><p>20岁有人愿意带你，愿意把一生的本领传给你，这就是成功。30岁有人愿意用你，把什么事情都交到你手上，事情不会办砸这叫成功。</p>
 <footer><strong>罗振宇</strong></footer></blockquote>
 <h3 id="传统人才进阶的悲哀"><a href="#传统人才进阶的悲哀" class="headerlink" title="传统人才进阶的悲哀"></a>传统人才进阶的悲哀</h3><ul>
 <li>重结果，不重过程</li>
