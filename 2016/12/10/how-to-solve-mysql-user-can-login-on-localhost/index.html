@@ -274,7 +274,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><p><strong> Mysql安装好了，却发现只能从本机对数据库进行访问</strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
+        <script src="/assets/js/APlayer.js"> </script><p><strong> Mysql安装好了，却发现只能从本机对数据库进行访问</strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
 <a id="more"></a>
 <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Mysql安装好了，却发现只能从本机对数据库进行访问。</p>
 <h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="1-检查Mysql-service是不是仅仅绑定了loopback地址"><a href="#1-检查Mysql-service是不是仅仅绑定了loopback地址" class="headerlink" title="1. 检查Mysql service是不是仅仅绑定了loopback地址"></a>1. 检查Mysql service是不是仅仅绑定了loopback地址</h4><p>在/etc/mysql/目录下面查看各个.cnf文件，看看有没有：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">bind-address</span>            = <span class="number">127.0</span>.<span class="number">0.1</span></div></pre></td></tr></table></figure></p>
