@@ -35,9 +35,9 @@ class APlayer {
 
         this.isMobile = /mobile/i.test(window.navigator.userAgent);
         // compatibility: some mobile browsers don't suppose autoplay
-        if (this.isMobile) {
+        /*if (this.isMobile) {
             option.autoplay = false;
-        }
+        }*/
 
         // default options
         const defaultOption = {
@@ -721,14 +721,14 @@ class APlayer {
         }
 
         // autoplay
-        if (this.option.autoplay && !this.isMobile) {
+        if (this.option.autoplay /*&& !this.isMobile*/) {
             this.play();
         }
         this.option.autoplay = true;  // autoplay next music
 
-        if (this.isMobile) {
+        /*if (this.isMobile) {
             this.pause();
-        }
+        }*/
     }
 
     /**

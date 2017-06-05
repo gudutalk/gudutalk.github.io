@@ -135,12 +135,12 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-django-social-auth/</loc>
+    <loc>http://talk.gudu.io/2015/09/29/2015-09-29-monad-in-javascript/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>为Django网站添加社交网络账号登录功能</title>
-        <pubTime>2015-10-17T09:51:09.000Z</pubTime>
+        <title>MONAD in Javascript</title>
+        <pubTime>2015-09-29T17:11:57.000Z</pubTime>
         
          
            
@@ -165,15 +165,27 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/</loc>
+    <loc>http://talk.gudu.io/2017/05/22/a1-01-german-greetings/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>Windows上Python开发环境的安装与配置</title>
-        <pubTime>2015-10-17T08:44:17.000Z</pubTime>
+        <title>01-German Greetings</title>
+        <pubTime>2017-05-22T14:11:04.000Z</pubTime>
         
+        <tag>German</tag>
+         
          
            
+             
+              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
+          
+             
+              <breadCrumb title="German" url="http://talk.gudu.io/categories/Learnings/German/"/>
+          
+             
+              <breadCrumb title="A1" url="http://talk.gudu.io/categories/Learnings/German/A1/"/>
+          
+             
         </display>
     </data>
     </url>
@@ -201,6 +213,48 @@
               <breadCrumb title="A1" url="http://talk.gudu.io/categories/Learnings/German/A1/"/>
           
              
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://talk.gudu.io/2017/05/27/a1-06-Yes-No-Thank-you/</loc>
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    <data>
+        <display>
+        <title>06-German-Yes-No-Thank-you</title>
+        <pubTime>2017-05-27T15:57:57.000Z</pubTime>
+        
+        <tag>German</tag>
+         
+         
+           
+             
+              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
+          
+             
+              <breadCrumb title="German" url="http://talk.gudu.io/categories/Learnings/German/"/>
+          
+             
+              <breadCrumb title="A1" url="http://talk.gudu.io/categories/Learnings/German/A1/"/>
+          
+             
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/</loc>
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    <data>
+        <display>
+        <title>Windows上Python开发环境的安装与配置</title>
+        <pubTime>2015-10-17T08:44:17.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>
@@ -282,93 +336,12 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2017/05/22/a1-01-german-greetings/</loc>
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    <data>
-        <display>
-        <title>01-German Greetings</title>
-        <pubTime>2017-05-22T14:11:04.000Z</pubTime>
-        
-        <tag>German</tag>
-         
-         
-           
-             
-              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
-          
-             
-              <breadCrumb title="German" url="http://talk.gudu.io/categories/Learnings/German/"/>
-          
-             
-              <breadCrumb title="A1" url="http://talk.gudu.io/categories/Learnings/German/A1/"/>
-          
-             
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://talk.gudu.io/2017/05/28/a1-07-german-numbers1/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
         <title>07-German-Numbers(0-20)</title>
         <pubTime>2017-05-28T13:51:57.000Z</pubTime>
-        
-        <tag>German</tag>
-         
-         
-           
-             
-              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
-          
-             
-              <breadCrumb title="German" url="http://talk.gudu.io/categories/Learnings/German/"/>
-          
-             
-              <breadCrumb title="A1" url="http://talk.gudu.io/categories/Learnings/German/A1/"/>
-          
-             
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://talk.gudu.io/2017/05/27/a1-06-Yes-No-Thank-you/</loc>
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    <data>
-        <display>
-        <title>06-German-Yes-No-Thank-you</title>
-        <pubTime>2017-05-27T15:57:57.000Z</pubTime>
-        
-        <tag>German</tag>
-         
-         
-           
-             
-              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
-          
-             
-              <breadCrumb title="German" url="http://talk.gudu.io/categories/Learnings/German/"/>
-          
-             
-              <breadCrumb title="A1" url="http://talk.gudu.io/categories/Learnings/German/A1/"/>
-          
-             
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://talk.gudu.io/2017/05/29/a1-08-german-numbers2/</loc>
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    <data>
-        <display>
-        <title>08-German-Numbers(20-100)</title>
-        <pubTime>2017-05-29T13:34:48.000Z</pubTime>
         
         <tag>German</tag>
          
@@ -417,12 +390,12 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2017/05/30/a1-09-german-noun-and-articles/</loc>
+    <loc>http://talk.gudu.io/2017/05/29/a1-08-german-numbers2/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>09-German-Noun-and-Articles</title>
-        <pubTime>2017-05-30T15:33:12.000Z</pubTime>
+        <title>08-German-Numbers(20-100)</title>
+        <pubTime>2017-05-29T13:34:48.000Z</pubTime>
         
         <tag>German</tag>
          
@@ -444,12 +417,12 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2017/06/01/a1-11-german-how-much-is/</loc>
+    <loc>http://talk.gudu.io/2017/05/30/a1-09-german-noun-and-articles/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>11-German-How-much-is</title>
-        <pubTime>2017-06-01T13:56:39.000Z</pubTime>
+        <title>09-German-Noun-and-Articles</title>
+        <pubTime>2017-05-30T15:33:12.000Z</pubTime>
         
         <tag>German</tag>
          
@@ -486,12 +459,39 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/</loc>
+    <loc>http://talk.gudu.io/2017/06/01/a1-11-german-how-much-is/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>在单元测试中进行依赖注入</title>
-        <pubTime>2015-10-15T16:30:47.000Z</pubTime>
+        <title>11-German-How-much-is</title>
+        <pubTime>2017-06-01T13:56:39.000Z</pubTime>
+        
+        <tag>German</tag>
+         
+         
+           
+             
+              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
+          
+             
+              <breadCrumb title="German" url="http://talk.gudu.io/categories/Learnings/German/"/>
+          
+             
+              <breadCrumb title="A1" url="http://talk.gudu.io/categories/Learnings/German/A1/"/>
+          
+             
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-django-social-auth/</loc>
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    <data>
+        <display>
+        <title>为Django网站添加社交网络账号登录功能</title>
+        <pubTime>2015-10-17T09:51:09.000Z</pubTime>
         
          
            
@@ -548,21 +548,6 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2016/08/22/effective-golang-data-md/</loc>
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    <data>
-        <display>
-        <title>effective-golang-data.md</title>
-        <pubTime>2016-08-22T16:01:44.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://talk.gudu.io/2016/08/19/effective-golang-function/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
@@ -587,24 +572,15 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2016/08/20/effective-golang-initialization/</loc>
+    <loc>http://talk.gudu.io/2016/08/22/effective-golang-data-md/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>Effective Go之初始化</title>
-        <pubTime>2016-08-20T13:50:36.000Z</pubTime>
+        <title>effective-golang-data.md</title>
+        <pubTime>2016-08-22T16:01:44.000Z</pubTime>
         
          
            
-             
-              <breadCrumb title="Golang" url="http://talk.gudu.io/categories/Golang/"/>
-          
-             
-              <breadCrumb title="Effective Go" url="http://talk.gudu.io/categories/Golang/Effective-Go/"/>
-          
-             
-              <breadCrumb title="Initialziation" url="http://talk.gudu.io/categories/Golang/Effective-Go/Initialziation/"/>
-          
         </display>
     </data>
     </url>
@@ -635,60 +611,12 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2016/08/20/effective-golang-methods/</loc>
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    <data>
-        <display>
-        <title>Effective Go之值方法 vs 指针方法</title>
-        <pubTime>2016-08-20T14:34:25.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Golang" url="http://talk.gudu.io/categories/Golang/"/>
-          
-             
-              <breadCrumb title="Effective Go" url="http://talk.gudu.io/categories/Golang/Effective-Go/"/>
-          
-             
-              <breadCrumb title="Methods" url="http://talk.gudu.io/categories/Golang/Effective-Go/Methods/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://talk.gudu.io/2016/07/22/fissionable-imbark-01/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
         <title>第一次裂变--割肉</title>
         <pubTime>2016-07-22T19:24:29.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Reading" url="http://talk.gudu.io/categories/Reading/"/>
-          
-             
-              <breadCrumb title="创业" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/"/>
-          
-             
-              <breadCrumb title="《裂变式创业》" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/%E3%80%8A%E8%A3%82%E5%8F%98%E5%BC%8F%E5%88%9B%E4%B8%9A%E3%80%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://talk.gudu.io/2016/07/22/fissionable-imbark-02/</loc>
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    <data>
-        <display>
-        <title>第二次裂变--换心</title>
-        <pubTime>2016-07-22T20:24:29.000Z</pubTime>
         
          
            
@@ -731,12 +659,36 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2016/07/25/fissionable-imbark-04/</loc>
+    <loc>http://talk.gudu.io/2016/08/20/effective-golang-initialization/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>第四次裂变--失控</title>
-        <pubTime>2016-07-25T16:19:12.000Z</pubTime>
+        <title>Effective Go之初始化</title>
+        <pubTime>2016-08-20T13:50:36.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Golang" url="http://talk.gudu.io/categories/Golang/"/>
+          
+             
+              <breadCrumb title="Effective Go" url="http://talk.gudu.io/categories/Golang/Effective-Go/"/>
+          
+             
+              <breadCrumb title="Initialziation" url="http://talk.gudu.io/categories/Golang/Effective-Go/Initialziation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://talk.gudu.io/2016/07/22/fissionable-imbark-02/</loc>
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    <data>
+        <display>
+        <title>第二次裂变--换心</title>
+        <pubTime>2016-07-22T20:24:29.000Z</pubTime>
         
          
            
@@ -770,6 +722,30 @@
 
     
   <url>
+    <loc>http://talk.gudu.io/2016/08/20/effective-golang-methods/</loc>
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    <data>
+        <display>
+        <title>Effective Go之值方法 vs 指针方法</title>
+        <pubTime>2016-08-20T14:34:25.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Golang" url="http://talk.gudu.io/categories/Golang/"/>
+          
+             
+              <breadCrumb title="Effective Go" url="http://talk.gudu.io/categories/Golang/Effective-Go/"/>
+          
+             
+              <breadCrumb title="Methods" url="http://talk.gudu.io/categories/Golang/Effective-Go/Methods/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://talk.gudu.io/2013/07/15/hello-world/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
@@ -784,30 +760,6 @@
           
              
               <breadCrumb title="bar" url="http://talk.gudu.io/categories/foo/bar/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://talk.gudu.io/2016/11/05/how-to-add-directory-to-path/</loc>
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    <data>
-        <display>
-        <title>Linux把一个路径添加到$PATH环境变量中</title>
-        <pubTime>2016-11-05T05:05:36.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
-          
-             
-              <breadCrumb title="Linux" url="http://talk.gudu.io/categories/Learnings/Linux/"/>
-          
-             
-              <breadCrumb title="Tricks" url="http://talk.gudu.io/categories/Learnings/Linux/Tricks/"/>
           
         </display>
     </data>
@@ -863,15 +815,24 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2015/09/29/2015-09-29-monad-in-javascript/</loc>
+    <loc>http://talk.gudu.io/2016/11/05/how-to-add-directory-to-path/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>MONAD in Javascript</title>
-        <pubTime>2015-09-29T17:11:57.000Z</pubTime>
+        <title>Linux把一个路径添加到$PATH环境变量中</title>
+        <pubTime>2016-11-05T05:05:36.000Z</pubTime>
         
          
            
+             
+              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
+          
+             
+              <breadCrumb title="Linux" url="http://talk.gudu.io/categories/Learnings/Linux/"/>
+          
+             
+              <breadCrumb title="Tricks" url="http://talk.gudu.io/categories/Learnings/Linux/Tricks/"/>
+          
         </display>
     </data>
     </url>
@@ -902,12 +863,12 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2016/08/12/positioning-chapter10/</loc>
+    <loc>http://talk.gudu.io/2016/07/25/fissionable-imbark-04/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>无名陷阱</title>
-        <pubTime>2016-08-12T18:30:10.000Z</pubTime>
+        <title>第四次裂变--失控</title>
+        <pubTime>2016-07-25T16:19:12.000Z</pubTime>
         
          
            
@@ -918,7 +879,7 @@
               <breadCrumb title="创业" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/"/>
           
              
-              <breadCrumb title="《定位》" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/%E3%80%8A%E5%AE%9A%E4%BD%8D%E3%80%8B/"/>
+              <breadCrumb title="《裂变式创业》" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/%E3%80%8A%E8%A3%82%E5%8F%98%E5%BC%8F%E5%88%9B%E4%B8%9A%E3%80%8B/"/>
           
         </display>
     </data>
@@ -950,24 +911,15 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2016/07/24/staged-event-driven-architecture/</loc>
+    <loc>http://talk.gudu.io/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>SEDA An Architecture for Well-Contained, Scalable Internet Services</title>
-        <pubTime>2016-07-24T14:16:21.000Z</pubTime>
+        <title>在单元测试中进行依赖注入</title>
+        <pubTime>2015-10-15T16:30:47.000Z</pubTime>
         
-        <tag>event driven</tag>
-         
-        <tag>scalable</tag>
-         
-        <tag>concurrency</tag>
-         
          
            
-             
-              <breadCrumb title="System Design" url="http://talk.gudu.io/categories/System-Design/"/>
-          
         </display>
     </data>
     </url>
@@ -991,6 +943,54 @@
           
              
               <breadCrumb title="Tricks" url="http://talk.gudu.io/categories/Learnings/MathJax/Tricks/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://talk.gudu.io/2016/08/12/positioning-chapter10/</loc>
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    <data>
+        <display>
+        <title>无名陷阱</title>
+        <pubTime>2016-08-12T18:30:10.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Reading" url="http://talk.gudu.io/categories/Reading/"/>
+          
+             
+              <breadCrumb title="创业" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/"/>
+          
+             
+              <breadCrumb title="《定位》" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/%E3%80%8A%E5%AE%9A%E4%BD%8D%E3%80%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://talk.gudu.io/2016/07/24/staged-event-driven-architecture/</loc>
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    <data>
+        <display>
+        <title>SEDA An Architecture for Well-Contained, Scalable Internet Services</title>
+        <pubTime>2016-07-24T14:16:21.000Z</pubTime>
+        
+        <tag>event driven</tag>
+         
+        <tag>scalable</tag>
+         
+        <tag>concurrency</tag>
+         
+         
+           
+             
+              <breadCrumb title="System Design" url="http://talk.gudu.io/categories/System-Design/"/>
           
         </display>
     </data>
