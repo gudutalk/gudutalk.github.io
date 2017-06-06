@@ -122,9 +122,9 @@
                         
                             <li><a href="/archives">Archives</a></li>
                         
-                            <li><a href="/categories">Categories</a></li>
+                            <li><a href="/tags/German">German</a></li>
                         
-                            <li><a href="/tags">Tags</a></li>
+                            <li><a href="/tags/Music">Music</a></li>
                         
                             <li><a href="/about">About</a></li>
                         
@@ -154,7 +154,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Bash/" style="font-size: 10px;">Bash</a> <a href="/tags/Basic/" style="font-size: 10px;">Basic</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Clipper/" style="font-size: 10px;">Clipper</a> <a href="/tags/CoffeeScript/" style="font-size: 10px;">CoffeeScript</a> <a href="/tags/Delphi/" style="font-size: 10px;">Delphi</a> <a href="/tags/German/" style="font-size: 20px;">German</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective C</a> <a href="/tags/Piano/" style="font-size: 10px;">Piano</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/Scala/" style="font-size: 10px;">Scala</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/concurrency/" style="font-size: 10px;">concurrency</a> <a href="/tags/event-driven/" style="font-size: 10px;">event driven</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a>
+                        <a href="/tags/Bash/" style="font-size: 10px;">Bash</a> <a href="/tags/Basic/" style="font-size: 10px;">Basic</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Clipper/" style="font-size: 10px;">Clipper</a> <a href="/tags/CoffeeScript/" style="font-size: 10px;">CoffeeScript</a> <a href="/tags/Delphi/" style="font-size: 10px;">Delphi</a> <a href="/tags/German/" style="font-size: 20px;">German</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective C</a> <a href="/tags/Piano/" style="font-size: 10px;">Piano</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/Scala/" style="font-size: 10px;">Scala</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/concurrency/" style="font-size: 10px;">concurrency</a> <a href="/tags/event-driven/" style="font-size: 10px;">event driven</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a>
                     </div>
                 </section>
                 
@@ -207,9 +207,9 @@
                 
                     <li><a href="/archives">Archives</a></li>
                 
-                    <li><a href="/categories">Categories</a></li>
+                    <li><a href="/tags/German">German</a></li>
                 
-                    <li><a href="/tags">Tags</a></li>
+                    <li><a href="/tags/Music">Music</a></li>
                 
                     <li><a href="/about">About</a></li>
                 
@@ -239,6 +239,75 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-staged-event-driven-architecture" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/24/staged-event-driven-architecture/" class="article-date">
+      <time datetime="2016-07-24T14:16:21.000Z" itemprop="datePublished">2016-07-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/24/staged-event-driven-architecture/">SEDA An Architecture for Well-Contained, Scalable Internet Services</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="3-阶段式的事件驱动架构-The-Staged-Event-Driven-Architecture"><a href="#3-阶段式的事件驱动架构-The-Staged-Event-Driven-Architecture" class="headerlink" title="3. 阶段式的事件驱动架构(The Staged Event-Driven Architecture)"></a>3. 阶段式的事件驱动架构(The Staged Event-Driven Architecture)</h2><p>在这一节，我们提出了一个使得高并发，负载调节(load conditioning)和容易操纵(ease of engineering)<br>的互联网服务成为可能的新的软件架构–阶段式的事件驱动架构(Staged Event-Driven Architecture–SDEA)。<br>SEDA通过事件队列分开把一个应用分解为由不同阶段组成的网络，并且引入了动态资源控制器，从而允许应用<br>根据负载的变化进行动态调整。图5给出了一个使用了SEDA架构的服务的整体设计。</p>
+<h3 id="3-1-目标"><a href="#3-1-目标" class="headerlink" title="3.1 目标"></a>3.1 目标</h3><p>下面列出了SEDA的主要设计目标：</p>
+<h4 id="支持大规模并发"><a href="#支持大规模并发" class="headerlink" title="支持大规模并发:"></a>支持大规模并发:</h4><p>为了避免多线程造成的性能下降，SEDA尽可能使用事件驱动的执行模型这同时也要求系统提<br>供高效和可伸缩的输入/输出元语</p>
+<h4 id="简化良态服务的构建"><a href="#简化良态服务的构建" class="headerlink" title="简化良态服务的构建"></a>简化良态服务的构建</h4><p>为了简化构建互联网服务的复杂性， SEDA将调度(scheduling)和资源管理的细节与开发者<br>进行隔离。同时支持模块化构建这些应用，并提供调试和性能分析的支持。</p>
+<h4 id="使自省成为可能"><a href="#使自省成为可能" class="headerlink" title="使自省成为可能"></a>使自省成为可能</h4><p>应用应该可以分析请求流，从而适应变化的负载。例如，系统应该能够对请求进行过滤和<br>区分优先级，以支持由于高负载退化了的服务(degraded service)。</p>
+<h4 id="支持自调节式的资源管理"><a href="#支持自调节式的资源管理" class="headerlink" title="支持自调节式的资源管理"></a>支持自调节式的资源管理</h4><p>系统应该不需要根据预先知道的应用对资源的需求以及客户端的负载特点，就可以动态地调<br>整它的资源管理参数，以达到目标性能。<br>例如，基于观察到的并发需求，自动决定分配给某个阶段的线程数，而不是由程序员或者系<br>统管理员设定一个固定的数值</p>
+<h3 id="3-1-以“阶段”作为耐用的积木式元件"><a href="#3-1-以“阶段”作为耐用的积木式元件" class="headerlink" title="3.1 以“阶段”作为耐用的积木式元件"></a>3.1 以“阶段”作为耐用的积木式元件</h3><p>SEDA的基本处理单元就是“阶段”，如图6所示，如下所述，一个“阶段”是一个自包含的应用组件，<br>包括事件处理程序，一个事件队列和一个线程池。每个“阶段”由一个控制器(controller)管理，<br>负责调度和分配线程。</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/concurrency/">concurrency</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/event-driven/">event driven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scalable/">scalable</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-fissionable-imbark-03" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -899,70 +968,6 @@
       
 
       
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2015-09-18-generate-table-of-contents" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/19/2015-09-18-generate-table-of-contents/" class="article-date">
-      <time datetime="2015-09-19T03:00:32.000Z" itemprop="datePublished">2015-09-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/19/2015-09-18-generate-table-of-contents/">Generate &#39;Table of Contents&#39;</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>After I got Octopress setup, I found there is no easy way to generate the table of contents of my blog,<br>actually there is a way by using the generate_toc extension of rdiscount markdown parser, but the extension<br>always generates table of contents from H1, so I decidied to do it by using the tableofcontents jquery plugin.</p>
-<h3 id="Download-Table-of-Contents-jQuery-Plugins"><a href="#Download-Table-of-Contents-jQuery-Plugins" class="headerlink" title="Download Table of Contents jQuery Plugins"></a>Download Table of Contents jQuery Plugins</h3><p>Download at <a href="http://fuelyourcoding.com/scripts/toc/" target="_blank" rel="external">http://fuelyourcoding.com/scripts/toc/</a> and put jquery.tableofcontents.min.js in your source/javascripts<br>directory.</p>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/octopress/">octopress</a><a class="article-category-link" href="/categories/octopress/jquery-plug-in/">jquery plug-in</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a class="hidden" href="/2015/09/19/2015-09-18-generate-table-of-contents/#more">null >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
