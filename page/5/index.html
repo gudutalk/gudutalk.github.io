@@ -5,15 +5,15 @@
   
   <title>Gudu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ich sollte ein Bauer sein, wie mein Vater will">
+  <meta name="description" content="Ich liebe dich immer noch so sehr">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gudu">
 <meta property="og:url" content="http://talk.gudu.io/page/5/index.html">
 <meta property="og:site_name" content="Gudu">
-<meta property="og:description" content="Ich sollte ein Bauer sein, wie mein Vater will">
+<meta property="og:description" content="Ich liebe dich immer noch so sehr">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gudu">
-<meta name="twitter:description" content="Ich sollte ein Bauer sein, wie mein Vater will">
+<meta name="twitter:description" content="Ich liebe dich immer noch so sehr">
   
     <link rel="alternative" href="/atom.xml" title="Gudu" type="application/atom+xml">
   
@@ -58,7 +58,7 @@
     <header id="header" class="inner">
         <a href="/" class="profilepic">
             
-            <img lazy-src="/inuyasha.gif" class="js-avatar">
+            <img lazy-src="/inuyasha6.gif" class="js-avatar">
             
         </a>
 
@@ -175,7 +175,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">My battle begins.</div>
+                    <div id="js-aboutme">Ich sollte ein Bauer sein, wie mein Vater will</div>
                 </section>
                 
             </div>
@@ -193,7 +193,7 @@
         <header id="header" class="inner">
             <a href="/" class="profilepic">
                 
-                    <img lazy-src="/inuyasha.gif" class="js-avatar">
+                    <img lazy-src="/inuyasha6.gif" class="js-avatar">
                 
             </a>
             <hgroup>
@@ -243,6 +243,64 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-2015-09-29-monad-in-javascript" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/29/2015-09-29-monad-in-javascript/" class="article-date">
+      <time datetime="2015-09-29T17:11:57.000Z" itemprop="datePublished">2015-09-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/29/2015-09-29-monad-in-javascript/">MONAD in Javascript</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <script src="/assets/js/APlayer.min.js"> </script><h4 id="Axioms"><a href="#Axioms" class="headerlink" title="Axioms"></a>Axioms</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">unit(value).bind(f) === f(value)</div><div class="line">monad.bind(unit) === monad</div><div class="line">monad.bind(f).bind(g) === monad.bind(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> f(value).bind(g);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MONAD</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">unit</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> monad = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</div><div class="line">        monad.bind = <span class="function"><span class="keyword">function</span> (<span class="params">func</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> func(value);</div><div class="line">        &#125;;</div><div class="line">        <span class="keyword">return</span> monad;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> identity = MONAD();</div><div class="line"><span class="keyword">var</span> monad = identity(<span class="string">"Hello World"</span>);</div><div class="line">monad.bind(alert());</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Improved version</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MONAD</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> prototype = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">unit</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> monad = <span class="built_in">Object</span>.create(prototype);</div><div class="line">        monad.bind = <span class="function"><span class="keyword">function</span>(<span class="params">func, args</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> func.apply(<span class="literal">undefined</span>, [value].concat(<span class="built_in">Array</span>.prototype.slice.apply(args || [])));</div><div class="line">        &#125;;</div><div class="line">        <span class="keyword">return</span> monad;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    unit.method = <span class="function"><span class="keyword">function</span> (<span class="params">name, func</span>) </span>&#123;</div><div class="line">        prototype[name] = func;</div><div class="line">        <span class="keyword">return</span> unit;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> unit;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-2015-09-19-test-highlight" class="article article-type-post" itemscope itemprop="blogPost">
   
