@@ -244,6 +244,76 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-effective-golang-initialization" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/20/effective-golang-initialization/" class="article-date">
+      <time datetime="2016-08-20T13:50:36.000Z" itemprop="datePublished">2016-08-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/20/effective-golang-initialization/">Effective Go之初始化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>在Go语言里，常量在编译期被创建，并且常量仅仅可以是数字，字符，字符串或者布尔类型<br>由于是编译器被创建，初始化常量仅仅可以使用常量表达式，因此不能用函数调用来初始化<br>常量，比如：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="number">1</span> &lt;&lt; <span class="number">3</span> <span class="comment">// 合法</span></div><div class="line"><span class="keyword">const</span> b = math.Sin(math.Pi/<span class="number">4</span>) <span class="comment">// 编译错误，因为math.Sin是个函数调用</span></div></pre></td></tr></table></figure>
+<p>在go语言中，枚举常量是用iota枚举器产生的，而且iota可以出现在表达式里，并且表达式<br>可以被隐式的重复，例如:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> ByteSize <span class="keyword">float64</span></div><div class="line"><span class="keyword">const</span> (</div><div class="line">    _               = <span class="literal">iota</span> <span class="comment">//忽略第一个值</span></div><div class="line">    KB  ByteSize    = <span class="number">1</span> &lt;&lt; (<span class="number">10</span> * <span class="literal">iota</span>)</div><div class="line">    MB</div><div class="line">    GB</div><div class="line">    TB</div><div class="line">    EB</div><div class="line">    ZB</div><div class="line">    YB</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>Go语言支持给用户定义类型添加方法的特性，使得你可以为ByteSize添加一个String方法，<br>从而实现自动格式化打印ByteSize类型的值</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b ByteSize)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    <span class="keyword">switch</span> &#123;</div><div class="line">    <span class="keyword">case</span> b &gt;= YB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fYB"</span>, b/YB)</div><div class="line">    <span class="keyword">case</span> b &gt;= ZB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fZB"</span>, b/ZB)</div><div class="line">    <span class="keyword">case</span> b &gt;= EB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fEB"</span>, b/EB)</div><div class="line">    <span class="keyword">case</span> b &gt;= PB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fPB"</span>, b/PB)</div><div class="line">    <span class="keyword">case</span> b &gt;= TB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fTB"</span>, b/TB)</div><div class="line">    <span class="keyword">case</span> b &gt;= GB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fGB"</span>, b/GB)</div><div class="line">    <span class="keyword">case</span> b &gt;= MB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fMB"</span>, b/MB)</div><div class="line">    <span class="keyword">case</span> b &gt;= KB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fKB"</span>, b/KB)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fB"</span>, b)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://play.golang.org/p/SwCR-1iVRn" target="_blank" rel="external">https://play.golang.org/p/SwCR-1iVRn</a></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>变量可以像常量一样被初始化，而且是可以用一般表达式在运行时初始化:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> (</div><div class="line">    home   = os.Getenv(<span class="string">"HOME"</span>)</div><div class="line">    user   = os.Getenv(<span class="string">"USER"</span>)</div><div class="line">    gopath = os.Getenv(<span class="string">"GOPATH"</span>)</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="init函数"><a href="#init函数" class="headerlink" title="init函数"></a>init函数</h3><p>每一个Go源文件都可以定义一个init函数，用来初始化所需的状态(每个文件可以有多个init函数)<br>init函数在所有package的变量被初始化后，并且所有被导入的package初始化完成后被调用</p>
+<p>init函数通常用来在正式执行前验证正确性或修复正确性</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="keyword">if</span> user == <span class="string">""</span> &#123;</div><div class="line">        log.Fatal(<span class="string">"$USER not set"</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> home == <span class="string">""</span> &#123;</div><div class="line">        home = <span class="string">"/home/"</span> + user</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> gopath == <span class="string">""</span> &#123;</div><div class="line">        gopath = home + <span class="string">"/go"</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// gopath may be overridden by --gopath flag on command line.</span></div><div class="line">    flag.StringVar(&amp;gopath, <span class="string">"gopath"</span>, gopath, <span class="string">"override default GOPATH"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Golang/">Golang</a><a class="article-category-link" href="/categories/Golang/Effective-Go/">Effective Go</a><a class="article-category-link" href="/categories/Golang/Effective-Go/Initialziation/">Initialziation</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-effective-golang-function" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -959,97 +1029,6 @@
 <h2 id="更新urls-py"><a href="#更新urls-py" class="headerlink" title="更新urls.py"></a>更新urls.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">urlpatterns = [</div><div class="line">    url(<span class="string">r'^admin/'</span>, include(admin.site.urls)),</div><div class="line">    url(<span class="string">''</span>, include(<span class="string">'social.apps.django_app.urls'</span>, namespace=<span class="string">'social'</span>)),</div><div class="line">    url(<span class="string">r'^$'</span>, <span class="string">'social_auth_app.views.login'</span>),</div><div class="line">    url(<span class="string">r'^home/$'</span>, <span class="string">'social_auth_app.views.home'</span>),</div><div class="line">    url(<span class="string">r'^logout/$'</span>, <span class="string">'social_auth_app.views.logout'</span>),</div><div class="line">]</div></pre></td></tr></table></figure>
 <h2 id="更新Views"><a href="#更新Views" class="headerlink" title="更新Views"></a>更新Views</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render_to_response, redirect</div><div class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> logout <span class="keyword">as</span> auth_logout</div><div class="line"><span class="keyword">from</span> django.contrib.auth.decorators <span class="keyword">import</span> login_required</div><div class="line"><span class="keyword">from</span> django.template.context <span class="keyword">import</span> RequestContext</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(request)</span>:</span></div><div class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'login.html'</span>, context=RequestContext(request))</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">@login_required(login_url='/')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">home</span><span class="params">(request)</span>:</span></div><div class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'home.html'</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">logout</span><span class="params">(request)</span>:</span></div><div class="line">    auth_logout(request)</div><div class="line">    <span class="keyword">return</span> redirect(<span class="string">'/'</span>)</div></pre></td></tr></table></figure>
 <h2 id="更新Templates"><a href="#更新Templates" class="headerlink" title="更新Templates"></a>更新Templates</h2>
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2015-10-17-setup-python-dev-environment-on-windows" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/" class="article-date">
-      <time datetime="2015-10-17T08:44:17.000Z" itemprop="datePublished">2015-10-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/">Windows上Python开发环境的安装与配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="安装-Python"><a href="#安装-Python" class="headerlink" title="安装 Python"></a>安装 Python</h2><ol>
-<li>从<a href="https://www.python.org/downloads/windows/下载Windows" target="_blank" rel="external">https://www.python.org/downloads/windows/下载Windows</a> x86-64 executable installer</li>
-<li>下载完成后，双击python-x.x.x-amd64.exe,并且勾选”Add Python x.x to PATH”，并点击”Install Now”</li>
-<li>当你看到下面这个对话框，则代表安装成功</li>
-</ol>
-<h2 id="安装-pip"><a href="#安装-pip" class="headerlink" title="安装 pip"></a>安装 pip</h2><ol>
-<li>下载get-pip.py (<a href="https://bootstrap.pypa.io/get-pip.py" target="_blank" rel="external">https://bootstrap.pypa.io/get-pip.py</a>)</li>
-<li>运行python get-pip.py</li>
-</ol>
-<h2 id="安装-virtualenvwrapper-win"><a href="#安装-virtualenvwrapper-win" class="headerlink" title="安装 virtualenvwrapper-win"></a>安装 virtualenvwrapper-win</h2><ol>
-<li>pip install virtualenvwrapper-win</li>
-<li>更多关于virtualenvwrapper-win的信息，详见<a href="https://github.com/davidmarble/virtualenvwrapper-win/" target="_blank" rel="external">https://github.com/davidmarble/virtualenvwrapper-win/</a></li>
-</ol>
-<h2 id="安装-PyCharm"><a href="#安装-PyCharm" class="headerlink" title="安装 PyCharm"></a>安装 PyCharm</h2><ol>
-<li>访问<a href="https://www.jetbrains.com/pycharm/download/" target="_blank" rel="external">https://www.jetbrains.com/pycharm/download/</a> 下载相应的PyCharm版本</li>
-<li>安装PyCharm，并接受默认选项</li>
-</ol>
-<h2 id="设置-PyCharm的字体大小"><a href="#设置-PyCharm的字体大小" class="headerlink" title="设置 PyCharm的字体大小"></a>设置 PyCharm的字体大小</h2><ol>
-<li>File-&gt;Settings-&gt;Apperance</li>
-<li>选中”Override default fonts by(not recommended)”，设置合适的字体大小</li>
-<li>在Settings对话框中选择Editor-&gt;General，勾选<ul>
-<li>“Change font size with Ctrol + Mouse Wheel”</li>
-<li>“Highlight current scope”</li>
-</ul>
-</li>
-<li>在Settings对话框中选择Editor-&gt;Apperance，勾选<ul>
-<li>“Show line numbers”</li>
-<li>“Show method separators”</li>
-<li>“Show white spaces”</li>
-</ul>
-</li>
-<li>在Editor-&gt;Colors &amp; Fonts-&gt;Font中<ul>
-<li>在Theme下拉框中选择”Twilight”并点击”Save As…”按钮</li>
-<li>在字体下拉框中选择”Source Code Pro”，并设置合适的字体大小</li>
-</ul>
-</li>
-</ol>
-
       
       
     </div>

@@ -244,6 +244,87 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-a1-01-german-greetings" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/22/a1-01-german-greetings/" class="article-date">
+      <time datetime="2017-05-22T14:11:04.000Z" itemprop="datePublished">2017-05-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/22/a1-01-german-greetings/">01-German Greetings</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <div id="aplayer1" class="aplayer" style="margin-bottom: 20px;"></div>
+		<script>
+			new APlayer({
+				element: document.getElementById("aplayer1"),
+				narrow: false,
+				autoplay: false,
+				showlrc: 0,
+				music: {
+					title: "01-german greetings",
+					author: "pony",
+					url: "/audio/german/01-Greetings.m4a",
+					pic: "/images/pony.jpg",
+				}
+			});
+		</script>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Learnings/">Learnings</a><a class="article-category-link" href="/categories/Learnings/German/">German</a><a class="article-category-link" href="/categories/Learnings/German/A1/">A1</a><a class="article-category-link" href="/categories/Learnings/German/A1/Greetings/">Greetings</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/German/">German</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a class="hidden" href="/2017/05/22/a1-01-german-greetings/#more">null >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-try-mathjax" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -852,76 +933,6 @@
       
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/Golang/">Golang</a><a class="article-category-link" href="/categories/Golang/Effective-Go/">Effective Go</a><a class="article-category-link" href="/categories/Golang/Effective-Go/Methods/">Methods</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-effective-golang-initialization" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/20/effective-golang-initialization/" class="article-date">
-      <time datetime="2016-08-20T13:50:36.000Z" itemprop="datePublished">2016-08-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/20/effective-golang-initialization/">Effective Go之初始化</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <script src="/assets/js/APlayer.min.js"> </script><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>在Go语言里，常量在编译期被创建，并且常量仅仅可以是数字，字符，字符串或者布尔类型<br>由于是编译器被创建，初始化常量仅仅可以使用常量表达式，因此不能用函数调用来初始化<br>常量，比如：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="number">1</span> &lt;&lt; <span class="number">3</span> <span class="comment">// 合法</span></div><div class="line"><span class="keyword">const</span> b = math.Sin(math.Pi/<span class="number">4</span>) <span class="comment">// 编译错误，因为math.Sin是个函数调用</span></div></pre></td></tr></table></figure>
-<p>在go语言中，枚举常量是用iota枚举器产生的，而且iota可以出现在表达式里，并且表达式<br>可以被隐式的重复，例如:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> ByteSize <span class="keyword">float64</span></div><div class="line"><span class="keyword">const</span> (</div><div class="line">    _               = <span class="literal">iota</span> <span class="comment">//忽略第一个值</span></div><div class="line">    KB  ByteSize    = <span class="number">1</span> &lt;&lt; (<span class="number">10</span> * <span class="literal">iota</span>)</div><div class="line">    MB</div><div class="line">    GB</div><div class="line">    TB</div><div class="line">    EB</div><div class="line">    ZB</div><div class="line">    YB</div><div class="line">)</div></pre></td></tr></table></figure>
-<p>Go语言支持给用户定义类型添加方法的特性，使得你可以为ByteSize添加一个String方法，<br>从而实现自动格式化打印ByteSize类型的值</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b ByteSize)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    <span class="keyword">switch</span> &#123;</div><div class="line">    <span class="keyword">case</span> b &gt;= YB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fYB"</span>, b/YB)</div><div class="line">    <span class="keyword">case</span> b &gt;= ZB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fZB"</span>, b/ZB)</div><div class="line">    <span class="keyword">case</span> b &gt;= EB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fEB"</span>, b/EB)</div><div class="line">    <span class="keyword">case</span> b &gt;= PB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fPB"</span>, b/PB)</div><div class="line">    <span class="keyword">case</span> b &gt;= TB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fTB"</span>, b/TB)</div><div class="line">    <span class="keyword">case</span> b &gt;= GB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fGB"</span>, b/GB)</div><div class="line">    <span class="keyword">case</span> b &gt;= MB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fMB"</span>, b/MB)</div><div class="line">    <span class="keyword">case</span> b &gt;= KB:</div><div class="line">        <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fKB"</span>, b/KB)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fmt.Sprintf(<span class="string">"%.2fB"</span>, b)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><a href="https://play.golang.org/p/SwCR-1iVRn" target="_blank" rel="external">https://play.golang.org/p/SwCR-1iVRn</a></p>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>变量可以像常量一样被初始化，而且是可以用一般表达式在运行时初始化:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> (</div><div class="line">    home   = os.Getenv(<span class="string">"HOME"</span>)</div><div class="line">    user   = os.Getenv(<span class="string">"USER"</span>)</div><div class="line">    gopath = os.Getenv(<span class="string">"GOPATH"</span>)</div><div class="line">)</div></pre></td></tr></table></figure>
-<h3 id="init函数"><a href="#init函数" class="headerlink" title="init函数"></a>init函数</h3><p>每一个Go源文件都可以定义一个init函数，用来初始化所需的状态(每个文件可以有多个init函数)<br>init函数在所有package的变量被初始化后，并且所有被导入的package初始化完成后被调用</p>
-<p>init函数通常用来在正式执行前验证正确性或修复正确性</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="keyword">if</span> user == <span class="string">""</span> &#123;</div><div class="line">        log.Fatal(<span class="string">"$USER not set"</span>)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> home == <span class="string">""</span> &#123;</div><div class="line">        home = <span class="string">"/home/"</span> + user</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> gopath == <span class="string">""</span> &#123;</div><div class="line">        gopath = home + <span class="string">"/go"</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// gopath may be overridden by --gopath flag on command line.</span></div><div class="line">    flag.StringVar(&amp;gopath, <span class="string">"gopath"</span>, gopath, <span class="string">"override default GOPATH"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Golang/">Golang</a><a class="article-category-link" href="/categories/Golang/Effective-Go/">Effective Go</a><a class="article-category-link" href="/categories/Golang/Effective-Go/Initialziation/">Initialziation</a>
     </div>
 
 
