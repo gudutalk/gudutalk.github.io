@@ -244,6 +244,87 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-a1-02-german-self-introduction" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/23/a1-02-german-self-introduction/" class="article-date">
+      <time datetime="2017-05-23T15:22:28.000Z" itemprop="datePublished">2017-05-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/23/a1-02-german-self-introduction/">02-German-Self Introduction</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <div id="aplayer0" class="aplayer" style="margin-bottom: 20px;"></div>
+		<script>
+			new APlayer({
+				element: document.getElementById("aplayer0"),
+				narrow: false,
+				autoplay: false,
+				showlrc: 0,
+				music: {
+					title: "02-german self introduction",
+					author: "pony",
+					url: "/audio/german/02-Self-Introduce.m4a",
+					pic: "/images/pony.jpg",
+				}
+			});
+		</script>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Learnings/">Learnings</a><a class="article-category-link" href="/categories/Learnings/German/">German</a><a class="article-category-link" href="/categories/Learnings/German/A1/">A1</a><a class="article-category-link" href="/categories/Learnings/German/A1/Self-introduction/">Self-introduction</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/German/">German</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a class="hidden" href="/2017/05/23/a1-02-german-self-introduction/#more">null >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-a1-01-german-greetings" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -271,10 +352,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <div id="aplayer0" class="aplayer" style="margin-bottom: 20px;"></div>
+              <div id="aplayer1" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			new APlayer({
-				element: document.getElementById("aplayer0"),
+				element: document.getElementById("aplayer1"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -868,73 +949,6 @@
     <div class="article-info article-info-index">
       
       
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-effective-golang-methods" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/20/effective-golang-methods/" class="article-date">
-      <time datetime="2016-08-20T14:34:25.000Z" itemprop="datePublished">2016-08-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/20/effective-golang-methods/">Effective Go之值方法 vs 指针方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <script src="/assets/js/APlayer.min.js"> </script><p>在Go语言里，可以为任何命名类型定义新的方法(指针和接口除外):</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> ByteSlice []<span class="keyword">byte</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(slice ByteSlice)</span> <span class="title">Append</span><span class="params">(data []<span class="keyword">byte</span>)</span> []<span class="title">byte</span></span> &#123;</div><div class="line">    l := <span class="built_in">len</span>(slice)</div><div class="line">    <span class="keyword">if</span> l + <span class="built_in">len</span>(data) &gt; <span class="built_in">cap</span>(slice) &#123;  <span class="comment">// reallocate</span></div><div class="line">        <span class="comment">// Allocate double what's needed, for future growth.</span></div><div class="line">        newSlice := <span class="built_in">make</span>([]<span class="keyword">byte</span>, (l+<span class="built_in">len</span>(data))*<span class="number">2</span>)</div><div class="line">        <span class="comment">// The copy function is predeclared and works for any slice type.</span></div><div class="line">        <span class="built_in">copy</span>(newSlice, slice)</div><div class="line">        slice = newSlice</div><div class="line">    &#125;</div><div class="line">    slice = slice[<span class="number">0</span>:l+<span class="built_in">len</span>(data)]</div><div class="line">    <span class="keyword">for</span> i, c := <span class="keyword">range</span> data &#123;</div><div class="line">        slice[l+i] = c</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> slice</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面这个方法仍然需要返回被更新过的slice，我们可以把这个方法改成接受一个指向ByteSlice<br>的指针，这样这个方法就可以修改调用者的slice了</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p *ByteSlice)</span> <span class="title">Append</span><span class="params">(data []<span class="keyword">byte</span>)</span></span> &#123;</div><div class="line">    slice = *p</div><div class="line">    <span class="comment">// 和上面的函数体一样，但是没有return语句</span></div><div class="line">    *p = slice</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>其实我们还有更好的方法:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p *ByteSlice)</span> <span class="title">Write</span><span class="params">(data[] <span class="keyword">byte</span>)</span> <span class="params">(n <span class="keyword">int</span>, err error)</span></span> &#123;</div><div class="line">    slice = *p</div><div class="line">    <span class="comment">// 和上面的函数体一样，但是没有return语句</span></div><div class="line">    *p = slice</div><div class="line">    <span class="keyword">return</span> <span class="built_in">len</span>(data), <span class="literal">nil</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这样*ByteSlice类型就满足标准接口io.Writer，例如:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> b ByteSlice</div><div class="line">fmt.Fprintf(&amp;b, <span class="string">"This hour has %d days\n"</span>, <span class="number">7</span>)</div></pre></td></tr></table></figure>
-<p>关于用指针还是用值作为方法的接收者(receiver)的规则是这样的，值作为接收者的方法可以<br>用值或者指针来调用，但是用指针作为接收器的方法只能用指针来调用。这是因为，指针方法<br>可以修改接收者，因此如果用值来调用指针方法会导致这个方法收到这个值的副本，所以方法<br>对该副本的任何修改最终都会被抛弃，为了防止这类错误的发生，Go语言才有了这个规则。这<br>里有个例外，如果这个值是可以被取地址的，那么Go语言会自动进行取地址操作，并把指向该<br>地址的指针传给指针方法。</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Golang/">Golang</a><a class="article-category-link" href="/categories/Golang/Effective-Go/">Effective Go</a><a class="article-category-link" href="/categories/Golang/Effective-Go/Methods/">Methods</a>
-    </div>
-
 
       
       
