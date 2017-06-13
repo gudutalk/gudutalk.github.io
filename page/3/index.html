@@ -244,6 +244,87 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-a1-04-How-are-you" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/25/a1-04-How-are-you/" class="article-date">
+      <time datetime="2017-05-25T14:41:45.000Z" itemprop="datePublished">2017-05-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/25/a1-04-How-are-you/">04-German-How are you?</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <div id="aplayer4" class="aplayer" style="margin-bottom: 20px;"></div>
+		<script>
+			new APlayer({
+				element: document.getElementById("aplayer4"),
+				narrow: false,
+				autoplay: false,
+				showlrc: 0,
+				music: {
+					title: "04-How are you?",
+					author: "pony",
+					url: "/audio/german/04-How-are-you.m4a",
+					pic: "/images/pony.jpg",
+				}
+			});
+		</script>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Learnings/">Learnings</a><a class="article-category-link" href="/categories/Learnings/German/">German</a><a class="article-category-link" href="/categories/Learnings/German/A1/">A1</a><a class="article-category-link" href="/categories/Learnings/German/A1/How-are-you/">How are you?</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/German/">German</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a class="hidden" href="/2017/05/25/a1-04-How-are-you/#more">null >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-a1-03-Where-do-I-come-from" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -271,10 +352,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <div id="aplayer6" class="aplayer" style="margin-bottom: 20px;"></div>
+              <div id="aplayer3" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			new APlayer({
-				element: document.getElementById("aplayer6"),
+				element: document.getElementById("aplayer3"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -352,10 +433,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <div id="aplayer1" class="aplayer" style="margin-bottom: 20px;"></div>
+              <div id="aplayer0" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			new APlayer({
-				element: document.getElementById("aplayer1"),
+				element: document.getElementById("aplayer0"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -433,10 +514,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <div id="aplayer0" class="aplayer" style="margin-bottom: 20px;"></div>
+              <div id="aplayer2" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			new APlayer({
-				element: document.getElementById("aplayer0"),
+				element: document.getElementById("aplayer2"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -929,75 +1010,9 @@
 
 
   
-    <article id="post-effective-golang-interface-md" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/22/effective-golang-interface-md/" class="article-date">
-      <time datetime="2016-08-22T16:02:08.000Z" itemprop="datePublished">2016-08-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/22/effective-golang-interface-md/">Effective Go之接口和其他类型</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <script src="/assets/js/APlayer.min.js"> </script><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>在Go语言里，一个类型可以实现多个接口，例如一个collection如果实现了sort.interface<br>就可以被sort包排序，sort.interface，例如:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Sequence []<span class="keyword">int</span></div><div class="line"></div><div class="line"><span class="comment">// sort.Interface接口的方法</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Len</span><span class="params">()</span> <span class="title">int</span></span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">len</span>(s)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Less</span><span class="params">(i, j, <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</div><div class="line">    <span class="keyword">return</span> s[i] &lt; s[j]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Swap</span><span class="params">(i, j, <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</div><div class="line">    s[i], s[j] = s[j], s[i]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    sort.Sort(s)</div><div class="line">    str := <span class="string">"["</span></div><div class="line">    <span class="keyword">for</span> i, elem := <span class="keyword">range</span> s &#123;</div><div class="line">        <span class="keyword">if</span> i &gt; <span class="number">0</span> &#123;</div><div class="line">            str += <span class="string">" "</span></div><div class="line">        &#125;</div><div class="line">        str += fmt.Sprint(elem)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> str + <span class="string">"]"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>前面例子的String方法实际上在Sprint中已经实现了，只不过Sprint函数接受的是一个Slice，<br>我们可以调用这个方法从而实现代码重用，但是我们在调用Sprint函数之前，我们需要做一个<br>从Sequence到Slice的类型转换</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    sort.Sort(s)</div><div class="line">    <span class="keyword">return</span> fmt.Sprint([]<span class="keyword">int</span>(s)) <span class="comment">//把s从Sequence类型转换为Slice类型</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在上面这个例子中，类型转换不会创建新的值，因为Sequence和[]int本质上是一样的，只是<br>名字不同，但是在有些类型转换中是需要创建新的值的，比如从int类型转换为float类型。</p>
-<p>在Go语言里，把一个类型转换为另一个类型，从而调用相应的方法是十分常见的，对于上面<br>这个例子，我们可以用一个已存在类型sort.IntSlice来使整个例子更加短小。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Sequence []<span class="keyword">int</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    sort.IntSlice(s).Sort() <span class="comment">// sort.IntSlice实现了sort.Interface的三个接口方法</span></div><div class="line">    <span class="keyword">return</span> fmt.Sprint([]<span class="keyword">int</span>(s))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="接口转换和类型诊断"><a href="#接口转换和类型诊断" class="headerlink" title="接口转换和类型诊断"></a>接口转换和类型诊断</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Stringer <span class="keyword">interface</span> &#123;</div><div class="line">    String() <span class="keyword">string</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> value <span class="keyword">interface</span> &#123;&#125; <span class="comment">// 调用者提供的值</span></div><div class="line"></div><div class="line"><span class="keyword">switch</span> str := value.(<span class="keyword">type</span>) &#123; <span class="comment">// type swit</span></div><div class="line">    <span class="keyword">case</span> <span class="keyword">string</span>:</div><div class="line">        <span class="keyword">return</span> str</div><div class="line">    <span class="keyword">case</span> Stringer:</div><div class="line">        <span class="keyword">return</span> str.String()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Golang/">Golang</a><a class="article-category-link" href="/categories/Golang/Effective-Go/">Effective Go</a><a class="article-category-link" href="/categories/Golang/Effective-Go/Interfaces-and-other-types/">Interfaces and other types</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </div>
