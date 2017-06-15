@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://talk.gudu.io/2017/05/27/a1-06-Yes-No-Thank-you/</loc>
+    
+    <lastmod>2017-06-15T00:35:53.986Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://talk.gudu.io/2017/06/04/a1-14-german-professions/</loc>
     
     <lastmod>2017-06-14T14:27:24.527Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2017/06/05/a1-15-german-indefinite-articles/</loc>
+    
+    <lastmod>2017-06-14T14:25:46.483Z</lastmod>
     
   </url>
   
@@ -156,20 +170,6 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2017/06/05/a1-15-german-indefinite-articles/</loc>
-    
-    <lastmod>2017-06-05T06:56:59.563Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2017/05/27/a1-06-Yes-No-Thank-you/</loc>
-    
-    <lastmod>2017-06-05T05:05:45.714Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://talk.gudu.io/2017/05/25/a1-04-How-are-you/</loc>
     
     <lastmod>2017-06-04T07:40:55.267Z</lastmod>
@@ -184,34 +184,6 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2017/05/26/a1-05-german-where-do-you-live/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2015/09/19/2015-09-18-generate-table-of-contents/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-django-social-auth/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://talk.gudu.io/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
@@ -219,14 +191,7 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2016/08/22/effective-golang-data-md/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2016/08/20/effective-golang-initialization/</loc>
+    <loc>http://talk.gudu.io/2015/09/18/2015-09-18-hello-world/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -240,7 +205,7 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2016/08/22/effective-golang-interface-md/</loc>
+    <loc>http://talk.gudu.io/2016/08/22/effective-golang-data-md/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -254,7 +219,35 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2017/05/29/a1-08-german-numbers2/</loc>
+    <loc>http://talk.gudu.io/2016/08/20/effective-golang-initialization/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2016/08/22/effective-golang-interface-md/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2016/07/22/fissionable-imbark-01/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2016/08/20/effective-golang-methods/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2016/07/23/fissionable-imbark-03/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -268,21 +261,14 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2014/05/21/from-classical-period-to-medieval-period/</loc>
+    <loc>http://talk.gudu.io/2015/09/19/2015-09-18-generate-table-of-contents/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2016/07/25/fissionable-imbark-04/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2016/07/23/fissionable-imbark-03/</loc>
+    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-django-social-auth/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -303,42 +289,7 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2016/07/22/fissionable-imbark-01/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://talk.gudu.io/2016/11/05/how-to-install-deb-file/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2016/08/12/positioning-chapter10/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2015/09/18/2015-09-18-hello-world/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2016/12/10/how-to-solve-mysql-user-can-login-on-localhost/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2016/11/11/run-virtualbox-on-windows/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -352,21 +303,21 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2017/05/20/try-mathjax/</loc>
+    <loc>http://talk.gudu.io/2016/12/10/how-to-solve-mysql-user-can-login-on-localhost/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2016/07/24/staged-event-driven-architecture/</loc>
+    <loc>http://talk.gudu.io/2014/05/21/from-classical-period-to-medieval-period/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2015/09/19/2015-09-19-test-highlight/</loc>
+    <loc>http://talk.gudu.io/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -380,7 +331,56 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2016/08/20/effective-golang-methods/</loc>
+    <loc>http://talk.gudu.io/2016/07/24/staged-event-driven-architecture/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2017/05/20/try-mathjax/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2016/11/11/run-virtualbox-on-windows/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2016/08/12/positioning-chapter10/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2015/09/19/2015-09-19-test-highlight/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2017/05/26/a1-05-german-where-do-you-live/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2017/05/29/a1-08-german-numbers2/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2016/07/25/fissionable-imbark-04/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
