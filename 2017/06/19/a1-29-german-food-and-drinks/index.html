@@ -3,18 +3,19 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>Effective Go之接口和其他类型 | Gudu</title>
+  <title>29-German-Food-and-Drinks | Gudu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="接口在Go语言里，一个类型可以实现多个接口，例如一个collection如果实现了sort.interface就可以被sort包排序，sort.interface，例如: 1234567891011121314151617181920212223242526type Sequence []int// sort.Interface接口的方法func (s Sequence) Len() int &amp;">
+  <meta name="description" content="new APlayer({ 				element: document.getElementById(&quot;aplayer28&quot;), 				narrow: false, 				autoplay: false, 				showlrc: 0, 				music: { 					title: &quot;29-Food-and-Drinks&quot;, 					author: &quot;pony&quot;,">
+<meta name="keywords" content="German">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Effective Go之接口和其他类型">
-<meta property="og:url" content="http://talk.gudu.io/2016/08/22/effective-golang-interface-md/index.html">
+<meta property="og:title" content="29-German-Food-and-Drinks">
+<meta property="og:url" content="http://talk.gudu.io/2017/06/19/a1-29-german-food-and-drinks/index.html">
 <meta property="og:site_name" content="Gudu">
-<meta property="og:description" content="接口在Go语言里，一个类型可以实现多个接口，例如一个collection如果实现了sort.interface就可以被sort包排序，sort.interface，例如: 1234567891011121314151617181920212223242526type Sequence []int// sort.Interface接口的方法func (s Sequence) Len() int &amp;">
-<meta property="og:updated_time" content="2017-06-02T05:19:47.904Z">
+<meta property="og:description" content="new APlayer({ 				element: document.getElementById(&quot;aplayer28&quot;), 				narrow: false, 				autoplay: false, 				showlrc: 0, 				music: { 					title: &quot;29-Food-and-Drinks&quot;, 					author: &quot;pony&quot;,">
+<meta property="og:updated_time" content="2017-06-19T05:36:38.056Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Effective Go之接口和其他类型">
-<meta name="twitter:description" content="接口在Go语言里，一个类型可以实现多个接口，例如一个collection如果实现了sort.interface就可以被sort包排序，sort.interface，例如: 1234567891011121314151617181920212223242526type Sequence []int// sort.Interface接口的方法func (s Sequence) Len() int &amp;">
+<meta name="twitter:title" content="29-German-Food-and-Drinks">
+<meta name="twitter:description" content="new APlayer({ 				element: document.getElementById(&quot;aplayer28&quot;), 				narrow: false, 				autoplay: false, 				showlrc: 0, 				music: { 					title: &quot;29-Food-and-Drinks&quot;, 					author: &quot;pony&quot;,">
   
     <link rel="alternative" href="/atom.xml" title="Gudu" type="application/atom+xml">
   
@@ -240,11 +241,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-effective-golang-interface-md" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-a1-29-german-food-and-drinks" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/22/effective-golang-interface-md/" class="article-date">
-      <time datetime="2016-08-22T16:02:08.000Z" itemprop="datePublished">2016-08-22</time>
+      <a href="/2017/06/19/a1-29-german-food-and-drinks/" class="article-date">
+      <time datetime="2017-06-19T12:24:17.000Z" itemprop="datePublished">2017-06-19</time>
 </a>
     </div>
   
@@ -257,7 +258,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Effective Go之接口和其他类型
+      29-German-Food-and-Drinks
     </h1>
   
 
@@ -266,11 +267,15 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Golang/">Golang</a><a class="article-category-link" href="/categories/Golang/Effective-Go/">Effective Go</a><a class="article-category-link" href="/categories/Golang/Effective-Go/Interfaces-and-other-types/">Interfaces and other types</a>
+    <a class="article-category-link" href="/categories/Learnings/">Learnings</a><a class="article-category-link" href="/categories/Learnings/German/">German</a><a class="article-category-link" href="/categories/Learnings/German/A1/">A1</a><a class="article-category-link" href="/categories/Learnings/German/A1/Food-and-Drinks/">Food and Drinks</a>
     </div>
 
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/German/">German</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -278,14 +283,33 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>在Go语言里，一个类型可以实现多个接口，例如一个collection如果实现了sort.interface<br>就可以被sort包排序，sort.interface，例如:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Sequence []<span class="keyword">int</span></div><div class="line"></div><div class="line"><span class="comment">// sort.Interface接口的方法</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Len</span><span class="params">()</span> <span class="title">int</span></span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">len</span>(s)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Less</span><span class="params">(i, j, <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</div><div class="line">    <span class="keyword">return</span> s[i] &lt; s[j]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">Swap</span><span class="params">(i, j, <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</div><div class="line">    s[i], s[j] = s[j], s[i]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    sort.Sort(s)</div><div class="line">    str := <span class="string">"["</span></div><div class="line">    <span class="keyword">for</span> i, elem := <span class="keyword">range</span> s &#123;</div><div class="line">        <span class="keyword">if</span> i &gt; <span class="number">0</span> &#123;</div><div class="line">            str += <span class="string">" "</span></div><div class="line">        &#125;</div><div class="line">        str += fmt.Sprint(elem)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> str + <span class="string">"]"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>前面例子的String方法实际上在Sprint中已经实现了，只不过Sprint函数接受的是一个Slice，<br>我们可以调用这个方法从而实现代码重用，但是我们在调用Sprint函数之前，我们需要做一个<br>从Sequence到Slice的类型转换</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    sort.Sort(s)</div><div class="line">    <span class="keyword">return</span> fmt.Sprint([]<span class="keyword">int</span>(s)) <span class="comment">//把s从Sequence类型转换为Slice类型</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在上面这个例子中，类型转换不会创建新的值，因为Sequence和[]int本质上是一样的，只是<br>名字不同，但是在有些类型转换中是需要创建新的值的，比如从int类型转换为float类型。</p>
-<p>在Go语言里，把一个类型转换为另一个类型，从而调用相应的方法是十分常见的，对于上面<br>这个例子，我们可以用一个已存在类型sort.IntSlice来使整个例子更加短小。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Sequence []<span class="keyword">int</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Sequence)</span> <span class="title">String</span><span class="params">()</span> <span class="title">string</span></span> &#123;</div><div class="line">    sort.IntSlice(s).Sort() <span class="comment">// sort.IntSlice实现了sort.Interface的三个接口方法</span></div><div class="line">    <span class="keyword">return</span> fmt.Sprint([]<span class="keyword">int</span>(s))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="接口转换和类型诊断"><a href="#接口转换和类型诊断" class="headerlink" title="接口转换和类型诊断"></a>接口转换和类型诊断</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">type</span> Stringer <span class="keyword">interface</span> &#123;</div><div class="line">    String() <span class="keyword">string</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> value <span class="keyword">interface</span> &#123;&#125; <span class="comment">// 调用者提供的值</span></div><div class="line"></div><div class="line"><span class="keyword">switch</span> str := value.(<span class="keyword">type</span>) &#123; <span class="comment">// type swit</span></div><div class="line">    <span class="keyword">case</span> <span class="keyword">string</span>:</div><div class="line">        <span class="keyword">return</span> str</div><div class="line">    <span class="keyword">case</span> Stringer:</div><div class="line">        <span class="keyword">return</span> str.String()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <script src="/assets/js/APlayer.min.js"> </script><div id="aplayer28" class="aplayer" style="margin-bottom: 20px;"></div>
+		<script>
+			new APlayer({
+				element: document.getElementById("aplayer28"),
+				narrow: false,
+				autoplay: false,
+				showlrc: 0,
+				music: {
+					title: "29-Food-and-Drinks",
+					author: "pony",
+					url: "/audio/german/28-food-and-drinks.m4a",
+					pic: "/images/pony.jpg",
+				}
+			});
+		</script>
+<a id="more"></a>
+<h2 id="Food-and-Drinks"><a href="#Food-and-Drinks" class="headerlink" title="Food and Drinks"></a>Food and Drinks</h2><ul>
+<li>Das Schnitzel</li>
+<li>Sauerbraten mit Rotkohl</li>
+<li>Käsespätzle</li>
+<li>Der Eintopf</li>
+<li>Bratwurst mit Sauerkraut</li>
+<li>Schwarzwälder Kirschtorte</li>
+<li>Das Bier</li>
+<li>Der Glühwein</li>
+</ul>
+<h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><div class="video-container"><iframe src="//www.youtube.com/embed/0QZDtyKj7a8" frameborder="0" allowfullscreen></iframe></div>
 
       
       
@@ -330,13 +354,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/08/22/effective-golang-interface-md/">Effective Go之接口和其他类型</a></p>
+        <p><span>本文标题:</span><a href="/2017/06/19/a1-29-german-food-and-drinks/">29-German-Food-and-Drinks</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Guannan Du 的个人博客">Guannan Du</a></p>
-        <p><span>发布时间:</span>2016年08月22日 - 09时02分</p>
-        <p><span>最后更新:</span>2017年06月02日 - 05时19分</p>
+        <p><span>发布时间:</span>2017年06月19日 - 05时24分</p>
+        <p><span>最后更新:</span>2017年06月19日 - 05时36分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/08/22/effective-golang-interface-md/" title="Effective Go之接口和其他类型">http://talk.gudu.io/2016/08/22/effective-golang-interface-md/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://talk.gudu.io/2016/08/22/effective-golang-interface-md/　　作者: Guannan Du" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/06/19/a1-29-german-food-and-drinks/" title="29-German-Food-and-Drinks">http://talk.gudu.io/2017/06/19/a1-29-german-food-and-drinks/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://talk.gudu.io/2017/06/19/a1-29-german-food-and-drinks/　　作者: Guannan Du" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -349,18 +373,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/11/05/how-to-add-directory-to-path/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/3017/04/30/piano-melodies/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Linux把一个路径添加到$PATH环境变量中
+          钢琴曲
         
       </div>
     </a>
   
   
-    <a href="/2016/08/22/effective-golang-data-md/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">effective-golang-data.md</div>
+    <a href="/2017/06/18/a1-28-german-order-dishes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">28-German-Order-Dishes</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -371,7 +395,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口"><span class="toc-number">1.</span> <span class="toc-text">接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类型转换"><span class="toc-number">2.</span> <span class="toc-text">类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口转换和类型诊断"><span class="toc-number">3.</span> <span class="toc-text">接口转换和类型诊断</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Food-and-Drinks"><span class="toc-number">1.</span> <span class="toc-text">Food and Drinks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Video"><span class="toc-number">2.</span> <span class="toc-text">Video</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -419,7 +443,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/08/22/effective-golang-interface-md/" data-title="Effective Go之接口和其他类型" data-url="http://talk.gudu.io/2016/08/22/effective-golang-interface-md/"></div>
+    <div class="ds-thread" data-thread-key="2017/06/19/a1-29-german-food-and-drinks/" data-title="29-German-Food-and-Drinks" data-url="http://talk.gudu.io/2017/06/19/a1-29-german-food-and-drinks/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -442,13 +466,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/11/05/how-to-add-directory-to-path/" title="上一篇: Linux把一个路径添加到$PATH环境变量中">
+            <a href="/3017/04/30/piano-melodies/" title="上一篇: 钢琴曲">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/08/22/effective-golang-data-md/" title="下一篇: effective-golang-data.md">
+            <a href="/2017/06/18/a1-28-german-order-dishes/" title="下一篇: 28-German-Order-Dishes">
                 <i class="fa fa-angle-right"></i>
             </a>
         

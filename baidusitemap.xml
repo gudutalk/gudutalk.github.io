@@ -4,6 +4,60 @@
 
     
   <url>
+    <loc>http://talk.gudu.io/2017/06/14/a1-24-german-ask-for-help/</loc>
+    <lastmod>2017-06-19T05:39:07.676Z</lastmod>
+    <data>
+        <display>
+        <title>24-German-Ask-For-Help</title>
+        <pubTime>2017-06-14T19:42:52.000Z</pubTime>
+        
+        <tag>German</tag>
+         
+         
+           
+             
+              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
+          
+             
+              <breadCrumb title="German" url="http://talk.gudu.io/categories/Learnings/German/"/>
+          
+             
+              <breadCrumb title="A1" url="http://talk.gudu.io/categories/Learnings/German/A1/"/>
+          
+             
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://talk.gudu.io/2017/06/19/a1-29-german-food-and-drinks/</loc>
+    <lastmod>2017-06-19T05:36:38.056Z</lastmod>
+    <data>
+        <display>
+        <title>29-German-Food-and-Drinks</title>
+        <pubTime>2017-06-19T12:24:17.000Z</pubTime>
+        
+        <tag>German</tag>
+         
+         
+           
+             
+              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
+          
+             
+              <breadCrumb title="German" url="http://talk.gudu.io/categories/Learnings/German/"/>
+          
+             
+              <breadCrumb title="A1" url="http://talk.gudu.io/categories/Learnings/German/A1/"/>
+          
+             
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://talk.gudu.io/2017/06/03/a1-13-german-be/</loc>
     <lastmod>2017-06-19T04:56:15.991Z</lastmod>
     <data>
@@ -172,33 +226,6 @@
         <display>
         <title>26-German-Languages</title>
         <pubTime>2017-06-16T13:52:58.000Z</pubTime>
-        
-        <tag>German</tag>
-         
-         
-           
-             
-              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
-          
-             
-              <breadCrumb title="German" url="http://talk.gudu.io/categories/Learnings/German/"/>
-          
-             
-              <breadCrumb title="A1" url="http://talk.gudu.io/categories/Learnings/German/A1/"/>
-          
-             
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://talk.gudu.io/2017/06/14/a1-24-german-ask-for-help/</loc>
-    <lastmod>2017-06-16T05:52:15.582Z</lastmod>
-    <data>
-        <display>
-        <title>24-German-Ask-For-Help</title>
-        <pubTime>2017-06-14T19:42:52.000Z</pubTime>
         
         <tag>German</tag>
          
@@ -737,15 +764,21 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/</loc>
+    <loc>http://talk.gudu.io/2015/09/19/2015-09-18-generate-table-of-contents/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>Windows上Python开发环境的安装与配置</title>
-        <pubTime>2015-10-17T08:44:17.000Z</pubTime>
+        <title>Generate 'Table of Contents'</title>
+        <pubTime>2015-09-19T03:00:32.000Z</pubTime>
         
          
            
+             
+              <breadCrumb title="octopress" url="http://talk.gudu.io/categories/octopress/"/>
+          
+             
+              <breadCrumb title="jquery plug-in" url="http://talk.gudu.io/categories/octopress/jquery-plug-in/"/>
+          
         </display>
     </data>
     </url>
@@ -779,21 +812,15 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2015/09/19/2015-09-18-generate-table-of-contents/</loc>
+    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>Generate 'Table of Contents'</title>
-        <pubTime>2015-09-19T03:00:32.000Z</pubTime>
+        <title>Windows上Python开发环境的安装与配置</title>
+        <pubTime>2015-10-17T08:44:17.000Z</pubTime>
         
          
            
-             
-              <breadCrumb title="octopress" url="http://talk.gudu.io/categories/octopress/"/>
-          
-             
-              <breadCrumb title="jquery plug-in" url="http://talk.gudu.io/categories/octopress/jquery-plug-in/"/>
-          
         </display>
     </data>
     </url>
@@ -815,12 +842,12 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/</loc>
+    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-run-py-file-on-windows/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>在单元测试中进行依赖注入</title>
-        <pubTime>2015-10-15T16:30:47.000Z</pubTime>
+        <title>Run .py file on windows</title>
+        <pubTime>2015-10-17T12:08:51.000Z</pubTime>
         
          
            
@@ -830,12 +857,12 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2015/10/17/2015-10-17-run-py-file-on-windows/</loc>
+    <loc>http://talk.gudu.io/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>Run .py file on windows</title>
-        <pubTime>2015-10-17T12:08:51.000Z</pubTime>
+        <title>在单元测试中进行依赖注入</title>
+        <pubTime>2015-10-15T16:30:47.000Z</pubTime>
         
          
            
@@ -884,12 +911,12 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2016/08/22/effective-golang-interface-md/</loc>
+    <loc>http://talk.gudu.io/2016/08/20/effective-golang-methods/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>Effective Go之接口和其他类型</title>
-        <pubTime>2016-08-22T16:02:08.000Z</pubTime>
+        <title>Effective Go之值方法 vs 指针方法</title>
+        <pubTime>2016-08-20T14:34:25.000Z</pubTime>
         
          
            
@@ -900,7 +927,7 @@
               <breadCrumb title="Effective Go" url="http://talk.gudu.io/categories/Golang/Effective-Go/"/>
           
              
-              <breadCrumb title="Interfaces and other types" url="http://talk.gudu.io/categories/Golang/Effective-Go/Interfaces-and-other-types/"/>
+              <breadCrumb title="Methods" url="http://talk.gudu.io/categories/Golang/Effective-Go/Methods/"/>
           
         </display>
     </data>
@@ -932,30 +959,6 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2016/08/20/effective-golang-methods/</loc>
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    <data>
-        <display>
-        <title>Effective Go之值方法 vs 指针方法</title>
-        <pubTime>2016-08-20T14:34:25.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Golang" url="http://talk.gudu.io/categories/Golang/"/>
-          
-             
-              <breadCrumb title="Effective Go" url="http://talk.gudu.io/categories/Golang/Effective-Go/"/>
-          
-             
-              <breadCrumb title="Methods" url="http://talk.gudu.io/categories/Golang/Effective-Go/Methods/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://talk.gudu.io/2016/07/22/fissionable-imbark-01/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
@@ -973,6 +976,30 @@
           
              
               <breadCrumb title="《裂变式创业》" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/%E3%80%8A%E8%A3%82%E5%8F%98%E5%BC%8F%E5%88%9B%E4%B8%9A%E3%80%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://talk.gudu.io/2016/08/22/effective-golang-interface-md/</loc>
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    <data>
+        <display>
+        <title>Effective Go之接口和其他类型</title>
+        <pubTime>2016-08-22T16:02:08.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Golang" url="http://talk.gudu.io/categories/Golang/"/>
+          
+             
+              <breadCrumb title="Effective Go" url="http://talk.gudu.io/categories/Golang/Effective-Go/"/>
+          
+             
+              <breadCrumb title="Interfaces and other types" url="http://talk.gudu.io/categories/Golang/Effective-Go/Interfaces-and-other-types/"/>
           
         </display>
     </data>
@@ -1001,30 +1028,6 @@
               <breadCrumb title="A1" url="http://talk.gudu.io/categories/Learnings/German/A1/"/>
           
              
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://talk.gudu.io/2016/07/23/fissionable-imbark-03/</loc>
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    <data>
-        <display>
-        <title>第三次裂变--选人</title>
-        <pubTime>2016-07-23T17:07:49.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Reading" url="http://talk.gudu.io/categories/Reading/"/>
-          
-             
-              <breadCrumb title="创业" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/"/>
-          
-             
-              <breadCrumb title="《裂变式创业》" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/%E3%80%8A%E8%A3%82%E5%8F%98%E5%BC%8F%E5%88%9B%E4%B8%9A%E3%80%8B/"/>
-          
         </display>
     </data>
     </url>
@@ -1064,6 +1067,51 @@
         
          
            
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://talk.gudu.io/2016/07/23/fissionable-imbark-03/</loc>
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    <data>
+        <display>
+        <title>第三次裂变--选人</title>
+        <pubTime>2016-07-23T17:07:49.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Reading" url="http://talk.gudu.io/categories/Reading/"/>
+          
+             
+              <breadCrumb title="创业" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/"/>
+          
+             
+              <breadCrumb title="《裂变式创业》" url="http://talk.gudu.io/categories/Reading/%E5%88%9B%E4%B8%9A/%E3%80%8A%E8%A3%82%E5%8F%98%E5%BC%8F%E5%88%9B%E4%B8%9A%E3%80%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://talk.gudu.io/2013/07/15/hello-world/</loc>
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2013-07-15T00:01:34.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="foo" url="http://talk.gudu.io/categories/foo/"/>
+          
+             
+              <breadCrumb title="bar" url="http://talk.gudu.io/categories/foo/bar/"/>
+          
         </display>
     </data>
     </url>
@@ -1118,27 +1166,6 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2013/07/15/hello-world/</loc>
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2013-07-15T00:01:34.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="foo" url="http://talk.gudu.io/categories/foo/"/>
-          
-             
-              <breadCrumb title="bar" url="http://talk.gudu.io/categories/foo/bar/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://talk.gudu.io/2016/12/10/how-to-solve-mysql-user-can-login-on-localhost/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
@@ -1156,30 +1183,6 @@
           
              
               <breadCrumb title="Tricks" url="http://talk.gudu.io/categories/Learnings/MySql/Tricks/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://talk.gudu.io/2016/11/08/how-to-recursively-copy-file/</loc>
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    <data>
-        <display>
-        <title>how-to-recursively-copy-file</title>
-        <pubTime>2016-11-08T09:43:32.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
-          
-             
-              <breadCrumb title="Linux" url="http://talk.gudu.io/categories/Learnings/Linux/"/>
-          
-             
-              <breadCrumb title="Tricks" url="http://talk.gudu.io/categories/Learnings/Linux/Tricks/"/>
           
         </display>
     </data>
@@ -1211,15 +1214,24 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2015/09/29/2015-09-29-monad-in-javascript/</loc>
+    <loc>http://talk.gudu.io/2016/11/08/how-to-recursively-copy-file/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>MONAD in Javascript</title>
-        <pubTime>2015-09-29T17:11:57.000Z</pubTime>
+        <title>how-to-recursively-copy-file</title>
+        <pubTime>2016-11-08T09:43:32.000Z</pubTime>
         
          
            
+             
+              <breadCrumb title="Learnings" url="http://talk.gudu.io/categories/Learnings/"/>
+          
+             
+              <breadCrumb title="Linux" url="http://talk.gudu.io/categories/Learnings/Linux/"/>
+          
+             
+              <breadCrumb title="Tricks" url="http://talk.gudu.io/categories/Learnings/Linux/Tricks/"/>
+          
         </display>
     </data>
     </url>
@@ -1243,6 +1255,30 @@
           
              
               <breadCrumb title="Tricks" url="http://talk.gudu.io/categories/Learnings/Windows/Tricks/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://talk.gudu.io/2016/07/24/staged-event-driven-architecture/</loc>
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    <data>
+        <display>
+        <title>SEDA An Architecture for Well-Contained, Scalable Internet Services</title>
+        <pubTime>2016-07-24T14:16:21.000Z</pubTime>
+        
+        <tag>event driven</tag>
+         
+        <tag>scalable</tag>
+         
+        <tag>concurrency</tag>
+         
+         
+           
+             
+              <breadCrumb title="System Design" url="http://talk.gudu.io/categories/System-Design/"/>
           
         </display>
     </data>
@@ -1274,24 +1310,15 @@
 
     
   <url>
-    <loc>http://talk.gudu.io/2016/07/24/staged-event-driven-architecture/</loc>
+    <loc>http://talk.gudu.io/2015/09/29/2015-09-29-monad-in-javascript/</loc>
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     <data>
         <display>
-        <title>SEDA An Architecture for Well-Contained, Scalable Internet Services</title>
-        <pubTime>2016-07-24T14:16:21.000Z</pubTime>
+        <title>MONAD in Javascript</title>
+        <pubTime>2015-09-29T17:11:57.000Z</pubTime>
         
-        <tag>event driven</tag>
-         
-        <tag>scalable</tag>
-         
-        <tag>concurrency</tag>
-         
          
            
-             
-              <breadCrumb title="System Design" url="http://talk.gudu.io/categories/System-Design/"/>
-          
         </display>
     </data>
     </url>
