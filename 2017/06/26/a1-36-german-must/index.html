@@ -3,15 +3,19 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>Effective Go之函数 | Gudu</title>
+  <title>36-German-Must/Have to | Gudu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Effective Go之函数">
-<meta property="og:url" content="http://talk.gudu.io/2016/08/19/effective-golang-function/index.html">
+  <meta name="description" content="new APlayer({ 				element: document.getElementById(&quot;aplayer4&quot;), 				narrow: false, 				autoplay: false, 				showlrc: 0, 				music: { 					title: &quot;35-Must/Have to pony&quot;&quot;, 					author: &quot;/audio/ge">
+<meta name="keywords" content="German">
+<meta property="og:type" content="article">
+<meta property="og:title" content="36-German-Must&#x2F;Have to">
+<meta property="og:url" content="http://talk.gudu.io/2017/06/26/a1-36-german-must/index.html">
 <meta property="og:site_name" content="Gudu">
-<meta property="og:updated_time" content="2017-06-19T11:42:43.125Z">
+<meta property="og:description" content="new APlayer({ 				element: document.getElementById(&quot;aplayer4&quot;), 				narrow: false, 				autoplay: false, 				showlrc: 0, 				music: { 					title: &quot;35-Must/Have to pony&quot;&quot;, 					author: &quot;/audio/ge">
+<meta property="og:updated_time" content="2017-06-26T06:08:24.331Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Effective Go之函数">
+<meta name="twitter:title" content="36-German-Must&#x2F;Have to">
+<meta name="twitter:description" content="new APlayer({ 				element: document.getElementById(&quot;aplayer4&quot;), 				narrow: false, 				autoplay: false, 				showlrc: 0, 				music: { 					title: &quot;35-Must/Have to pony&quot;&quot;, 					author: &quot;/audio/ge">
   
     <link rel="alternative" href="/atom.xml" title="Gudu" type="application/atom+xml">
   
@@ -237,11 +241,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-effective-golang-function" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-a1-36-german-must" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/19/effective-golang-function/" class="article-date">
-      <time datetime="2016-08-19T15:03:30.000Z" itemprop="datePublished">2016-08-19</time>
+      <a href="/2017/06/26/a1-36-german-must/" class="article-date">
+      <time datetime="2017-06-26T12:55:37.000Z" itemprop="datePublished">2017-06-26</time>
 </a>
     </div>
   
@@ -254,7 +258,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Effective Go之函数
+      36-German-Must/Have to
     </h1>
   
 
@@ -263,11 +267,15 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Golang/">Golang</a><a class="article-category-link" href="/categories/Golang/Effective-Go/">Effective Go</a><a class="article-category-link" href="/categories/Golang/Effective-Go/Functions/">Functions</a>
+    <a class="article-category-link" href="/categories/Learnings/">Learnings</a><a class="article-category-link" href="/categories/Learnings/German/">German</a><a class="article-category-link" href="/categories/Learnings/German/A1/">A1</a><a class="article-category-link" href="/categories/Learnings/German/A1/Must-Have-to/">Must/Have to</a>
     </div>
 
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/German/">German</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -275,29 +283,39 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><hr>
+        <script src="/assets/js/APlayer.min.js"> </script><div id="aplayer4" class="aplayer" style="margin-bottom: 20px;"></div>
+		<script>
+			new APlayer({
+				element: document.getElementById("aplayer4"),
+				narrow: false,
+				autoplay: false,
+				showlrc: 0,
+				music: {
+					title: "35-Must/Have to pony"",
+					author: "/audio/german/35-must.m4a",
+					url: "/images/pony.jpg",
+					pic: "",
+				}
+			});
+		</script>
 <a id="more"></a>
-<h3 id="多个返回值"><a href="#多个返回值" class="headerlink" title="多个返回值"></a>多个返回值</h3><p>Go语言支持函数有多个返回值，例如:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">nextInt</span><span class="params">(b []<span class="keyword">byte</span>, i <span class="keyword">int</span>)</span> <span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span> &#123;</div><div class="line">    <span class="keyword">for</span> ; i &lt; <span class="built_in">len</span>(b) &amp;&amp; !isDigit(b[i]); i++ &#123;</div><div class="line">    &#125;</div><div class="line">    x := <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> ; i &lt; <span class="built_in">len</span>(b) &amp;&amp; isDigit(b[i]); i++ &#123;</div><div class="line">        x = x*<span class="number">10</span> + <span class="keyword">int</span>(b[i]) - <span class="string">'0'</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x, i</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>多返回值函数的使用方法:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(b); &#123;</div><div class="line">    x, i = nextInt(b, i)</div><div class="line">    fmt.Println(x)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><a href="https://play.golang.org/p/SwTTtg4HRw" target="_blank" rel="external">https://play.golang.org/p/SwTTtg4HRw</a></p>
-<h3 id="命名返回参数"><a href="#命名返回参数" class="headerlink" title="命名返回参数"></a>命名返回参数</h3><p>命名返回参数就像函数传入的参数一样可以被用作为一般变量，命名返回参数会被初始化为<br>相应的零值，如果函数执行一个没有参数的return语句，那么命名返回参数的当前值就被当<br>做函数的返回值。下面是NextInt的命名返回参数实现。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">nextInt</span><span class="params">(b []<span class="keyword">byte</span>, i <span class="keyword">int</span>)</span> <span class="params">(x, nextPos)</span></span> &#123;</div><div class="line">    <span class="keyword">for</span> ; i &lt; <span class="built_in">len</span>(b) &amp;&amp; !isDigit(b[i]); i++ &#123;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> ; i &lt; <span class="built_in">len</span>(b) &amp;&amp; isDigit(b[i]); i++ &#123;</div><div class="line">        x = x*<span class="number">10</span> + <span class="keyword">int</span>(b[i]) - <span class="string">'0'</span></div><div class="line">    &#125;</div><div class="line">    nextPos = i</div><div class="line">    <span class="keyword">return</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><a href="https://play.golang.org/p/jUi28IGWdU" target="_blank" rel="external">https://play.golang.org/p/jUi28IGWdU</a></p>
-<h3 id="Defer"><a href="#Defer" class="headerlink" title="Defer"></a>Defer</h3><p>Go语言的defer语句通常被用来处理资源释放，defer语句会保证其后面的函数一定在当前函数<br>返回之前被调用，类似于Java和C#的finally，不同在于，defer语句可以写在资源分配语句的<br>下一句，从而使代码更易于阅读。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Contents returns the file's contents as a string.</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">Contents</span><span class="params">(filename <span class="keyword">string</span>)</span> <span class="params">(<span class="keyword">string</span>, error)</span></span> &#123;</div><div class="line">    f, err := os.Open(filename)</div><div class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">""</span>, err</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">defer</span> f.Close()  <span class="comment">// f.Close一定会在Contents函数返回之前被调用</span></div><div class="line"></div><div class="line">    <span class="keyword">var</span> result []<span class="keyword">byte</span></div><div class="line">    buf := <span class="built_in">make</span>([]<span class="keyword">byte</span>, <span class="number">100</span>)</div><div class="line">    <span class="keyword">for</span> &#123;</div><div class="line">        n, err := f.Read(buf[<span class="number">0</span>:])</div><div class="line">        result = <span class="built_in">append</span>(result, buf[<span class="number">0</span>:n]...)</div><div class="line">        <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</div><div class="line">            <span class="keyword">if</span> err == io.EOF &#123;</div><div class="line">                <span class="keyword">break</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> <span class="string">""</span>, err  <span class="comment">// 如果代码执行到这，f.Close会在这个return之前执行</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">string</span>(result), <span class="literal">nil</span> <span class="comment">// 如果代码执行到这，f.Close会在这个return之前执行</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>defer语句调用的函数的参数(如果是方法的话也包括接收器)会在defer语句执行时被求值，<br>而不是等到defer语句的函数被执行的时候才被求值，例如:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</div><div class="line">	i := <span class="number">0</span></div><div class="line">	<span class="keyword">defer</span> fmt.Println(i) <span class="comment">// 输出结果是0， 因为defer语句被执行的时候i是0</span></div><div class="line">	i += <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><a href="https://play.golang.org/p/5bAQ5XMrde" target="_blank" rel="external">https://play.golang.org/p/5bAQ5XMrde</a></p>
-<p>被defer的函数是以后进先出(LIFO)的顺序被执行的，例如</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</div><div class="line">	i := <span class="number">0</span></div><div class="line">	<span class="keyword">defer</span> fmt.Println(i)</div><div class="line">	i += <span class="number">1</span></div><div class="line">	<span class="keyword">defer</span> fmt.Println(i) <span class="comment">//结果输出 1, 0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><a href="https://play.golang.org/p/Y-qEo0SWV5" target="_blank" rel="external">https://play.golang.org/p/Y-qEo0SWV5</a></p>
-<p>另外一个演示被defer的函数的参数是在defer语句被执行的时候就被求值的例子:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">trace</span><span class="params">(s <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</div><div class="line">    fmt.Println(<span class="string">"entering:"</span>, s)</div><div class="line">    <span class="keyword">return</span> s</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">un</span><span class="params">(s <span class="keyword">string</span>)</span></span> &#123;</div><div class="line">    fmt.Println(<span class="string">"leaving:"</span>, s)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">a</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="keyword">defer</span> un(trace(<span class="string">"a"</span>)) <span class="comment">// trace("a")的返回值是un的参数，在程序执行到这的时候就被执行了</span></div><div class="line">    fmt.Println(<span class="string">"in a"</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">b</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="keyword">defer</span> un(trace(<span class="string">"b"</span>)) <span class="comment">// trace("b")的返回值是un的参数，在程序执行到这的时候就被执行了</span></div><div class="line">    fmt.Println(<span class="string">"in b"</span>)</div><div class="line">    a()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</div><div class="line">    b()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这段程序将打印:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">entering: b</div><div class="line">in b</div><div class="line">entering: a</div><div class="line">in a</div><div class="line">leaving: a</div><div class="line">leaving: b</div></pre></td></tr></table></figure>
-<p><a href="https://play.golang.org/p/8mw7wL_dN_" target="_blank" rel="external">https://play.golang.org/p/8mw7wL_dN_</a></p>
+<h2 id="Must-Have-to"><a href="#Must-Have-to" class="headerlink" title="Must/Have to"></a>Must/Have to</h2><h3 id="ich-er-sie-es-muss-I-he-she-it-must-have-to"><a href="#ich-er-sie-es-muss-I-he-she-it-must-have-to" class="headerlink" title="ich/er/sie/es muss(I/he/she/it must/have to)"></a>ich/er/sie/es muss(I/he/she/it must/have to)</h3><ul>
+<li>Ich muss Deutsch Lernen.(I have to learn german.)</li>
+<li>Er muss sich duschen.(He has to take a shower.)</li>
+</ul>
+<h3 id="du-musst-you-must-have-to"><a href="#du-musst-you-must-have-to" class="headerlink" title="du musst(you must/have to)"></a>du musst(you must/have to)</h3><ul>
+<li>Du musst nach Hause kommen.(You have to come home.)</li>
+</ul>
+<h3 id="wir-mussen-we-must-have-to"><a href="#wir-mussen-we-must-have-to" class="headerlink" title="wir müssen(we must/have to)"></a>wir müssen(we must/have to)</h3><ul>
+<li>Wir müssen unsere Wäsche waschen.(We have to wash our clothes.)</li>
+</ul>
+<h3 id="ihr-musst-you-must-have-to"><a href="#ihr-musst-you-must-have-to" class="headerlink" title="ihr müsst(you must/have to)"></a>ihr müsst(you must/have to)</h3><ul>
+<li>Ihr müsst meine Videos anschauen.(You have to watch my videos.)</li>
+</ul>
+<h3 id="Sie-sie-mussen-you-they-must-have-to"><a href="#Sie-sie-mussen-you-they-must-have-to" class="headerlink" title="Sie/sie müssen(you/they must/have to)"></a>Sie/sie müssen(you/they must/have to)</h3><ul>
+<li>Sie müseen mehr Deutsch sprechen.(You/They have to speak more German.)</li>
+</ul>
+<h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><div class="video-container"><iframe src="//www.youtube.com/embed/jCFOhNe1cJY" frameborder="0" allowfullscreen></iframe></div>
 
       
       
@@ -342,13 +360,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/08/19/effective-golang-function/">Effective Go之函数</a></p>
+        <p><span>本文标题:</span><a href="/2017/06/26/a1-36-german-must/">36-German-Must/Have to</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Guannan Du 的个人博客">Guannan Du</a></p>
-        <p><span>发布时间:</span>2016年08月19日 - 08时03分</p>
-        <p><span>最后更新:</span>2017年06月19日 - 11时42分</p>
+        <p><span>发布时间:</span>2017年06月26日 - 05时55分</p>
+        <p><span>最后更新:</span>2017年06月26日 - 06时08分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/08/19/effective-golang-function/" title="Effective Go之函数">http://talk.gudu.io/2016/08/19/effective-golang-function/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://talk.gudu.io/2016/08/19/effective-golang-function/　　作者: Guannan Du" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/06/26/a1-36-german-must/" title="36-German-Must/Have to">http://talk.gudu.io/2017/06/26/a1-36-german-must/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://talk.gudu.io/2017/06/26/a1-36-german-must/　　作者: Guannan Du" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -361,18 +379,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/08/20/effective-golang-initialization/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/3017/04/30/piano-melodies/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Effective Go之初始化
+          钢琴曲
         
       </div>
     </a>
   
   
-    <a href="/2016/08/12/positioning-chapter10/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">无名陷阱</div>
+    <a href="/2017/06/25/a1-35-german-can/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">35-German-Can</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -383,7 +401,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#多个返回值"><span class="toc-number">1.</span> <span class="toc-text">多个返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命名返回参数"><span class="toc-number">2.</span> <span class="toc-text">命名返回参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Defer"><span class="toc-number">3.</span> <span class="toc-text">Defer</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Must-Have-to"><span class="toc-number">1.</span> <span class="toc-text">Must/Have to</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ich-er-sie-es-muss-I-he-she-it-must-have-to"><span class="toc-number">1.1.</span> <span class="toc-text">ich/er/sie/es muss(I/he/she/it must/have to)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#du-musst-you-must-have-to"><span class="toc-number">1.2.</span> <span class="toc-text">du musst(you must/have to)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wir-mussen-we-must-have-to"><span class="toc-number">1.3.</span> <span class="toc-text">wir müssen(we must/have to)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ihr-musst-you-must-have-to"><span class="toc-number">1.4.</span> <span class="toc-text">ihr müsst(you must/have to)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sie-sie-mussen-you-they-must-have-to"><span class="toc-number">1.5.</span> <span class="toc-text">Sie/sie müssen(you/they must/have to)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Video"><span class="toc-number">2.</span> <span class="toc-text">Video</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -431,7 +449,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/08/19/effective-golang-function/" data-title="Effective Go之函数" data-url="http://talk.gudu.io/2016/08/19/effective-golang-function/"></div>
+    <div class="ds-thread" data-thread-key="2017/06/26/a1-36-german-must/" data-title="36-German-Must/Have to" data-url="http://talk.gudu.io/2017/06/26/a1-36-german-must/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -454,13 +472,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/20/effective-golang-initialization/" title="上一篇: Effective Go之初始化">
+            <a href="/3017/04/30/piano-melodies/" title="上一篇: 钢琴曲">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/08/12/positioning-chapter10/" title="下一篇: 无名陷阱">
+            <a href="/2017/06/25/a1-35-german-can/" title="下一篇: 35-German-Can">
                 <i class="fa fa-angle-right"></i>
             </a>
         
