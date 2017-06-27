@@ -3,15 +3,19 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>第三次裂变--选人 | Gudu</title>
+  <title>关于完整性的“设计哲学” | Gudu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="第三次裂变--选人">
-<meta property="og:url" content="http://talk.gudu.io/2016/07/23/fissionable-imbark-03/index.html">
+  <meta name="description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：Develop Your Design Philosophy">
+<meta name="keywords" content="golang,design">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于完整性的“设计哲学”">
+<meta property="og:url" content="http://talk.gudu.io/2017/06/26/design-philosophy-on-integrity/index.html">
 <meta property="og:site_name" content="Gudu">
-<meta property="og:updated_time" content="2017-06-19T11:43:38.212Z">
+<meta property="og:description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：Develop Your Design Philosophy">
+<meta property="og:updated_time" content="2017-06-26T20:57:38.003Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第三次裂变--选人">
+<meta name="twitter:title" content="关于完整性的“设计哲学”">
+<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：Develop Your Design Philosophy">
   
     <link rel="alternative" href="/atom.xml" title="Gudu" type="application/atom+xml">
   
@@ -151,7 +155,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Bash/" style="font-size: 10px;">Bash</a> <a href="/tags/Basic/" style="font-size: 10px;">Basic</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Clipper/" style="font-size: 10px;">Clipper</a> <a href="/tags/CoffeeScript/" style="font-size: 10px;">CoffeeScript</a> <a href="/tags/Delphi/" style="font-size: 10px;">Delphi</a> <a href="/tags/German/" style="font-size: 20px;">German</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective C</a> <a href="/tags/Piano/" style="font-size: 10px;">Piano</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/Scala/" style="font-size: 10px;">Scala</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/concurrency/" style="font-size: 10px;">concurrency</a> <a href="/tags/event-driven/" style="font-size: 10px;">event driven</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a>
+                        <a href="/tags/Bash/" style="font-size: 10px;">Bash</a> <a href="/tags/Basic/" style="font-size: 10px;">Basic</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Clipper/" style="font-size: 10px;">Clipper</a> <a href="/tags/CoffeeScript/" style="font-size: 10px;">CoffeeScript</a> <a href="/tags/Delphi/" style="font-size: 10px;">Delphi</a> <a href="/tags/German/" style="font-size: 20px;">German</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective C</a> <a href="/tags/Piano/" style="font-size: 10px;">Piano</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/Scala/" style="font-size: 10px;">Scala</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/concurrency/" style="font-size: 10px;">concurrency</a> <a href="/tags/design/" style="font-size: 15px;">design</a> <a href="/tags/event-driven/" style="font-size: 10px;">event driven</a> <a href="/tags/golang/" style="font-size: 15px;">golang</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a>
                     </div>
                 </section>
                 
@@ -237,11 +241,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-fissionable-imbark-03" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-design-philosophy-on-integrity" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/23/fissionable-imbark-03/" class="article-date">
-      <time datetime="2016-07-23T17:07:49.000Z" itemprop="datePublished">2016-07-23</time>
+      <a href="/2017/06/26/design-philosophy-on-integrity/" class="article-date">
+      <time datetime="2017-06-26T20:57:38.003Z" itemprop="datePublished">2017-06-26</time>
 </a>
     </div>
   
@@ -254,7 +258,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      第三次裂变--选人
+      关于完整性的“设计哲学”
     </h1>
   
 
@@ -262,12 +266,12 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Reading/">Reading</a><a class="article-category-link" href="/categories/Reading/创业/">创业</a><a class="article-category-link" href="/categories/Reading/创业/《裂变式创业》/">《裂变式创业》</a>
-    </div>
-
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design/">design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/">golang</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -275,56 +279,41 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><hr>
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：<br>Develop Your Design Philosophy</p>
 <a id="more"></a>
-<blockquote><p>20岁有人愿意带你，愿意把一生的本领传给你，这就是成功。30岁有人愿意用你，把什么事情都交到你手上，事情不会办砸这叫成功。</p>
-<footer><strong>罗振宇</strong></footer></blockquote>
-<h3 id="传统人才进阶的悲哀"><a href="#传统人才进阶的悲哀" class="headerlink" title="传统人才进阶的悲哀"></a>传统人才进阶的悲哀</h3><ul>
-<li>重结果，不重过程</li>
-<li>自上而下的选拔</li>
-<li>一点对面的筛选</li>
-</ul>
-<h3 id="用人民币投票的竞选过程中能看到的秘密"><a href="#用人民币投票的竞选过程中能看到的秘密" class="headerlink" title="用人民币投票的竞选过程中能看到的秘密"></a>用人民币投票的竞选过程中能看到的秘密</h3><ul>
-<li>自愿出来做老大的人是最具勇气和魄力的，这是做领导者的前提</li>
-<li>在用钱投票的情况下，下属不会因为你原来的位高权重而追随你，可以看出谁有真正的领导力</li>
-<li>被很多组争夺的人说明这个人具有突出的技能和好的人际关系</li>
-<li>选择加入哪个团队考验了一个人的智慧和是否具备长远的眼光</li>
-<li>竞选前会掀起学习的高潮，解决了传统企业培组织培训的痛点</li>
-<li>换血规则考验了领导者的狠劲</li>
-<li>考验演讲能力，没有口才的总经理是不称职的</li>
-</ul>
-<blockquote><p>机遇只偏爱那些有准备头脑的人。</p>
-<footer><strong>路易 巴斯德</strong></footer></blockquote>
-<h3 id="什么是资产，什么是负债"><a href="#什么是资产，什么是负债" class="headerlink" title="什么是资产，什么是负债"></a>什么是资产，什么是负债</h3><p>资产是能把钱放进你口袋里的东西；负债是把钱从你口袋里取走的东西。世界上绝大多数在<br>钱的问题上挣扎的人是因为把负债当作资产。负债和资产的唯一分界线是流动性，也就是变<br>现的容易程度。</p>
-<h3 id="招聘创业型员工的秘密"><a href="#招聘创业型员工的秘密" class="headerlink" title="招聘创业型员工的秘密"></a>招聘创业型员工的秘密</h3><ul>
-<li>老板必须亲自招人</li>
-<li>看人才是否主动、创意、理想、胸怀、口才，多才多艺</li>
-<li>宁缺毋滥</li>
-</ul>
-<h3 id="平台创业比独立创业胜算高"><a href="#平台创业比独立创业胜算高" class="headerlink" title="平台创业比独立创业胜算高"></a>平台创业比独立创业胜算高</h3><ul>
-<li>对外界统一而强大的企业形象和品牌优势是个体独立创业者不具备的</li>
-<li>人力资源的支持，容易招聘到优秀的人才</li>
-<li>资金的支持。平台有能力提供可以拆借的资金，而个体公司贷款很难</li>
-<li>服务部门的共享可以降低孵化的成本</li>
-<li>处理公共关系的优势</li>
-<li>创业老手护送起步</li>
-</ul>
-<blockquote><p>一名优秀的员工可以顶50名平庸的员工。</p>
-<footer><strong>乔布斯</strong></footer></blockquote>
-<p>乔布斯这段话并不是说一个人可以干50个人的活，而是他可以影响很多人。</p>
-<h3 id="喜欢与风险为伴"><a href="#喜欢与风险为伴" class="headerlink" title="喜欢与风险为伴"></a>喜欢与风险为伴</h3><blockquote><p>杀不死我的，只会让我更坚强。</p>
-<footer><strong>尼采</strong></footer></blockquote>
-<p>创业者最需要具备的素质就是反脆弱，面对危险不是恐慌而是兴奋，富贵险中求，能不能<br>成功往往就在于敢不敢迈出第一步。</p>
-<h3 id="用钱买来的团队是靠不住的"><a href="#用钱买来的团队是靠不住的" class="headerlink" title="用钱买来的团队是靠不住的"></a>用钱买来的团队是靠不住的</h3><blockquote><p>什么都可能用钱买到，但一定买不到人心</p>
-<footer><strong>宗毅</strong></footer></blockquote>
-<p>慎重使用空降兵，创建一个有信念的企业：</p>
-<p>一个有信念的企业</p>
+<h3 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h3><p>&emsp;&emsp;我想在这里分享我关于完整性的“设计哲学”以及对于Go语言它意味着什么。完整性绝对不仅仅是一个漂亮的口号，它是我编程和生活中做一切事情的驱动原则。</p>
+<p>&emsp;&emsp;这是我对完整性的定义：<br>&emsp;&emsp;代码读、写以及执行每一条指令的准确性和一致性。同样重要的是，写更少的代码并且知道错误处理是代码的主要部分。</p>
+<p>&emsp;&emsp;如果你仔细想一想你写的代码实际上做了什么，你可以把它分成微观和宏观两个层面的操作。你的每一行代码在微观上都是在分配内存，或读取内存，或写数据到内存中。变量和语句是这些操作背后的驱动力。在宏观上，你所写的大部分代码都是在做数据转换。我们有一个输入然后我们产生一个输出。我们的函数是这些操作背后的驱动力。</p>
+<p>&emsp;&emsp;这样看起来就有两个驱动力：<br>&emsp;&emsp;完整性是关于准确、一致、高效的分配和读写内存。类型系统对确保微观的完整性至关重要。</p>
+<p>&emsp;&emsp;完整性是关于准确、一致、高效的进行数据转换。写更少的代码和正确的处理错误情况对确保宏观的完整性至关重要。</p>
+<p>&emsp;&emsp;完整性对于编写出可塑性强并且可靠地软件至关重要。</p>
+<h3 id="认真对待可靠性"><a href="#认真对待可靠性" class="headerlink" title="认真对待可靠性"></a>认真对待可靠性</h3><p>&emsp;&emsp;如果我们认真对待可靠性，我们就必须认真对待完整性，因此我们必须认真对待错误处理。有一个针对几百个Cassandra，HBase，HDFS，MapReduce和Redis的bug案例研究。在这个研究中，发现了48个关键故障，下面这些故障原因的分类：</p>
+<p>92% : 糟糕的错误处理导致的故障<br>35% : 不正确的处理</p>
 <ul>
-<li>共同的利益关系–他好我也好，成就他人的同时就是成就自己</li>
-<li>超越小我的社会责任心</li>
-<li>领袖的人格魅力–树立人格魅力的最好方式就是以身作则</li>
+<li>25% : 简单的忽视错误</li>
+<li>8% : 捕捉了错误的异常</li>
+<li>2% : 没有完成的TODO<br>57% 系统特有的</li>
+<li>23% : 很容易被检测到</li>
+<li>34% : 复杂的bug<br>8% : 潜在的认为错误导致的故障</li>
 </ul>
-
+<p>&emsp;&emsp;结果也许会令你感到吃惊。如果开发人员把完整性作为第一优先级，92%的严重故障是可以被避免的。错误被以很多不同的方式不正确的处理了。在一些情况下是因为异常如何被处理的，而另外一些情况下是由于开发人员的粗心大意。</p>
+<p>&emsp;&emsp;异常处理本来是用来处理错误的，却往往造成了故障的发生。“异常处理”这个名字使得你没有把它当成你的主要代码的一部分，而是把代码中的异常处理逻辑当做某些可以稍后处理，或者其它什么东西。在事后讨论检查发现了很多由于这种脱节造成的问题。</p>
+<p>&emsp;&emsp;我总是听到有人抱怨Go语言的错误处理机制有多么烦人，有多么不方便，但是，这正是问题所在。用这种方式Go语言迫使你不去忽略完整性问题。我们都知道，为了保证安全性，通常会造成同样的繁琐和不方便，我并不认为Go语言的错误机制和这个有任何不同，完整性和安全性总是齐头并进的。</p>
+<h3 id="开发人员的粗心大意"><a href="#开发人员的粗心大意" class="headerlink" title="开发人员的粗心大意"></a>开发人员的粗心大意</h3><pre><code>                 Non-Deliberate               Deliberate
+              ------------------------------------------------------
+              |                          |                         |
+              |                          |                         |
+   Ignorance  |  Learning / Prototyping  |    Hacking / Guessing   |
+              |                          |                         |
+              |                          |                         |
+              |-----------------------------------------------------
+              |                          |                         |
+              |                          |                         |
+Carelessness  |        Education         |   Dangerous Situation   |
+              |                          |                         |
+              |                          |                         |
+              ------------------------------------------------------
+</code></pre>
       
       
         <div class="page-reward">
@@ -368,13 +357,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/07/23/fissionable-imbark-03/">第三次裂变--选人</a></p>
+        <p><span>本文标题:</span><a href="/2017/06/26/design-philosophy-on-integrity/">关于完整性的“设计哲学”</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Guannan Du 的个人博客">Guannan Du</a></p>
-        <p><span>发布时间:</span>2016年07月23日 - 10时07分</p>
-        <p><span>最后更新:</span>2017年06月19日 - 11时43分</p>
+        <p><span>发布时间:</span>2017年06月26日 - 13时57分</p>
+        <p><span>最后更新:</span>2017年06月26日 - 20时57分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/07/23/fissionable-imbark-03/" title="第三次裂变--选人">http://talk.gudu.io/2016/07/23/fissionable-imbark-03/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://talk.gudu.io/2016/07/23/fissionable-imbark-03/　　作者: Guannan Du" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/06/26/design-philosophy-on-integrity/" title="关于完整性的“设计哲学”">http://talk.gudu.io/2017/06/26/design-philosophy-on-integrity/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://talk.gudu.io/2017/06/26/design-philosophy-on-integrity/　　作者: Guannan Du" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -387,18 +376,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/07/24/staged-event-driven-architecture/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/3017/04/30/piano-melodies/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          SEDA An Architecture for Well-Contained, Scalable Internet Services
+          钢琴曲
         
       </div>
     </a>
   
   
-    <a href="/2016/07/22/fissionable-imbark-02/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第二次裂变--换心</div>
+    <a href="/2017/06/26/develop-your-design-philosophy/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">形成你自己的设计哲学</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -409,7 +398,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#传统人才进阶的悲哀"><span class="toc-number">1.</span> <span class="toc-text">传统人才进阶的悲哀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用人民币投票的竞选过程中能看到的秘密"><span class="toc-number">2.</span> <span class="toc-text">用人民币投票的竞选过程中能看到的秘密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是资产，什么是负债"><span class="toc-number">3.</span> <span class="toc-text">什么是资产，什么是负债</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#招聘创业型员工的秘密"><span class="toc-number">4.</span> <span class="toc-text">招聘创业型员工的秘密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#平台创业比独立创业胜算高"><span class="toc-number">5.</span> <span class="toc-text">平台创业比独立创业胜算高</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#喜欢与风险为伴"><span class="toc-number">6.</span> <span class="toc-text">喜欢与风险为伴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用钱买来的团队是靠不住的"><span class="toc-number">7.</span> <span class="toc-text">用钱买来的团队是靠不住的</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导论"><span class="toc-number">2.</span> <span class="toc-text">导论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#认真对待可靠性"><span class="toc-number">3.</span> <span class="toc-text">认真对待可靠性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发人员的粗心大意"><span class="toc-number">4.</span> <span class="toc-text">开发人员的粗心大意</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -457,7 +446,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/07/23/fissionable-imbark-03/" data-title="第三次裂变--选人" data-url="http://talk.gudu.io/2016/07/23/fissionable-imbark-03/"></div>
+    <div class="ds-thread" data-thread-key="2017/06/26/design-philosophy-on-integrity/" data-title="关于完整性的“设计哲学”" data-url="http://talk.gudu.io/2017/06/26/design-philosophy-on-integrity/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -480,18 +469,18 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/07/24/staged-event-driven-architecture/" title="上一篇: SEDA An Architecture for Well-Contained, Scalable Internet Services">
+            <a href="/3017/04/30/piano-melodies/" title="上一篇: 钢琴曲">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/07/22/fissionable-imbark-02/" title="下一篇: 第二次裂变--换心">
+            <a href="/2017/06/26/develop-your-design-philosophy/" title="下一篇: 形成你自己的设计哲学">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/3017/04/30/piano-melodies/">钢琴曲</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/27/a1-37-german-be-allowed-to/">37-German-Be-allowed-to</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/a1-36-german-must/">36-German-Must/Have to</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/a1-35-german-can/">35-German-Can</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/24/a1-34-german-want/">34-German-Want</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/23/a1-33-german-modal-verbs/">33-German-Modal-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/22/a1-32-german-months/">32-German-Months</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/a1-31-german-days-of-the-week/">31-German-Days-of-the-Week</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/20/a1-30-german-hungry-and-yummy/">30-German-Hungry-and-Yummy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/19/a1-29-german-food-and-drinks/">29-German-Food-and-Drinks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/18/a1-28-german-order-dishes/">28-German-Order-Dishes</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/17/a1-27-german-food/">27-German-Food</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/16/a1-26-german-languages/">26-German-Languages</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/15/a1-25-german-verb-speak/">25-German-Verb-Speak</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/14/a1-24-german-ask-for-help/">24-German-Ask-For-Help</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/13/a1-23-german-question-words/">23-German-Question-Words</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/12/a1-22-german-ask-questions/">22-German-Ask-Questions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/11/a1-21-german-most-used-verbs/">21-German-Most-Used-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/a1-20-german-introduce-others/">20-German-Introduce-Others</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/09/a1-19-german-verb-conjugation/">19-German-Verb-Conjugation</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/08/a1-18-german-family/">18-German-Family</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/a1-17-german-verbs-have/">17-German Have</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/a1-16-german-possessive-pronouns/">16-German-Possessive-Pronouns</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/05/a1-15-german-indefinite-articles/">15-German-Indefinite-Articles(ein and eine)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/04/a1-14-german-professions/">14-German-Professions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/a1-13-german-be/">13-German-be</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/a1-12-german-personal-data/">12-German-Personal-Data</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/a1-11-german-how-much-is/">11-German-How-much-is</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/31/a1-10-german-how-to-guess-articles/">10-German-How-to-Guess-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/30/a1-09-german-noun-and-articles/">09-German-Noun-and-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/a1-08-german-numbers2/">08-German-Numbers(20-100)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/a1-07-german-numbers1/">07-German-Numbers(0-20)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/27/a1-06-Yes-No-Thank-you/">06-German-Yes-No-Thank-you</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/26/a1-05-german-where-do-you-live/">05-German Where do you live?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/25/a1-04-How-are-you/">04-German-How are you?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/24/a1-03-Where-do-I-come-from/">03-German-Where do I come from</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/a1-02-german-self-introduction/">02-German-Self Introduction</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/22/a1-01-german-greetings/">01-German Greetings</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/20/try-mathjax/">try-mathjax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/10/how-to-solve-mysql-user-can-login-on-localhost/">Mysql只能从本机登陆问题的解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/11/run-virtualbox-on-windows/">run-virtualbox-on-windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/how-to-recursively-copy-file/">how-to-recursively-copy-file</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-install-deb-file/">如何安装deb文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-add-directory-to-path/">Linux把一个路径添加到$PATH环境变量中</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-interface-md/">Effective Go之接口和其他类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-data-md/">effective-golang-data.md</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-methods/">Effective Go之值方法 vs 指针方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-initialization/">Effective Go之初始化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/19/effective-golang-function/">Effective Go之函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/positioning-chapter10/">无名陷阱</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/25/fissionable-imbark-04/">第四次裂变--失控</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/staged-event-driven-architecture/">SEDA An Architecture for Well-Contained, Scalable Internet Services</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/23/fissionable-imbark-03/">第三次裂变--选人</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-02/">第二次裂变--换心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-01/">第一次裂变--割肉</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-run-py-file-on-windows/">Run .py file on windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-django-social-auth/">为Django网站添加社交网络账号登录功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/">Windows上Python开发环境的安装与配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/">在单元测试中进行依赖注入</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/29/2015-09-29-monad-in-javascript/">MONAD in Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-19-test-highlight/">test highlight</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-18-generate-table-of-contents/">Generate 'Table of Contents'</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/18/2015-09-18-hello-world/">Hello World!!!</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/from-classical-period-to-medieval-period/">古典时期到中世纪</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/15/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/3017/04/30/piano-melodies/">钢琴曲</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/design-philosophy-on-integrity/">关于完整性的“设计哲学”</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/develop-your-design-philosophy/">形成你自己的设计哲学</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/a1-36-german-must/">36-German-Must/Have to</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/a1-35-german-can/">35-German-Can</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/24/a1-34-german-want/">34-German-Want</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/23/a1-33-german-modal-verbs/">33-German-Modal-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/22/a1-32-german-months/">32-German-Months</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/a1-31-german-days-of-the-week/">31-German-Days-of-the-Week</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/20/a1-30-german-hungry-and-yummy/">30-German-Hungry-and-Yummy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/19/a1-29-german-food-and-drinks/">29-German-Food-and-Drinks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/18/a1-28-german-order-dishes/">28-German-Order-Dishes</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/17/a1-27-german-food/">27-German-Food</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/16/a1-26-german-languages/">26-German-Languages</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/15/a1-25-german-verb-speak/">25-German-Verb-Speak</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/14/a1-24-german-ask-for-help/">24-German-Ask-For-Help</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/13/a1-23-german-question-words/">23-German-Question-Words</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/12/a1-22-german-ask-questions/">22-German-Ask-Questions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/11/a1-21-german-most-used-verbs/">21-German-Most-Used-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/a1-20-german-introduce-others/">20-German-Introduce-Others</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/09/a1-19-german-verb-conjugation/">19-German-Verb-Conjugation</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/08/a1-18-german-family/">18-German-Family</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/a1-17-german-verbs-have/">17-German Have</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/a1-16-german-possessive-pronouns/">16-German-Possessive-Pronouns</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/05/a1-15-german-indefinite-articles/">15-German-Indefinite-Articles(ein and eine)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/04/a1-14-german-professions/">14-German-Professions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/a1-13-german-be/">13-German-be</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/a1-12-german-personal-data/">12-German-Personal-Data</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/a1-11-german-how-much-is/">11-German-How-much-is</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/31/a1-10-german-how-to-guess-articles/">10-German-How-to-Guess-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/30/a1-09-german-noun-and-articles/">09-German-Noun-and-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/a1-08-german-numbers2/">08-German-Numbers(20-100)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/a1-07-german-numbers1/">07-German-Numbers(0-20)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/27/a1-06-Yes-No-Thank-you/">06-German-Yes-No-Thank-you</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/26/a1-05-german-where-do-you-live/">05-German Where do you live?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/25/a1-04-How-are-you/">04-German-How are you?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/24/a1-03-Where-do-I-come-from/">03-German-Where do I come from</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/a1-02-german-self-introduction/">02-German-Self Introduction</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/22/a1-01-german-greetings/">01-German Greetings</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/20/try-mathjax/">try-mathjax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/10/how-to-solve-mysql-user-can-login-on-localhost/">Mysql只能从本机登陆问题的解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/11/run-virtualbox-on-windows/">run-virtualbox-on-windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/how-to-recursively-copy-file/">how-to-recursively-copy-file</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-install-deb-file/">如何安装deb文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-add-directory-to-path/">Linux把一个路径添加到$PATH环境变量中</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-interface-md/">Effective Go之接口和其他类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-data-md/">effective-golang-data.md</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-methods/">Effective Go之值方法 vs 指针方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-initialization/">Effective Go之初始化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/19/effective-golang-function/">Effective Go之函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/positioning-chapter10/">无名陷阱</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/25/fissionable-imbark-04/">第四次裂变--失控</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/staged-event-driven-architecture/">SEDA An Architecture for Well-Contained, Scalable Internet Services</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/23/fissionable-imbark-03/">第三次裂变--选人</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-02/">第二次裂变--换心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-01/">第一次裂变--割肉</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-run-py-file-on-windows/">Run .py file on windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-django-social-auth/">为Django网站添加社交网络账号登录功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/">Windows上Python开发环境的安装与配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/">在单元测试中进行依赖注入</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/29/2015-09-29-monad-in-javascript/">MONAD in Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-19-test-highlight/">test highlight</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-18-generate-table-of-contents/">Generate 'Table of Contents'</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/18/2015-09-18-hello-world/">Hello World!!!</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/from-classical-period-to-medieval-period/">古典时期到中世纪</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/15/hello-world/">Hello World</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
