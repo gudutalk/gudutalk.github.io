@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://talk.gudu.io/2017/06/30/a1-40-german-weather/</loc>
+    
+    <lastmod>2017-06-30T07:59:22.500Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2017/06/29/a1-39-german-adjectives/</loc>
+    
+    <lastmod>2017-06-30T07:40:15.548Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://talk.gudu.io/2017/06/28/a1-38-german-like/</loc>
     
     <lastmod>2017-06-28T06:55:22.595Z</lastmod>
@@ -471,14 +485,14 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2017/05/24/a1-03-Where-do-I-come-from/</loc>
+    <loc>http://talk.gudu.io/2016/08/22/effective-golang-data-md/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2016/08/22/effective-golang-data-md/</loc>
+    <loc>http://talk.gudu.io/2017/05/24/a1-03-Where-do-I-come-from/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
