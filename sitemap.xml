@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://talk.gudu.io/2017/07/02/a1-42-german-transport/</loc>
+    
+    <lastmod>2017-07-06T09:35:41.283Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://talk.gudu.io/2017/07/04/a1-44-german-sentence-structure-part1/</loc>
     
     <lastmod>2017-07-06T08:30:48.701Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://talk.gudu.io/2017/07/06/the-human-cost-of-tech-debt/</loc>
     
     <lastmod>2017-07-06T07:39:30.835Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://talk.gudu.io/2017/07/02/a1-42-german-transport/</loc>
-    
-    <lastmod>2017-07-03T08:36:55.835Z</lastmod>
     
   </url>
   
@@ -520,7 +520,7 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2017/05/24/a1-03-Where-do-I-come-from/</loc>
+    <loc>http://talk.gudu.io/2017/05/26/a1-05-german-where-do-you-live/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
@@ -534,7 +534,7 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2017/05/26/a1-05-german-where-do-you-live/</loc>
+    <loc>http://talk.gudu.io/2017/05/24/a1-03-Where-do-I-come-from/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     
