@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>面向“包”的软件设计 | Gudu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：&amp;emsp;&amp;emsp; Develop Your Design Philosophy&amp;emsp;&amp;emsp; Design Philosophy On Packaging">
+<meta name="keywords" content="golang,design">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向“包”的软件设计">
+<meta property="og:url" content="http://talk.gudu.io/2017/07/04/package-oriented-design/index.html">
+<meta property="og:site_name" content="Gudu">
+<meta property="og:description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：&amp;emsp;&amp;emsp; Develop Your Design Philosophy&amp;emsp;&amp;emsp; Design Philosophy On Packaging">
+<meta property="og:updated_time" content="2017-07-04T00:08:40.663Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向“包”的软件设计">
+<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：&amp;emsp;&amp;emsp; Develop Your Design Philosophy&amp;emsp;&amp;emsp; Design Philosophy On Packaging">
+  
+    <link rel="alternative" href="/atom.xml" title="Gudu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/inuyasha6.gif" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Guannan Du</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Ich sollte ein Bauer sein, wie mein Vater will</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/.">Home</a></li>
+                        
+                            <li><a href="/archives">Archives</a></li>
+                        
+                            <li><a href="/tags/German">German</a></li>
+                        
+                            <li><a href="/tags/Music">Music</a></li>
+                        
+                            <li><a href="/lectures">Lectures</a></li>
+                        
+                            <li><a href="/about">About</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:nspforever@gmail.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/nspforever" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Bash/" style="font-size: 10px;">Bash</a> <a href="/tags/Basic/" style="font-size: 10px;">Basic</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Clipper/" style="font-size: 10px;">Clipper</a> <a href="/tags/CoffeeScript/" style="font-size: 10px;">CoffeeScript</a> <a href="/tags/Delphi/" style="font-size: 10px;">Delphi</a> <a href="/tags/German/" style="font-size: 20px;">German</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective C</a> <a href="/tags/Piano/" style="font-size: 10px;">Piano</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/Scala/" style="font-size: 10px;">Scala</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/concurrency/" style="font-size: 10px;">concurrency</a> <a href="/tags/design/" style="font-size: 15px;">design</a> <a href="/tags/event-driven/" style="font-size: 10px;">event driven</a> <a href="/tags/golang/" style="font-size: 15px;">golang</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">Ich sollte ein Bauer sein, wie mein Vater will</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Guannan Du</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/inuyasha6.gif" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Guannan Du</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Ich sollte ein Bauer sein, wie mein Vater will</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/.">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                    <li><a href="/tags/German">German</a></li>
+                
+                    <li><a href="/tags/Music">Music</a></li>
+                
+                    <li><a href="/lectures">Lectures</a></li>
+                
+                    <li><a href="/about">About</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:nspforever@gmail.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/nspforever" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-package-oriented-design" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/04/package-oriented-design/" class="article-date">
+      <time datetime="2017-07-04T00:08:40.663Z" itemprop="datePublished">2017-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向“包”的软件设计
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design/">design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/">golang</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：<br>&emsp;&emsp; Develop Your Design Philosophy<br>&emsp;&emsp; Design Philosophy On Packaging</p>
+<a id="more"></a>
+<h3 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h3><p>&emsp;&emsp;面向包的设计使得开发者辨认出一个包应该放在Go项目的什么位置以及这个包需要尊重的设计准则。它定义了什么是Go项目和Go项目是如何组织的。最后，它可以改善团队成员的沟通，推广关于整洁的包设计和项目架构的讨论。</p>
+<p>&emsp;&emsp;面向包的的设计不仅仅局限于单个的项目结构，而且声明项目结构对于应用好的包设计准则是至关重要的。将来我会给出一个项目的结构，以及根据前面提到的设计哲学所需要遵守的准则。</p>
+<h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p>&emsp;&emsp;我认为每个公司都应该为一系列部署在一起的不同的程序建立一个工具箱项目和多个应用项目。</p>
+<h4 id="工具箱项目"><a href="#工具箱项目" class="headerlink" title="工具箱项目"></a>工具箱项目</h4><p>&emsp;&emsp;把工具箱项目想成是公司的标准库，因此它应该只有一个。工具箱项目里面的包的设计需要把保证最高的可移植性考虑进去。这些包应该可以被多个应用程序使用，并且提供非常具体的基础的专业领域知识。在这里，工具箱项目不允许有vendor目录。<br>如果任何工具项里的包依赖于其它第三方的包，它们必须总是在这些第三方包的最新版本上进行构建。</p>
+<p>&emsp;&emsp;一个典型的工具箱项目的结构应该是：</p>
+<p><strong>列表1</strong></p>
+<pre><code>github.com/ardanlabs/kit
+├── CONTRIBUTORS
+├── LICENSE
+├── README.md
+├── cfg/
+├── examples/
+├── log/
+├── pool/
+├── tcp/
+├── timezone/
+├── udp/
+└── web/
+</code></pre><p>&emsp;&emsp;注意：每个工具包项目有自己的代码库通常不是什么问题。我没有这么做是因为这么做会增加管理所有这类包的工作。今天的各种vendoring工具允许我们从一个代码库里面提取我们想vendor的包。</p>
+<h4 id="应用类项目"><a href="#应用类项目" class="headerlink" title="应用类项目"></a>应用类项目</h4><p>&emsp;&emsp;应用类项目包含一组部署在一起的程序。这一组程序可以包含服务，命令行工具以及后台运行的程序。每个应用程序应该被限定在一个代码库中，这个代码库应该包含项目的所有代码以及第三方依赖的所有代码。有多少个应用类项目取决于你，但是你要知道少即是多。</p>
+<p>&emsp;&emsp;一个典型的应用类项目的结构应该是：</p>
+<p><strong>列表2</strong></p>
+<pre><code>github.com/servi-io/api
+├── cmd/
+│   ├── servi/
+│   │   ├── cmdupdate/
+│   │   ├── cmdquery/
+│   │   └── servi.go
+│   └── servid/
+│       ├── routes/
+│       │   └── handlers/
+│       ├── tests/
+│       └── servid.go
+├── internal/
+│   ├── attachments/
+│   ├── locations/
+│   ├── orders/
+│   │   ├── customers/
+│   │   ├── items/
+│   │   ├── tags/
+│   │   └── orders.go
+│   ├── registrations/
+│   └── platform/
+│       ├── crypto/
+│       ├── mongo/
+│       └── json/
+└── vendor/
+    ├── github.com/
+    │   ├── ardanlabs/
+    │   ├── golang/
+    │   ├── prometheus/
+    └── golang.org/
+</code></pre><p><strong>vendor目录</strong><br>&emsp;&emsp;Daniel Theophanes写的这篇Gopher学院的文章是关于vendor目录的一个非常的文档。这篇文章的目的是说，所有的第三方包都需要复制到vendor目录中。这个也包含了工具箱项目所对应的包。在这里应该把工具箱项目看作是一个第三方的包。</p>
+<p><strong>cmd目录</strong><br>&emsp;&emsp;所有项目所包含的应用程序应该放到cmd目录里。cmd目录下面的目录应该按照其对应的应用程序命名。以字母d结尾的目录应该包含一个daemon程序。每个目录下面应该有一个main包。</p>
+<p><strong>internal目录</strong><br>&emsp;&emsp;被多个程序引入的包应该被放在internal目录里。使用internal目录是为了给项目提供多一层的保护。因为，项目以外的包是不能引入internal目录里面的包的。因此，这些包是这个项目私有的。</p>
+<p><strong>internal/platform目录</strong><br>&emsp;&emsp;一些基础的并且只属于这个项目的包，可以放在internal/platform目录里。这些包可以提供诸如访问数据库，身份认证甚至是编排(marshaling)。</p>
+<h3 id="验证包设计"><a href="#验证包设计" class="headerlink" title="验证包设计"></a>验证包设计</h3><p>&emsp;&emsp;面向包的设计的一个重要方面就是有能力验证包的设计。这是因为面向包的设计的指导方针是与它在项目中的位置关联的。这里有7个步骤验证可以帮助你发现设计问题。</p>
+<h4 id="验证包的位置"><a href="#验证包的位置" class="headerlink" title="验证包的位置."></a>验证包的位置.</h4><ul>
+<li>Kit<br>  为不同应用提供基础支持的包。<br>  日志，配置或者Web功能。</li>
+<li>cmd/<br>  为某个特定的程序提供支持的包<br>  启动，关闭和配置</li>
+<li>internal/<br>  为一个项目下面不同的程序提供支持的包<br>  支持CRUD操作，或者服务、业务相关的逻辑</li>
+<li>internal/platform/<br>  为项目提供内部的基础支持<br>  数据库，认证或者marshaling</li>
+</ul>
+<h4 id="验证对依赖的选择"><a href="#验证对依赖的选择" class="headerlink" title="验证对依赖的选择"></a>验证对依赖的选择</h4><ul>
+<li>All<br>Validate the cost/benefit of each dependency.<br>Question imports for the sake of sharing existing types.<br>Question imports to others packages at the same level.<br>If a package wants to import another package at the same level:<br>Question the current design choices of these packages.<br>If reasonable, move the package inside the source tree for the package that wants to import it.<br>Use the source tree to show the dependency relationships.<br>internal/<br>Packages from these locations CAN’T be imported:<br>cmd/<br>internal/platform/<br>Packages from these locations CAN’T be imported:<br>cmd/<br>internal/<h4 id="验证策略被执行"><a href="#验证策略被执行" class="headerlink" title="验证策略被执行"></a>验证策略被执行</h4></li>
+</ul>
+<p>Kit, internal/platform/<br>NOT allowed to set policy about any application concerns.<br>NOT allowed to log, but access to trace information must be decoupled.<br>Configuration and runtime changes must be decoupled.<br>Retrieving metric and telemetry values must be decoupled.<br>cmd/, internal/<br>Allowed to set policy about any application concerns.<br>Allowed to log and handle configuration natively.</p>
+<h4 id="验证数据是如何被接受的-返回的"><a href="#验证数据是如何被接受的-返回的" class="headerlink" title="验证数据是如何被接受的/返回的"></a>验证数据是如何被接受的/返回的</h4><p>All<br>Validate the consistent use of value/pointer semantics for a given type.<br>When using an interface type to accept a value, the focus must be on the behavior that is required and not the value itself.<br>If behavior is not required, use a concrete type.<br>When reasonable, use an existing type before declaring a new one.<br>Question types from dependencies that leak into the exported API.<br>An existing type may no longer be reasonable to use.</p>
+<h4 id="验证错误是如何被处理的"><a href="#验证错误是如何被处理的" class="headerlink" title="验证错误是如何被处理的"></a>验证错误是如何被处理的</h4><p>All<br>Handling an error means:<br>The error has been logged.<br>The application is back to 100% integrity.<br>The current error is not reported any longer.<br>Kit<br>NOT allowed to panic an application.<br>NOT allowed to wrap errors.<br>Return only root cause error values.<br>cmd/<br>Allowed to panic an application.<br>Wrap errors with context if not being handled.<br>Majority of handling errors happen here.<br>internal/<br>NOT allowed to panic an application.<br>Wrap errors with context if not being handled.<br>Minority of handling errors happen here.<br>internal/platform/<br>NOT allowed to panic an application.<br>NOT allowed to wrap errors.<br>Return only root cause error values.</p>
+<h4 id="验证测试"><a href="#验证测试" class="headerlink" title="验证测试"></a>验证测试</h4><p>cmd/<br>Allowed to use 3rd party testing packages.<br>Can have a test folder for tests.<br>Focus more on integration than unit testing.<br>kit/, internal/, internal/platform/<br>Stick to the testing package in go.<br>Test files belong inside the package.<br>Focus more on unit than integration testing.</p>
+<h4 id="验正从panic中恢复"><a href="#验正从panic中恢复" class="headerlink" title="验正从panic中恢复"></a>验正从panic中恢复</h4><p>cmd/<br>Can recover any panic.<br>Only if system can be returned to 100% integrity.<br>kit/, internal/, internal/platform/<br>Can not recover from panics unless:<br>Goroutine is owned by the package.<br>Can provide an event to the app about the panic.</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>Here is a quick example of how we can review the Application project to understand how the project is put together and validate the dependency choices for each package.</p>
+<p>cmd/<br>This Application project builds two programs: servi and servid.<br>servid is a web service.<br>servi is a cli tool.<br>None of the packages inside of servid/ can import any packages from inside servi/.<br>The routes package CAN’T import the cmdupdate package.<br>The routes package does import the handlers package.<br>internal/<br>This project has four root level internal packages.<br>attachments, locations, orders and registrations.<br>This project has three internal/platform/ packages.<br>crypto, mongo and sg<br>The four root level packages are not allowed to import each other.<br>They are at the same level.<br>attachments can’t import any other internal/ only package.<br>The orders package has three packages declared inside of it.<br>customers, items and tags.<br>From within the internal/ folder, only orders can import these packages.<br>These three packages can’t import each other.<br>Any package inside of the internal/ folder can import from internal/platform/.<br>The attachments package can import mongo.<br>The internal/platform/ packages can import each other.<br>The crypto can import the mongo.</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/07/04/package-oriented-design/">面向“包”的软件设计</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Guannan Du 的个人博客">Guannan Du</a></p>
+        <p><span>发布时间:</span>2017年07月03日 - 17时08分</p>
+        <p><span>最后更新:</span>2017年07月04日 - 00时08分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/04/package-oriented-design/" title="面向“包”的软件设计">http://talk.gudu.io/2017/07/04/package-oriented-design/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://talk.gudu.io/2017/07/04/package-oriented-design/　　作者: Guannan Du" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/3017/04/30/piano-melodies/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          钢琴曲
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/03/a1-43-german-relationship/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">43-German-Relationship</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导论"><span class="toc-number">2.</span> <span class="toc-text">导论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目结构"><span class="toc-number">3.</span> <span class="toc-text">项目结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#工具箱项目"><span class="toc-number">3.1.</span> <span class="toc-text">工具箱项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用类项目"><span class="toc-number">3.2.</span> <span class="toc-text">应用类项目</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#验证包设计"><span class="toc-number">4.</span> <span class="toc-text">验证包设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#验证包的位置"><span class="toc-number">4.1.</span> <span class="toc-text">验证包的位置.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#验证对依赖的选择"><span class="toc-number">4.2.</span> <span class="toc-text">验证对依赖的选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#验证策略被执行"><span class="toc-number">4.3.</span> <span class="toc-text">验证策略被执行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#验证数据是如何被接受的-返回的"><span class="toc-number">4.4.</span> <span class="toc-text">验证数据是如何被接受的/返回的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#验证错误是如何被处理的"><span class="toc-number">4.5.</span> <span class="toc-text">验证错误是如何被处理的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#验证测试"><span class="toc-number">4.6.</span> <span class="toc-text">验证测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#验正从panic中恢复"><span class="toc-number">4.7.</span> <span class="toc-text">验正从panic中恢复</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例"><span class="toc-number">5.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结论"><span class="toc-number">6.</span> <span class="toc-text">结论</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2017/07/04/package-oriented-design/" data-title="面向“包”的软件设计" data-url="http://talk.gudu.io/2017/07/04/package-oriented-design/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/3017/04/30/piano-melodies/" title="上一篇: 钢琴曲">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/07/03/a1-43-german-relationship/" title="下一篇: 43-German-Relationship">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/3017/04/30/piano-melodies/">钢琴曲</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/package-oriented-design/">面向“包”的软件设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/03/a1-43-german-relationship/">43-German-Relationship</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/02/a1-42-german-transport/">42-German-Transport</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/01/a1-41-german-colors/">41-German-Colors</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/30/a1-40-german-weather/">40-German-Weather</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/29/a1-39-german-adjectives/">39-German-Important Adjectives</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/28/a1-38-german-like/">38-German-Like</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/27/design-philosophy-on-packaging/">关于“包”的设计哲学</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/27/a1-37-german-be-allowed-to/">37-German-Be-allowed-to</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/develop-your-design-philosophy/">形成你自己的设计哲学</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/design-philosophy-on-integrity/">关于完整性的“设计哲学”</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/a1-36-german-must/">36-German-Must/Have to</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/a1-35-german-can/">35-German-Can</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/24/a1-34-german-want/">34-German-Want</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/23/a1-33-german-modal-verbs/">33-German-Modal-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/22/a1-32-german-months/">32-German-Months</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/a1-31-german-days-of-the-week/">31-German-Days-of-the-Week</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/20/a1-30-german-hungry-and-yummy/">30-German-Hungry-and-Yummy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/19/a1-29-german-food-and-drinks/">29-German-Food-and-Drinks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/18/a1-28-german-order-dishes/">28-German-Order-Dishes</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/17/a1-27-german-food/">27-German-Food</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/16/a1-26-german-languages/">26-German-Languages</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/15/a1-25-german-verb-speak/">25-German-Verb-Speak</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/14/a1-24-german-ask-for-help/">24-German-Ask-For-Help</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/13/a1-23-german-question-words/">23-German-Question-Words</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/12/a1-22-german-ask-questions/">22-German-Ask-Questions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/11/a1-21-german-most-used-verbs/">21-German-Most-Used-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/a1-20-german-introduce-others/">20-German-Introduce-Others</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/09/a1-19-german-verb-conjugation/">19-German-Verb-Conjugation</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/08/a1-18-german-family/">18-German-Family</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/a1-17-german-verbs-have/">17-German Have</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/a1-16-german-possessive-pronouns/">16-German-Possessive-Pronouns</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/05/a1-15-german-indefinite-articles/">15-German-Indefinite-Articles(ein and eine)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/04/a1-14-german-professions/">14-German-Professions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/a1-13-german-be/">13-German-be</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/a1-12-german-personal-data/">12-German-Personal-Data</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/a1-11-german-how-much-is/">11-German-How-much-is</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/31/a1-10-german-how-to-guess-articles/">10-German-How-to-Guess-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/30/a1-09-german-noun-and-articles/">09-German-Noun-and-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/a1-08-german-numbers2/">08-German-Numbers(20-100)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/a1-07-german-numbers1/">07-German-Numbers(0-20)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/27/a1-06-Yes-No-Thank-you/">06-German-Yes-No-Thank-you</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/26/a1-05-german-where-do-you-live/">05-German Where do you live?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/25/a1-04-How-are-you/">04-German-How are you?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/24/a1-03-Where-do-I-come-from/">03-German-Where do I come from</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/a1-02-german-self-introduction/">02-German-Self Introduction</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/22/a1-01-german-greetings/">01-German Greetings</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/20/try-mathjax/">try-mathjax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/10/how-to-solve-mysql-user-can-login-on-localhost/">Mysql只能从本机登陆问题的解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/11/run-virtualbox-on-windows/">run-virtualbox-on-windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/how-to-recursively-copy-file/">how-to-recursively-copy-file</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-install-deb-file/">如何安装deb文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-add-directory-to-path/">Linux把一个路径添加到$PATH环境变量中</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-interface-md/">Effective Go之接口和其他类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-data-md/">effective-golang-data.md</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-methods/">Effective Go之值方法 vs 指针方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-initialization/">Effective Go之初始化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/19/effective-golang-function/">Effective Go之函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/positioning-chapter10/">无名陷阱</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/25/fissionable-imbark-04/">第四次裂变--失控</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/staged-event-driven-architecture/">SEDA An Architecture for Well-Contained, Scalable Internet Services</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/23/fissionable-imbark-03/">第三次裂变--选人</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-02/">第二次裂变--换心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-01/">第一次裂变--割肉</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-run-py-file-on-windows/">Run .py file on windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-django-social-auth/">为Django网站添加社交网络账号登录功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/">Windows上Python开发环境的安装与配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/">在单元测试中进行依赖注入</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/29/2015-09-29-monad-in-javascript/">MONAD in Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-19-test-highlight/">test highlight</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-18-generate-table-of-contents/">Generate 'Table of Contents'</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/18/2015-09-18-hello-world/">Hello World!!!</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/from-classical-period-to-medieval-period/">古典时期到中世纪</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/15/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 Guannan Du
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

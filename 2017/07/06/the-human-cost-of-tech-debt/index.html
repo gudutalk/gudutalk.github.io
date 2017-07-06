@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>技术债务的人力成本 | Gudu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;emsp;&amp;emsp;如果你对技术债务(technical debt)这个概念不是很熟悉，那么了解它是非常有必要的。我之所以这么说是因为它是一个工业界非常常用的重要概念。 &amp;emsp;&amp;emsp;技术债务这个术语是Ward Cunningham发明的，它引入了一个概念，就是如果你在一个软件项目中抄了近路，不仅仅意味着你最终会为此付出同等的代价，它还意味着你会为此付出额外的代价，就好像你欠了外债，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="技术债务的人力成本">
+<meta property="og:url" content="http://talk.gudu.io/2017/07/06/the-human-cost-of-tech-debt/index.html">
+<meta property="og:site_name" content="Gudu">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;如果你对技术债务(technical debt)这个概念不是很熟悉，那么了解它是非常有必要的。我之所以这么说是因为它是一个工业界非常常用的重要概念。 &amp;emsp;&amp;emsp;技术债务这个术语是Ward Cunningham发明的，它引入了一个概念，就是如果你在一个软件项目中抄了近路，不仅仅意味着你最终会为此付出同等的代价，它还意味着你会为此付出额外的代价，就好像你欠了外债，">
+<meta property="og:updated_time" content="2017-07-06T07:39:30.835Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="技术债务的人力成本">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;如果你对技术债务(technical debt)这个概念不是很熟悉，那么了解它是非常有必要的。我之所以这么说是因为它是一个工业界非常常用的重要概念。 &amp;emsp;&amp;emsp;技术债务这个术语是Ward Cunningham发明的，它引入了一个概念，就是如果你在一个软件项目中抄了近路，不仅仅意味着你最终会为此付出同等的代价，它还意味着你会为此付出额外的代价，就好像你欠了外债，">
+  
+    <link rel="alternative" href="/atom.xml" title="Gudu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/dragon-logo8.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Guannan Du</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Ich sollte ein Bauer sein, wie mein Vater will</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/.">Home</a></li>
+                        
+                            <li><a href="/archives">Archives</a></li>
+                        
+                            <li><a href="/tags/German">German</a></li>
+                        
+                            <li><a href="/tags/Music">Music</a></li>
+                        
+                            <li><a href="/lectures">Lectures</a></li>
+                        
+                            <li><a href="/about">About</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:nspforever@gmail.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/nspforever" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Bash/" style="font-size: 10px;">Bash</a> <a href="/tags/Basic/" style="font-size: 10px;">Basic</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Clipper/" style="font-size: 10px;">Clipper</a> <a href="/tags/CoffeeScript/" style="font-size: 10px;">CoffeeScript</a> <a href="/tags/Delphi/" style="font-size: 10px;">Delphi</a> <a href="/tags/German/" style="font-size: 20px;">German</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Music/" style="font-size: 10px;">Music</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective C</a> <a href="/tags/Piano/" style="font-size: 10px;">Piano</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Ruby/" style="font-size: 10px;">Ruby</a> <a href="/tags/Scala/" style="font-size: 10px;">Scala</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/concurrency/" style="font-size: 10px;">concurrency</a> <a href="/tags/event-driven/" style="font-size: 10px;">event driven</a> <a href="/tags/scalable/" style="font-size: 10px;">scalable</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">Ich sollte ein Bauer sein, wie mein Vater will</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Guannan Du</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/dragon-logo8.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Guannan Du</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Ich sollte ein Bauer sein, wie mein Vater will</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/.">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                    <li><a href="/tags/German">German</a></li>
+                
+                    <li><a href="/tags/Music">Music</a></li>
+                
+                    <li><a href="/lectures">Lectures</a></li>
+                
+                    <li><a href="/about">About</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:nspforever@gmail.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/nspforever" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-the-human-cost-of-tech-debt" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/06/the-human-cost-of-tech-debt/" class="article-date">
+      <time datetime="2017-07-06T04:32:50.000Z" itemprop="datePublished">2017-07-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      技术债务的人力成本
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <script src="/assets/js/APlayer.min.js"> </script><p>&emsp;&emsp;如果你对技术债务(technical debt)这个概念不是很熟悉，那么了解它是非常有必要的。我之所以这么说是因为它是一个工业界非常常用的重要概念。</p>
+<p>&emsp;&emsp;技术债务这个术语是Ward Cunningham发明的，它引入了一个概念，就是如果你在一个软件项目中抄了近路，不仅仅意味着你最终会为此付出同等的代价，它还意味着你会为此付出额外的代价，就好像你欠了外债，那么你除了偿还本金意外，还要偿还额外的利息。比如说，当前通过引入一个全局变量，从而使你的产品早发布半天，但这意味着以后的某天你最终会为此付出超过半天的时间。</p>
+<p><a href="https://www.infragistics.com/community/blogs/erikdietrich/archive/2016/06/29/the-human-cost-of-tech-debt.aspx" target="_blank" rel="external">原文地址</a><br><a id="more"></a></p>
+<h3 id="比喻的力量"><a href="#比喻的力量" class="headerlink" title="比喻的力量"></a>比喻的力量</h3><p>&emsp;&emsp;在写了多年代码之后，近几年中我的大部分工作是从事提供IT项目管理相关的咨询服务。以我的经验，这个在代码库中通过抄近路形成技术债务的比喻在商务团队与软件开发团队之间的沟通中是非常有用的。通过使用经济学语言向经理或者有MBA背景的管理层解释软件工程层面上的各种决定，他们是能够听得懂的。</p>
+<p>&emsp;&emsp;由于技术债务这个比喻的有效性，它经常被用来描述一个项目的健康程度，尤其是加上了截止日期和里程碑这样的维度之后。开发人员会声称过于紧迫的项目截止日期会导致很高的技术债务，最终导致在后续需要添加新功能的时候需要更长时间。当项目经理讨论错过截止日期的时候，它们有可能把它归罪于项目以前积累下来的技术债务。当要做出一个重要的替换/淘汰/重写决定时，上层管理有可能要求对技术债务进行评估。</p>
+<p>&emsp;&emsp;问题在于，对于大多数人，技术债务仅仅是产品什么时候发布的问题。</p>
+<p>&emsp;&emsp;但是，今天我要讨论的是技术债务与“人”有关的一面。不要误会，所有“人”的问题，从更广的角度上，也是商业上的问题。不高兴的人就是不高兴的员工，不高兴的员工导致工作效率低下。根据我的经验，很少有人从这个角度认识和讨论技术债务。</p>
+<h3 id="不愉快的工作"><a href="#不愉快的工作" class="headerlink" title="不愉快的工作"></a>不愉快的工作</h3><p>&emsp;&emsp;对于一个经理，一个技术债务债台高筑的代码库意味着以龟速交付新功能，这将引发大量的关于商业能力的令人沮丧的和糟糕的对话。对于开发人员，这种沮丧就更加严重。没人喜欢戴着枷锁日复一日的低效工作，技术债务债台高筑的代码库恰恰就是开发人员身上的枷锁。</p>
+<p>&emsp;&emsp;开发人员每天来上班，却发现完成简单如在窗体上添加一个复选框的工作要花去一天中的大部分时间。并且他们还要没完没了的解释为什么这么一个看起来如此简单的事情要花费如此之长的时间。当新的开发人员或顾问加入项目，开发人员知道他们会看到一张张困惑了脸，以及这些新手试图隐藏的对项目糟糕现状的鄙视。</p>
+<p>&emsp;&emsp;回到技术债务这个比喻，想想某个债台高筑的人试图向别人解释被人追债的情景。这很令人尴尬而且会导致团队士气低落。</p>
+<h3 id="团队内讧"><a href="#团队内讧" class="headerlink" title="团队内讧"></a>团队内讧</h3><p>&emsp;&emsp;不奇怪的是，这种情况往往导致团队争吵。回到技术债务这个比喻，这种行为在负债严重的夫妻之间是可想而知的。团队面对严重的技术债务时会划分战线。</p>
+<p>&emsp;&emsp;争吵可能发生在新来的员工与老员工之间，因为新员工把这些技术债务归罪于老员工。争吵也可能发生在维护着技术债务严重的旧有代码的开人员和正在开发新项目的开发人员之间。</p>
+<p>&emsp;&emsp;不管这些战线如何划分，这些都是问题，这些问题使得团队在这些令人沮丧和尴尬的问题之上恶语相向。</p>
+<h3 id="弱化的技能"><a href="#弱化的技能" class="headerlink" title="弱化的技能"></a>弱化的技能</h3><p>&emsp;&emsp;令人尴尬的是，互相责怪的游戏愈演愈烈，团队成员感觉职业精神在不停的流逝。到头来，技术债务不仅在新功能开发上造成了很大的拖累，也对代码库的演进产生不利的影响。</p>
+<p>&emsp;&emsp;在这种代码库中，做任何一件事情都变得异常困难。团队推迟升级到最新的语言版本。他们抵制引进更加先进的架构设计。他们害怕替换过时的第三方插件。总的来说，他们想尽量少的触碰任何代码库中的代码，因为这样做会进一步恶化这个已经使人昏昏欲睡的过程。想完成任何事情都显得太慢而且风险太高。</p>
+<p>&emsp;&emsp;但即使他们作出这些决定(或者他们接受别人做的决定)，他们明白，他们的市场价值在逐天下降。他们清醒的知道，当业界拥抱最新的JavaScript框架和领域驱动(domain driven)的设计方法，而他们却正在艰难的在为一个苟延残喘的，基于CRUD的WinForm应用程序添加新的功能。</p>
+<h3 id="隐藏的商业上的开销：人员流动和人员耗损"><a href="#隐藏的商业上的开销：人员流动和人员耗损" class="headerlink" title="隐藏的商业上的开销：人员流动和人员耗损"></a>隐藏的商业上的开销：人员流动和人员耗损</h3><p>&emsp;&emsp;希望管理层能够意识到，不开心的开发人员是一个商业上的问题，而且是一个非常严重的问题。在当前的IT人才市场环境下，开发人员有很多选择，即便是那些被有严重技术债务的旧有代码困住的开发人员也有很多选择。</p>
+<p>&emsp;&emsp;每天上班工作都要面对折磨人的代码库，面对心存不满的人，面对有很多其它想法的人，最终会产生一个很多人都在想着找另一份工作的团队。而且，人员的离开只是迟早的事。而这样团队的领导者，通常是公司最不愿意失去的人(因为项目的一些内幕只有他才了解)。招聘新人进入这样的团队也会越来越难，而且对于新的团队成员，有效的展开工作也变得越来越困难。</p>
+<p>&emsp;&emsp;因此，当你考虑技术债务，不只要想到它会带来新功能发布的推迟和缺陷数量的增长。还要考虑一下人力成本，以及从更长远看来它所带来的商业上的问题。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/07/06/the-human-cost-of-tech-debt/">技术债务的人力成本</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Guannan Du 的个人博客">Guannan Du</a></p>
+        <p><span>发布时间:</span>2017年07月05日 - 21时32分</p>
+        <p><span>最后更新:</span>2017年07月06日 - 07时39分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/06/the-human-cost-of-tech-debt/" title="技术债务的人力成本">http://talk.gudu.io/2017/07/06/the-human-cost-of-tech-debt/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://talk.gudu.io/2017/07/06/the-human-cost-of-tech-debt/　　作者: Guannan Du" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/3017/04/30/piano-melodies/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          钢琴曲
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/05/a1-45-german-sentence-structure-part2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">45-German Sentence Structure Part2</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#比喻的力量"><span class="toc-number">1.</span> <span class="toc-text">比喻的力量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不愉快的工作"><span class="toc-number">2.</span> <span class="toc-text">不愉快的工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#团队内讧"><span class="toc-number">3.</span> <span class="toc-text">团队内讧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#弱化的技能"><span class="toc-number">4.</span> <span class="toc-text">弱化的技能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐藏的商业上的开销：人员流动和人员耗损"><span class="toc-number">5.</span> <span class="toc-text">隐藏的商业上的开销：人员流动和人员耗损</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2017/07/06/the-human-cost-of-tech-debt/" data-title="技术债务的人力成本" data-url="http://talk.gudu.io/2017/07/06/the-human-cost-of-tech-debt/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/3017/04/30/piano-melodies/" title="上一篇: 钢琴曲">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/07/05/a1-45-german-sentence-structure-part2/" title="下一篇: 45-German Sentence Structure Part2">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/3017/04/30/piano-melodies/">钢琴曲</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/06/the-human-cost-of-tech-debt/">技术债务的人力成本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/05/a1-45-german-sentence-structure-part2/">45-German Sentence Structure Part2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/a1-44-german-sentence-structure-part1/">44-German Sentence Structure Part1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/03/a1-43-german-relationship/">43-German-Relationship</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/02/a1-42-german-transport/">42-German-Transport</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/01/a1-41-german-colors/">41-German-Colors</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/30/a1-40-german-weather/">40-German-Weather</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/29/a1-39-german-adjectives/">39-German-Important Adjectives</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/28/a1-38-german-like/">38-German-Like</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/27/a1-37-german-be-allowed-to/">37-German-Be-allowed-to</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/a1-36-german-must/">36-German-Must/Have to</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/a1-35-german-can/">35-German-Can</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/24/a1-34-german-want/">34-German-Want</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/23/a1-33-german-modal-verbs/">33-German-Modal-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/22/a1-32-german-months/">32-German-Months</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/a1-31-german-days-of-the-week/">31-German-Days-of-the-Week</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/20/a1-30-german-hungry-and-yummy/">30-German-Hungry-and-Yummy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/19/a1-29-german-food-and-drinks/">29-German-Food-and-Drinks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/18/a1-28-german-order-dishes/">28-German-Order-Dishes</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/17/a1-27-german-food/">27-German-Food</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/16/a1-26-german-languages/">26-German-Languages</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/15/a1-25-german-verb-speak/">25-German-Verb-Speak</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/14/a1-24-german-ask-for-help/">24-German-Ask-For-Help</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/13/a1-23-german-question-words/">23-German-Question-Words</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/12/a1-22-german-ask-questions/">22-German-Ask-Questions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/11/a1-21-german-most-used-verbs/">21-German-Most-Used-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/a1-20-german-introduce-others/">20-German-Introduce-Others</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/09/a1-19-german-verb-conjugation/">19-German-Verb-Conjugation</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/08/a1-18-german-family/">18-German-Family</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/a1-17-german-verbs-have/">17-German Have</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/a1-16-german-possessive-pronouns/">16-German-Possessive-Pronouns</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/05/a1-15-german-indefinite-articles/">15-German-Indefinite-Articles(ein and eine)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/04/a1-14-german-professions/">14-German-Professions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/a1-13-german-be/">13-German-be</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/a1-12-german-personal-data/">12-German-Personal-Data</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/a1-11-german-how-much-is/">11-German-How-much-is</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/31/a1-10-german-how-to-guess-articles/">10-German-How-to-Guess-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/30/a1-09-german-noun-and-articles/">09-German-Noun-and-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/a1-08-german-numbers2/">08-German-Numbers(20-100)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/a1-07-german-numbers1/">07-German-Numbers(0-20)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/27/a1-06-Yes-No-Thank-you/">06-German-Yes-No-Thank-you</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/26/a1-05-german-where-do-you-live/">05-German Where do you live?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/25/a1-04-How-are-you/">04-German-How are you?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/24/a1-03-Where-do-I-come-from/">03-German-Where do I come from</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/a1-02-german-self-introduction/">02-German-Self Introduction</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/22/a1-01-german-greetings/">01-German Greetings</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/20/try-mathjax/">try-mathjax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/10/how-to-solve-mysql-user-can-login-on-localhost/">Mysql只能从本机登陆问题的解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/11/run-virtualbox-on-windows/">run-virtualbox-on-windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/how-to-recursively-copy-file/">how-to-recursively-copy-file</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-install-deb-file/">如何安装deb文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-add-directory-to-path/">Linux把一个路径添加到$PATH环境变量中</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-interface-md/">Effective Go之接口和其他类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-data-md/">effective-golang-data.md</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-methods/">Effective Go之值方法 vs 指针方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-initialization/">Effective Go之初始化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/19/effective-golang-function/">Effective Go之函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/positioning-chapter10/">无名陷阱</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/25/fissionable-imbark-04/">第四次裂变--失控</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/staged-event-driven-architecture/">SEDA An Architecture for Well-Contained, Scalable Internet Services</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/23/fissionable-imbark-03/">第三次裂变--选人</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-02/">第二次裂变--换心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-01/">第一次裂变--割肉</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-run-py-file-on-windows/">Run .py file on windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-django-social-auth/">为Django网站添加社交网络账号登录功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/">Windows上Python开发环境的安装与配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/">在单元测试中进行依赖注入</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/29/2015-09-29-monad-in-javascript/">MONAD in Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-19-test-highlight/">test highlight</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-18-generate-table-of-contents/">Generate 'Table of Contents'</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/18/2015-09-18-hello-world/">Hello World!!!</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/from-classical-period-to-medieval-period/">古典时期到中世纪</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/15/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 Guannan Du
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

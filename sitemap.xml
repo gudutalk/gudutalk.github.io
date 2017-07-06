@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://talk.gudu.io/2017/07/04/a1-44-german-sentence-structure-part1/</loc>
+    
+    <lastmod>2017-07-06T08:30:48.701Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2017/07/05/a1-45-german-sentence-structure-part2/</loc>
+    
+    <lastmod>2017-07-06T08:30:26.193Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://talk.gudu.io/2017/07/03/a1-43-german-relationship/</loc>
     
-    <lastmod>2017-07-03T08:50:58.887Z</lastmod>
+    <lastmod>2017-07-06T07:59:22.155Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/3017/04/30/piano-melodies/</loc>
+    
+    <lastmod>2017-07-06T07:41:50.827Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2017/07/06/the-human-cost-of-tech-debt/</loc>
+    
+    <lastmod>2017-07-06T07:39:30.835Z</lastmod>
     
   </url>
   
@@ -443,13 +471,6 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/3017/04/30/piano-melodies/</loc>
-    
-    <lastmod>2017-06-10T09:16:51.363Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://talk.gudu.io/how-the-economic-machine-works/index.html</loc>
     
     <lastmod>2017-06-07T06:46:50.321Z</lastmod>
@@ -499,13 +520,6 @@
   </url>
   
   <url>
-    <loc>http://talk.gudu.io/2017/05/26/a1-05-german-where-do-you-live/</loc>
-    
-    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://talk.gudu.io/2017/05/24/a1-03-Where-do-I-come-from/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
@@ -514,6 +528,13 @@
   
   <url>
     <loc>http://talk.gudu.io/2016/08/22/effective-golang-data-md/</loc>
+    
+    <lastmod>2017-06-02T05:19:47.904Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://talk.gudu.io/2017/05/26/a1-05-german-where-do-you-live/</loc>
     
     <lastmod>2017-06-02T05:19:47.904Z</lastmod>
     

@@ -5,17 +5,17 @@
   
   <title>关于完整性的“设计哲学” | Gudu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：Develop Your Design Philosophy">
+  <meta name="description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：&amp;emsp;&amp;emsp; Develop Your Design Philosophy">
 <meta name="keywords" content="golang,design">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于完整性的“设计哲学”">
 <meta property="og:url" content="http://talk.gudu.io/2017/06/26/design-philosophy-on-integrity/index.html">
 <meta property="og:site_name" content="Gudu">
-<meta property="og:description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：Develop Your Design Philosophy">
-<meta property="og:updated_time" content="2017-06-26T20:57:38.003Z">
+<meta property="og:description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：&amp;emsp;&amp;emsp; Develop Your Design Philosophy">
+<meta property="og:updated_time" content="2017-06-26T23:05:45.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于完整性的“设计哲学”">
-<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：Develop Your Design Philosophy">
+<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：&amp;emsp;&amp;emsp; Develop Your Design Philosophy">
   
     <link rel="alternative" href="/atom.xml" title="Gudu" type="application/atom+xml">
   
@@ -245,7 +245,7 @@
   
     <div class="article-meta">
       <a href="/2017/06/26/design-philosophy-on-integrity/" class="article-date">
-      <time datetime="2017-06-26T20:57:38.003Z" itemprop="datePublished">2017-06-26</time>
+      <time datetime="2017-06-26T23:05:45.270Z" itemprop="datePublished">2017-06-26</time>
 </a>
     </div>
   
@@ -279,27 +279,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：<br>Develop Your Design Philosophy</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;这文章是一个系列文章的一部分，目的是使你开始思考你自己的“设计哲学”。如果你还没有读过之前的文章，请先阅读：<br>&emsp;&emsp; Develop Your Design Philosophy</p>
 <a id="more"></a>
 <h3 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h3><p>&emsp;&emsp;我想在这里分享我关于完整性的“设计哲学”以及对于Go语言它意味着什么。完整性绝对不仅仅是一个漂亮的口号，它是我编程和生活中做一切事情的驱动原则。</p>
-<p>&emsp;&emsp;这是我对完整性的定义：<br>&emsp;&emsp;代码读、写以及执行每一条指令的准确性和一致性。同样重要的是，写更少的代码并且知道错误处理是代码的主要部分。</p>
+<p>&emsp;&emsp;这是我对完整性的定义：<br>&emsp;&emsp;代码读、写以及执行每一条指令是准确的和一致的。同样重要的是，写更少的代码并且知道错误处理是代码的主要部分。</p>
 <p>&emsp;&emsp;如果你仔细想一想你写的代码实际上做了什么，你可以把它分成微观和宏观两个层面的操作。你的每一行代码在微观上都是在分配内存，或读取内存，或写数据到内存中。变量和语句是这些操作背后的驱动力。在宏观上，你所写的大部分代码都是在做数据转换。我们有一个输入然后我们产生一个输出。我们的函数是这些操作背后的驱动力。</p>
 <p>&emsp;&emsp;这样看起来就有两个驱动力：<br>&emsp;&emsp;完整性是关于准确、一致、高效的分配和读写内存。类型系统对确保微观的完整性至关重要。</p>
 <p>&emsp;&emsp;完整性是关于准确、一致、高效的进行数据转换。写更少的代码和正确的处理错误情况对确保宏观的完整性至关重要。</p>
 <p>&emsp;&emsp;完整性对于编写出可塑性强并且可靠地软件至关重要。</p>
 <h3 id="认真对待可靠性"><a href="#认真对待可靠性" class="headerlink" title="认真对待可靠性"></a>认真对待可靠性</h3><p>&emsp;&emsp;如果我们认真对待可靠性，我们就必须认真对待完整性，因此我们必须认真对待错误处理。有一个针对几百个Cassandra，HBase，HDFS，MapReduce和Redis的bug案例研究。在这个研究中，发现了48个关键故障，下面这些故障原因的分类：</p>
-<p>92% : 糟糕的错误处理导致的故障<br>35% : 不正确的处理</p>
-<ul>
-<li>25% : 简单的忽视错误</li>
-<li>8% : 捕捉了错误的异常</li>
-<li>2% : 没有完成的TODO<br>57% 系统特有的</li>
-<li>23% : 很容易被检测到</li>
-<li>34% : 复杂的bug<br>8% : 潜在的认为错误导致的故障</li>
-</ul>
-<p>&emsp;&emsp;结果也许会令你感到吃惊。如果开发人员把完整性作为第一优先级，92%的严重故障是可以被避免的。错误被以很多不同的方式不正确的处理了。在一些情况下是因为异常如何被处理的，而另外一些情况下是由于开发人员的粗心大意。</p>
+<pre><code>* 92% : 糟糕的错误处理导致的故障
+    * 35% : 不正确的处理
+        - 25% : 简单的忽视错误
+        - 8% : 捕捉了错误的异常
+        - 2% : 没有完成的TODO
+    * 57% 系统特有的
+        - 23% : 很容易被检测到
+        - 34% : 复杂的bug
+* 8% : 潜在的认为错误导致的故障
+</code></pre><p>&emsp;&emsp;结果也许会令你感到吃惊。如果开发人员把完整性作为第一优先级，92%的严重故障是可以被避免的。错误被以很多不同的方式不正确的处理了。在一些情况下是因为异常如何被处理的，而另外一些情况下是由于开发人员的粗心大意。</p>
 <p>&emsp;&emsp;异常处理本来是用来处理错误的，却往往造成了故障的发生。“异常处理”这个名字使得你没有把它当成你的主要代码的一部分，而是把代码中的异常处理逻辑当做某些可以稍后处理，或者其它什么东西。在事后讨论检查发现了很多由于这种脱节造成的问题。</p>
 <p>&emsp;&emsp;我总是听到有人抱怨Go语言的错误处理机制有多么烦人，有多么不方便，但是，这正是问题所在。用这种方式Go语言迫使你不去忽略完整性问题。我们都知道，为了保证安全性，通常会造成同样的繁琐和不方便，我并不认为Go语言的错误机制和这个有任何不同，完整性和安全性总是齐头并进的。</p>
-<h3 id="开发人员的粗心大意"><a href="#开发人员的粗心大意" class="headerlink" title="开发人员的粗心大意"></a>开发人员的粗心大意</h3><pre><code>                 Non-Deliberate               Deliberate
+<h3 id="开发人员的粗心大意"><a href="#开发人员的粗心大意" class="headerlink" title="开发人员的粗心大意"></a>开发人员的粗心大意</h3><p>&emsp;&emsp;这个案例研究也揭示了一个开发人员的特点，那就是粗心大意。我总是相信开发人员的行为可以归结为一个关于粗心大意vs无知vs专心致志的。每当我们发现一个完整性问题，我们必须问自己这是怎么发生的，为什么会发生。</p>
+<p>&emsp;&emsp;当试图理解开发人员有关完整性行为的时候我喜欢使用矩阵。这是一个对于Martin Fowler’s的技术债矩阵的变形。当一个完整性问题被发现，这个问题通常来自于无知或者粗心大意。</p>
+<pre><code>                 Non-Deliberate               Deliberate
               ------------------------------------------------------
               |                          |                         |
               |                          |                         |
@@ -313,7 +316,21 @@ Carelessness  |        Education         |   Dangerous Situation   |
               |                          |                         |
               |                          |                         |
               ------------------------------------------------------
-</code></pre>
+</code></pre><p>&emsp;&emsp;无知导致的完整性问题通常或是在我们创建原型/学习(不审慎的)或是在我们用hack的方式去解决一个问题，但是却没有考虑这样做的后果(审慎的)。我通常可以接受第一种无知造成的完整性问题，但是我希望能够尽可能消除hacking或者猜测造成的完整性问题。</p>
+<p>&emsp;&emsp;粗心大意造成的完整性问题是非常危险的。一个开发人员有明知会引入完整性问题并且部署有问题的代码超出了我的容忍限度。也即是说，在紧急情况下并且在很短的时间内有完整性问题是可以接受的。不审慎的粗心大意需要采取立即行动进行教育培训。我们必须尽量避免粗心大意造成的完整性问题。</p>
+<h3 id="写更少的代码"><a href="#写更少的代码" class="headerlink" title="写更少的代码"></a>写更少的代码</h3><p>&emsp;&emsp;已经有很多关于一个软件正常该有的bug数量的研究。业界的平均大概是每1000行代码应该有15到50个bug。一个简单的减少bug数量并且提高软件完整性的方法是写尽量少的代码。</p>
+<p>&emsp;&emsp;Bjarne Stroustrup声称多余的代码会造成丑陋，冗长并且缓慢的代码:</p>
+<ul>
+<li>丑陋：给bug留下了隐藏的空间</li>
+<li>冗长：导致测试不完全</li>
+<li>缓慢：造成容易走捷径和使用肮脏的技巧</li>
+</ul>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>&emsp;&emsp;我想再次总结我对完整性的定义：</p>
+<p>&emsp;&emsp;代码读、写以及执行每一条指令是准确的和一致的。同样重要的是，写更少的代码并且知道错误处理是代码的主要部分。</p>
+<p>&emsp;&emsp;我强烈的认为保证完整性是你做任何事情和做任何决定的最高优先级。这意味着写尽量少的代码，把错误处理逻辑当做你代码的主要部分而不是作为所谓的其它东西。Go语言处理错误的方法证明Go语言在保证完整性的方面的丝毫不妥协的态度，并且错误处理和完整性总是形影不离的。</p>
+<h3 id="错误处理机制"><a href="#错误处理机制" class="headerlink" title="错误处理机制"></a>错误处理机制</h3><p>&emsp;&emsp;如果你是Go语言的新手，读一读下面这几篇关于错误处理机制的文章可能会很有帮助：</p>
+<p>&emsp;&emsp;Error Handling In Go Part I<br>&emsp;&emsp;Error Handling In Go Part II<br>&emsp;&emsp;Error Training Material</p>
+
       
       
         <div class="page-reward">
@@ -359,8 +376,8 @@ Carelessness  |        Education         |   Dangerous Situation   |
     <div class="copyright">
         <p><span>本文标题:</span><a href="/2017/06/26/design-philosophy-on-integrity/">关于完整性的“设计哲学”</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Guannan Du 的个人博客">Guannan Du</a></p>
-        <p><span>发布时间:</span>2017年06月26日 - 13时57分</p>
-        <p><span>最后更新:</span>2017年06月26日 - 20时57分</p>
+        <p><span>发布时间:</span>2017年06月26日 - 16时05分</p>
+        <p><span>最后更新:</span>2017年06月26日 - 23时05分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/06/26/design-philosophy-on-integrity/" title="关于完整性的“设计哲学”">http://talk.gudu.io/2017/06/26/design-philosophy-on-integrity/</a>
             <span class="copy-path" data-clipboard-text="原文: http://talk.gudu.io/2017/06/26/design-philosophy-on-integrity/　　作者: Guannan Du" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -376,18 +393,18 @@ Carelessness  |        Education         |   Dangerous Situation   |
 
 <nav id="article-nav">
   
-    <a href="/3017/04/30/piano-melodies/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/06/26/develop-your-design-philosophy/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          钢琴曲
+          形成你自己的设计哲学
         
       </div>
     </a>
   
   
-    <a href="/2017/06/26/develop-your-design-philosophy/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">形成你自己的设计哲学</div>
+    <a href="/2017/06/26/a1-36-german-must/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">36-German-Must/Have to</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -398,7 +415,7 @@ Carelessness  |        Education         |   Dangerous Situation   |
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导论"><span class="toc-number">2.</span> <span class="toc-text">导论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#认真对待可靠性"><span class="toc-number">3.</span> <span class="toc-text">认真对待可靠性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发人员的粗心大意"><span class="toc-number">4.</span> <span class="toc-text">开发人员的粗心大意</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导论"><span class="toc-number">2.</span> <span class="toc-text">导论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#认真对待可靠性"><span class="toc-number">3.</span> <span class="toc-text">认真对待可靠性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发人员的粗心大意"><span class="toc-number">4.</span> <span class="toc-text">开发人员的粗心大意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写更少的代码"><span class="toc-number">5.</span> <span class="toc-text">写更少的代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结论"><span class="toc-number">6.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误处理机制"><span class="toc-number">7.</span> <span class="toc-text">错误处理机制</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -469,18 +486,18 @@ Carelessness  |        Education         |   Dangerous Situation   |
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/3017/04/30/piano-melodies/" title="上一篇: 钢琴曲">
+            <a href="/2017/06/26/develop-your-design-philosophy/" title="上一篇: 形成你自己的设计哲学">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/06/26/develop-your-design-philosophy/" title="下一篇: 形成你自己的设计哲学">
+            <a href="/2017/06/26/a1-36-german-must/" title="下一篇: 36-German-Must/Have to">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/3017/04/30/piano-melodies/">钢琴曲</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/design-philosophy-on-integrity/">关于完整性的“设计哲学”</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/develop-your-design-philosophy/">形成你自己的设计哲学</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/a1-36-german-must/">36-German-Must/Have to</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/a1-35-german-can/">35-German-Can</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/24/a1-34-german-want/">34-German-Want</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/23/a1-33-german-modal-verbs/">33-German-Modal-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/22/a1-32-german-months/">32-German-Months</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/a1-31-german-days-of-the-week/">31-German-Days-of-the-Week</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/20/a1-30-german-hungry-and-yummy/">30-German-Hungry-and-Yummy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/19/a1-29-german-food-and-drinks/">29-German-Food-and-Drinks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/18/a1-28-german-order-dishes/">28-German-Order-Dishes</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/17/a1-27-german-food/">27-German-Food</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/16/a1-26-german-languages/">26-German-Languages</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/15/a1-25-german-verb-speak/">25-German-Verb-Speak</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/14/a1-24-german-ask-for-help/">24-German-Ask-For-Help</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/13/a1-23-german-question-words/">23-German-Question-Words</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/12/a1-22-german-ask-questions/">22-German-Ask-Questions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/11/a1-21-german-most-used-verbs/">21-German-Most-Used-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/a1-20-german-introduce-others/">20-German-Introduce-Others</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/09/a1-19-german-verb-conjugation/">19-German-Verb-Conjugation</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/08/a1-18-german-family/">18-German-Family</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/a1-17-german-verbs-have/">17-German Have</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/a1-16-german-possessive-pronouns/">16-German-Possessive-Pronouns</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/05/a1-15-german-indefinite-articles/">15-German-Indefinite-Articles(ein and eine)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/04/a1-14-german-professions/">14-German-Professions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/a1-13-german-be/">13-German-be</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/a1-12-german-personal-data/">12-German-Personal-Data</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/a1-11-german-how-much-is/">11-German-How-much-is</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/31/a1-10-german-how-to-guess-articles/">10-German-How-to-Guess-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/30/a1-09-german-noun-and-articles/">09-German-Noun-and-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/a1-08-german-numbers2/">08-German-Numbers(20-100)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/a1-07-german-numbers1/">07-German-Numbers(0-20)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/27/a1-06-Yes-No-Thank-you/">06-German-Yes-No-Thank-you</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/26/a1-05-german-where-do-you-live/">05-German Where do you live?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/25/a1-04-How-are-you/">04-German-How are you?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/24/a1-03-Where-do-I-come-from/">03-German-Where do I come from</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/a1-02-german-self-introduction/">02-German-Self Introduction</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/22/a1-01-german-greetings/">01-German Greetings</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/20/try-mathjax/">try-mathjax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/10/how-to-solve-mysql-user-can-login-on-localhost/">Mysql只能从本机登陆问题的解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/11/run-virtualbox-on-windows/">run-virtualbox-on-windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/how-to-recursively-copy-file/">how-to-recursively-copy-file</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-install-deb-file/">如何安装deb文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-add-directory-to-path/">Linux把一个路径添加到$PATH环境变量中</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-interface-md/">Effective Go之接口和其他类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-data-md/">effective-golang-data.md</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-methods/">Effective Go之值方法 vs 指针方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-initialization/">Effective Go之初始化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/19/effective-golang-function/">Effective Go之函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/positioning-chapter10/">无名陷阱</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/25/fissionable-imbark-04/">第四次裂变--失控</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/staged-event-driven-architecture/">SEDA An Architecture for Well-Contained, Scalable Internet Services</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/23/fissionable-imbark-03/">第三次裂变--选人</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-02/">第二次裂变--换心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-01/">第一次裂变--割肉</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-run-py-file-on-windows/">Run .py file on windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-django-social-auth/">为Django网站添加社交网络账号登录功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/">Windows上Python开发环境的安装与配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/">在单元测试中进行依赖注入</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/29/2015-09-29-monad-in-javascript/">MONAD in Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-19-test-highlight/">test highlight</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-18-generate-table-of-contents/">Generate 'Table of Contents'</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/18/2015-09-18-hello-world/">Hello World!!!</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/from-classical-period-to-medieval-period/">古典时期到中世纪</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/15/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/3017/04/30/piano-melodies/">钢琴曲</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/package-oriented-design/">面向“包”的软件设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/03/a1-43-german-relationship/">43-German-Relationship</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/02/a1-42-german-transport/">42-German-Transport</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/01/a1-41-german-colors/">41-German-Colors</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/30/a1-40-german-weather/">40-German-Weather</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/29/a1-39-german-adjectives/">39-German-Important Adjectives</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/28/a1-38-german-like/">38-German-Like</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/27/design-philosophy-on-packaging/">关于“包”的设计哲学</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/27/a1-37-german-be-allowed-to/">37-German-Be-allowed-to</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/develop-your-design-philosophy/">形成你自己的设计哲学</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/design-philosophy-on-integrity/">关于完整性的“设计哲学”</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/a1-36-german-must/">36-German-Must/Have to</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/a1-35-german-can/">35-German-Can</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/24/a1-34-german-want/">34-German-Want</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/23/a1-33-german-modal-verbs/">33-German-Modal-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/22/a1-32-german-months/">32-German-Months</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/a1-31-german-days-of-the-week/">31-German-Days-of-the-Week</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/20/a1-30-german-hungry-and-yummy/">30-German-Hungry-and-Yummy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/19/a1-29-german-food-and-drinks/">29-German-Food-and-Drinks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/18/a1-28-german-order-dishes/">28-German-Order-Dishes</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/17/a1-27-german-food/">27-German-Food</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/16/a1-26-german-languages/">26-German-Languages</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/15/a1-25-german-verb-speak/">25-German-Verb-Speak</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/14/a1-24-german-ask-for-help/">24-German-Ask-For-Help</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/13/a1-23-german-question-words/">23-German-Question-Words</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/12/a1-22-german-ask-questions/">22-German-Ask-Questions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/11/a1-21-german-most-used-verbs/">21-German-Most-Used-Verbs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/a1-20-german-introduce-others/">20-German-Introduce-Others</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/09/a1-19-german-verb-conjugation/">19-German-Verb-Conjugation</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/08/a1-18-german-family/">18-German-Family</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/a1-17-german-verbs-have/">17-German Have</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/06/a1-16-german-possessive-pronouns/">16-German-Possessive-Pronouns</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/05/a1-15-german-indefinite-articles/">15-German-Indefinite-Articles(ein and eine)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/04/a1-14-german-professions/">14-German-Professions</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/03/a1-13-german-be/">13-German-be</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/a1-12-german-personal-data/">12-German-Personal-Data</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/a1-11-german-how-much-is/">11-German-How-much-is</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/31/a1-10-german-how-to-guess-articles/">10-German-How-to-Guess-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/30/a1-09-german-noun-and-articles/">09-German-Noun-and-Articles</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/29/a1-08-german-numbers2/">08-German-Numbers(20-100)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/a1-07-german-numbers1/">07-German-Numbers(0-20)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/27/a1-06-Yes-No-Thank-you/">06-German-Yes-No-Thank-you</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/26/a1-05-german-where-do-you-live/">05-German Where do you live?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/25/a1-04-How-are-you/">04-German-How are you?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/24/a1-03-Where-do-I-come-from/">03-German-Where do I come from</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/a1-02-german-self-introduction/">02-German-Self Introduction</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/22/a1-01-german-greetings/">01-German Greetings</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/20/try-mathjax/">try-mathjax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/10/how-to-solve-mysql-user-can-login-on-localhost/">Mysql只能从本机登陆问题的解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/11/run-virtualbox-on-windows/">run-virtualbox-on-windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/how-to-recursively-copy-file/">how-to-recursively-copy-file</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-install-deb-file/">如何安装deb文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/how-to-add-directory-to-path/">Linux把一个路径添加到$PATH环境变量中</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-interface-md/">Effective Go之接口和其他类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/22/effective-golang-data-md/">effective-golang-data.md</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-methods/">Effective Go之值方法 vs 指针方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/effective-golang-initialization/">Effective Go之初始化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/19/effective-golang-function/">Effective Go之函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/positioning-chapter10/">无名陷阱</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/25/fissionable-imbark-04/">第四次裂变--失控</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/staged-event-driven-architecture/">SEDA An Architecture for Well-Contained, Scalable Internet Services</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/23/fissionable-imbark-03/">第三次裂变--选人</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-02/">第二次裂变--换心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/fissionable-imbark-01/">第一次裂变--割肉</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-run-py-file-on-windows/">Run .py file on windows</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-django-social-auth/">为Django网站添加社交网络账号登录功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/17/2015-10-17-setup-python-dev-environment-on-windows/">Windows上Python开发环境的安装与配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/15/2015-10-15-ways-to-inject-fake-implementation-into-a-unit-under-test/">在单元测试中进行依赖注入</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/29/2015-09-29-monad-in-javascript/">MONAD in Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-19-test-highlight/">test highlight</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/19/2015-09-18-generate-table-of-contents/">Generate 'Table of Contents'</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/18/2015-09-18-hello-world/">Hello World!!!</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/from-classical-period-to-medieval-period/">古典时期到中世纪</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/15/hello-world/">Hello World</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
